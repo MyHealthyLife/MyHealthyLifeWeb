@@ -1,4 +1,4 @@
-<html>
+<html ng-app="centric_main">
 <head>
 	<title>MyHealthyLife</title>
 	
@@ -9,7 +9,7 @@
     <script src="static/js/bootstrap.min.js"></script>
     
 </head>
-<body ng-app="main">
-<h2>Hello World!</h2>
+<body>
+
 </body>
 </html>
