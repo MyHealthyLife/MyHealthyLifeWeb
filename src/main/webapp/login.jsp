@@ -96,5 +96,9 @@
 			</div>
         </div>
         
+        
+        
+        <!-- Include modals -->
+    	<%@ include file="signUpModal.jsp" %>
 	</body>
 </html>
