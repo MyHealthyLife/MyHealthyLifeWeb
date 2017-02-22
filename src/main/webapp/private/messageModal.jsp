@@ -1,12 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-</html>
+<div class="container">
+    <div class="modal fade" id="messageModal" role="dialog" aria-hidden="true" style="display: none;">
+       <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+             <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">×</button>
+                 <h2 class="modal-title">Message</h2>
+               </div>
+               <div class="modal-body">
+                   
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                 <h3>
+                                    <% if(request.getAttribute("genericMessage")!=null) { %>
+                                       <%=request.getAttribute("genericMessage")%>
+                                    <% } else { %>
+                                        <%=session.getAttribute("genericMessage")%>
+                                        <%session.removeAttribute("genericMessage");%>
+                                    <% } %>
+                                 </h3>
+                            </center>
+                        </div>
+                    </div>
+                    <br>
+
+               </div>
+               <div class="modal-footer">
+                    <center>
+                        <button data-dismiss="modal" name="genericButtonDismiss" type="button" class="btn btn-primary">Return</button>
+                    </center>
+               </div>
+         </div>
+
+       </div>
+ </div>
+</div>
