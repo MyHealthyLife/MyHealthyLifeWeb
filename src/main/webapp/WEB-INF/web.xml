@@ -4,14 +4,44 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>LoginFilter</filter-name>
+  	<display-name>LoginFilter</display-name>
+  	<description></description>
+  	<filter-class>myhealthylife.myhealthylifeweb.filters.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>LoginFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   <servlet>
   	<servlet-name>MainServlet</servlet-name>
   	<display-name>MainServlet</display-name>
   	<description></description>
   	<servlet-class>myhealthylife.myhealthylifeweb.MainServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LoginValidator</servlet-name>
+  	<display-name>LoginValidator</display-name>
+  	<description></description>
+  	<servlet-class>myhealthylife.myhealthylifeweb.LoginValidator</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Logout</servlet-name>
+  	<display-name>Logout</display-name>
+  	<description></description>
+  	<servlet-class>myhealthylife.myhealthylifeweb.Logout</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>MainServlet</servlet-name>
   	<url-pattern>/MainServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginValidator</servlet-name>
+  	<url-pattern>/LoginValidator</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Logout</servlet-name>
+  	<url-pattern>/logout</url-pattern>
   </servlet-mapping>
 </web-app>
