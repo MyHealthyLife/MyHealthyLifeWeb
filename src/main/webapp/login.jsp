@@ -78,7 +78,7 @@
 		                
 		                <div class="form-group">
 		                    <label for="password">
-		                        <span class="glyphicon glyphicon-eye-open"></span> Password
+		                        <span class="glyphicon glyphicon-lock"></span> Password
 		                    </label>
 		                    <input type="password" class="form-control" name="password" placeholder="Enter password" value="">
 		                </div>
@@ -100,5 +100,18 @@
         
         <!-- Include modals -->
     	<%@ include file="signUpModal.jsp" %>
+    	
+    	<% if(request.getAttribute("errorMessage")!=null) { %>
+    
+        <%@ include file="private/errorMessageModal.jsp" %>
+        	<script language="JavaScript" type="text/javascript" src="js/showGenericErrorMessage.js"></script>
+   		<% } %>
+    
+    	<% if(request.getAttribute("genericMessage")!=null) { %>
+    
+        <%@ include file="private/messageModal.jsp" %>
+        	<script language="JavaScript" type="text/javascript" src="js/showGenericMessage.js"></script>
+    	<% } %>
+    	
 	</body>
 </html>
