@@ -82,7 +82,7 @@ public class LoginValidator extends HttpServlet {
 		
 		session.setAttribute(LoginFilter.USERNAME, username);
 		
-		response.sendRedirect(request.getContextPath() + "/MainServlet");
+		response.sendRedirect(request.getContextPath() + "/index.html");
 		
 		
 		
