@@ -36,6 +36,10 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         // Get the parameters in the sign up form
         String username = request.getParameter("usernameNew");
         String password = request.getParameter("passwordNew");
+        String passConfirm = request.getParameter("passwordConfirmNew");
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        String sex = request.getParameter("sex");
         
         // Check of some parameters
         if(username!=null && !username.equals("") && password!=null && !password.equals("")) {
@@ -43,7 +47,9 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         	Person p = new Person();
     		p.setUsername(username);
     		p.setPassword(password);
-    		//p.setFirstname(name);
+    		p.setFirstname(firstname);
+    		p.setLastname(lastname);
+    		p.setSex(sex);
     		/*try {
     			p.setBirthdate(format.parse(birthdate));
     		} catch (ParseException e) {
