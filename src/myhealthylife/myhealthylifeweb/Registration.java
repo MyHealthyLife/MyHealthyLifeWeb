@@ -54,13 +54,12 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
     		Response resp= ServicesLocator.getCentric1Connection().path("user/register").request().accept(MediaType.APPLICATION_JSON).post(Entity.entity(p, MediaType.APPLICATION_JSON));
     		
         	
-    		if(resp.getStatus()!=Response.Status.OK.getStatusCode()){
+    		if(resp.getStatus()!=Response.Status.OK.getStatusCode()) {
     			
     			// Forward to the main page
                 request.setAttribute("errorMessage", "An error has occured in the server!");
                 RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
                 rd.forward(request, response);
-    			return;
     		}
     		else {
 	        

@@ -14,18 +14,61 @@
 	        <div class="modal-body" style="padding:40px 50px;">
 	            <form role="form" name="regModule" onsubmit="return control();" action="Registration" method="POST">
 	                
-	                <div class="form-group">
-	                  <label for="password">Username</label>
-	                  <input type="text" class="form-control" name="usernameNew" placeholder="Insert Username">
+	                <div class="row">
+		                <div class="col-xs-12">
+			                <div class="form-group">
+			                  <label for="password">Username</label>
+			                  <input type="text" class="form-control" name="usernameNew" placeholder="Insert Username">
+		                	</div>
+		                </div>
 	                </div>
-	                <div class="form-group">
-	                  <label for="password">Password</label>
-	                  <input type="password" class="form-control" name="passwordNew" placeholder="Insert Password">
+	                <div class="row">
+		                <div class="col-xs-6">
+			                <div class="form-group">
+			                  <label for="firstname">Firstname</label>
+			                  <input type="text" class="form-control" name="firstname" placeholder="Firstname">
+			                </div>
+	                	</div>
+	                	
+		                <div class="col-xs-6">	                
+			                <div class="form-group">
+			                  <label for="lastname">Lastname</label>
+			                  <input type="text" class="form-control" name="lastname" placeholder="Lastname">
+			                </div>
+	                	</div>
+                	</div>
+	                
+	                <div class="row">
+		                <div class="col-xs-6">
+			                <div class="form-group">
+			                  <label for="password">Password</label>
+			                  <input type="password" class="form-control" name="passwordNew" placeholder="Insert Password">
+			                </div>
+	                	</div>
+		                <div class="col-xs-6">
+			                <div class="form-group">
+			                  <label for="password">Confirm password</label>
+			                  <input type="password" class="form-control" name="passwordConfirmNew" placeholder="Confirm Password">
+			                </div>
+	                	</div>
+                	</div>
+                	
+                	
+	                <div class="row">
+		                <div class="col-xs-6">
+	                		<div class="form-group">
+			                  <label for="birthdate">Birthdate</label>
+			                  <input type="text" class="form-control" name="birthdate" placeholder="Insert birthdate">
+			                </div>
+		                </div>
+		                <div class="col-xs-6">
+	                		<div class="form-group">
+			                  <label for="sex">Sex</label>
+			                  <input type="text" class="form-control" name="sex" placeholder="Insert sex">
+			                </div>
+		                </div>
 	                </div>
-	                <div class="form-group">
-	                  <label for="password">Confirm password</label>
-	                  <input type="password" class="form-control" name="passwordConfirmNew" placeholder="Confirm Password">
-	                </div>
+	                
 	                <br><br>
 	                  <button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-off"></span> Sign Up</button>
 	                  
