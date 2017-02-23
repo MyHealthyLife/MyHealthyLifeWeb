@@ -1,6 +1,8 @@
 package myhealthylife.myhealthylifeweb;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,12 +32,12 @@ public class LoginValidator extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		// Get the request parameters
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		
+		// Query to check if the user exists
 		Response resp= ServicesLocator.getCentric1Connection().path("/user/data/"+username).request().accept(MediaType.APPLICATION_JSON).get();
 		
 		if(resp.getStatus()!=Response.Status.OK.getStatusCode()){
@@ -46,17 +48,29 @@ public class LoginValidator extends HttpServlet {
 		Person p=resp.readEntity(Person.class);
 		
 		if(p==null){
-			throwError(response);
+			
+			// Forward to the main page
+            request.setAttribute("errorMessage", "An error has occured!");
+            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
 			return;
 		}
 		
 		if(p.getPassword()==null){
-			throwError(response);
+			
+			// Forward to the main page
+            request.setAttribute("errorMessage", "An error has occured!");
+            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
 			return;
 		}
 		
 		if(!password.equals(p.getPassword())){
-			throwError(response);
+			
+			// Forward to the main page
+            request.setAttribute("genericMessage", "The password is not correct!");
+            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
 			return;
 		}
 		

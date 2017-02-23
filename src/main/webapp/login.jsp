@@ -104,13 +104,13 @@
     	<% if(request.getAttribute("errorMessage")!=null) { %>
     
         <%@ include file="private/errorMessageModal.jsp" %>
-        	<script language="JavaScript" type="text/javascript" src="js/showGenericErrorMessage.js"></script>
+        	<script language="JavaScript" type="text/javascript" src="static/js/showGenericErrorMessage.js"></script>
    		<% } %>
     
     	<% if(request.getAttribute("genericMessage")!=null) { %>
     
         <%@ include file="private/messageModal.jsp" %>
-        	<script language="JavaScript" type="text/javascript" src="js/showGenericMessage.js"></script>
+        	<script language="JavaScript" type="text/javascript" src="static/js/showGenericMessage.js"></script>
     	<% } %>
     	
 	</body>
