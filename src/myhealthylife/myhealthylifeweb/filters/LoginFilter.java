@@ -45,6 +45,7 @@ public class LoginFilter implements Filter {
 		
 		String loginUri=req.getContextPath()+"/login.jsp";
 		String loginValidatorURI=req.getContextPath()+"/LoginValidator";
+		String registrationURI = req.getContextPath() + "/Registration";
 		String subPath=req.getRequestURI().substring(req.getContextPath().length());
 		
 		if(subPath.startsWith("/static")){
@@ -52,7 +53,7 @@ public class LoginFilter implements Filter {
 			return;
 		}			
 		
-		if(req.getRequestURI().equals(loginUri) || req.getRequestURI().equals(loginValidatorURI)){
+		if(req.getRequestURI().equals(loginUri) || req.getRequestURI().equals(loginValidatorURI) || req.getRequestURI().equals(registrationURI)){
 			chain.doFilter(request, response);
 			return;
 		}

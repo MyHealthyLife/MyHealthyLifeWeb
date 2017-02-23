@@ -29,7 +29,7 @@ public class Registration extends HttpServlet {
     }
     
     
-protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         response.setContentType("text/html;charset=UTF-8");
         
@@ -42,7 +42,7 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
         String sex = request.getParameter("sex");
         
         // Check of some parameters
-        if(username!=null && !username.equals("") && password!=null && !password.equals("")) {
+        if(username!=null && !username.equals("") && password!=null && !password.equals("") && password.equals(passConfirm)) {
             
         	Person p = new Person();
     		p.setUsername(username);
@@ -54,26 +54,27 @@ protected void processRequest(HttpServletRequest request, HttpServletResponse re
     			p.setBirthdate(format.parse(birthdate));
     		} catch (ParseException e) {
     			p.setBirthdate(null);
-    		}
-    		p.setSex(sex);*/
+    		}*/
     		
     		Response resp= ServicesLocator.getCentric1Connection().path("user/register").request().accept(MediaType.APPLICATION_JSON).post(Entity.entity(p, MediaType.APPLICATION_JSON));
     		
         	
-    		if(resp.getStatus()!=Response.Status.OK.getStatusCode()) {
+    		if(resp.getStatus()==Response.Status.OK.getStatusCode()) {
     			
+    			// Forward to the main page
+		        request.setAttribute("genericMessage", "Your account has been created! Please log in using the standard form");
+		        RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+		        rd.forward(request, response);
+	    		return;
+    		}
+    		else {
+
     			// Forward to the main page
                 request.setAttribute("errorMessage", "An error has occured in the server!");
                 RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
                 rd.forward(request, response);
-    		}
-    		else {
-	        
-		        // Forward to the main page
-		        request.setAttribute("genericMessage", "Your account has been created! Please log in using the standard form");
-		        RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
-		        rd.forward(request, response);
-	    		
+                return;
+		        
     		}
             
         }
