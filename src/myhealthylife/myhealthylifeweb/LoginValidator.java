@@ -41,7 +41,11 @@ public class LoginValidator extends HttpServlet {
 		Response resp= ServicesLocator.getCentric1Connection().path("/user/data/"+username).request().accept(MediaType.APPLICATION_JSON).get();
 		
 		if(resp.getStatus()!=Response.Status.OK.getStatusCode()){
-			throwError(response);
+			
+			// Forward to the main page
+            request.setAttribute("errorMessage", "An error has occured in the server!");
+            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
 			return;
 		}
 		
