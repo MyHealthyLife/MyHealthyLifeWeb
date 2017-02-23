@@ -45,7 +45,7 @@
 	
 	
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	        <form name="logModule" action="RegisterUser" method="POST" class="navbar-form navbar-right">
+	        <form name="logModule" action="Registration" method="POST" class="navbar-form navbar-right">
 	            <div class="form-group">
 	
 	                Haven't got an account yet?<button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#signUpModal">Register</button>

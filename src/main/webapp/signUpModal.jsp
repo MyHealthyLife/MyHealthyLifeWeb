@@ -12,7 +12,7 @@
 	          <h4><span class="glyphicon glyphicon-lock"></span> Sign Up</h4>
 	        </div>
 	        <div class="modal-body" style="padding:40px 50px;">
-	            <form role="form" name="regModule" onsubmit="return control();" action="RegisterUser" method="POST">
+	            <form role="form" name="regModule" onsubmit="return control();" action="Registration" method="POST">
 	                
 	                <div class="form-group">
 	                  <label for="password">Username</label>
