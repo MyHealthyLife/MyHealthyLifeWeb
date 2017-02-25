@@ -103,6 +103,8 @@
                     <div class="desc">Lastname: {{user_data.lastname}} </div>
                     <div class="desc">Sex: {{user_data.sex}} </div>
                     <div class="desc">Birthdate: {{user_data.birthdate}} </div>
+                    
+                    <div class="desc"><br><button class="btn btn-primary" ng-click="editData()"><span class="	glyphicon glyphicon-pencil"></span>Edit data</button></div>
                 </div>
                 <div class="bottom">
                     
@@ -110,6 +112,59 @@
             </div>
 
         </div>
+        
+        
+		<!-- Edit Data Modal -->
+		   <div class="container">
+		    <div class="modal fade" id="editDataModal" role="dialog" aria-hidden="true" style="display: none;">
+		       <div class="modal-dialog">
+		         <!-- Modal content-->
+		         <div class="modal-content">
+		             <div class="modal-header">
+		                 <button type="button" class="close" data-dismiss="modal">×</button>
+		                 <h2 class="modal-title">Message</h2>
+		               </div>
+		               <div class="modal-body">
+		                   
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="form-group">
+		                            	<center>
+			                            	<form id="edit_data_form" action="">
+			                            		<label>Username:</label><br>
+			                            		<input class="form-control" type="text" name="username" ng-model="edit_username"/><br>
+			                            		<label>Firstname:</label><br>
+			                            		<input class="form-control" type="text" name="firstname" ng-model="edit_firstname"/><br>
+			                            		<label>Lastname:</label><br>
+			                            		<input class="form-control" type="text" name="lastname" ng-model="edit_lastname"/><br>
+			                            		<label>Sex:</label><br>
+			                            		<select class="form-control" name="sex" ng-model="edit_sex">
+			                            			<option value="M">M</option>
+			                            			<option value="F">F</option>
+			                            		</select><br>
+			                            		<label>Birthdate:</label>
+			                            		<input class="form-control" type="date" name="birthdate" ng-model="edit_birthdate"><br><br>
+			                            		
+			                            	</form>
+		                            	</center>
+		                            
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <br>
+		
+		               </div>
+		               <div class="modal-footer">
+		                    <center>
+		                    	<button class="btn btn-primary" ng-click="editSave()">Save</button>
+		                        <button data-dismiss="modal" name="genericButtonDismiss" type="button" class="btn btn-primary">Cancel</button>
+		                    </center>
+		               </div>
+		         </div>
+		
+		       </div>
+		 </div>
+		</div>
 
 	</div>
 	
