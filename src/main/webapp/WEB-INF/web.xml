@@ -5,15 +5,28 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <filter>
+  	<filter-name>CorsFilter</filter-name>
+  	<display-name>CorsFilter</display-name>
+  	<description></description>
+  	<filter-class>myhealthylife.myhealthylifeweb.filters.CorsFilter</filter-class>
+  </filter>
+  <filter>
   	<filter-name>LoginFilter</filter-name>
   	<display-name>LoginFilter</display-name>
   	<description></description>
   	<filter-class>myhealthylife.myhealthylifeweb.filters.LoginFilter</filter-class>
   </filter>
+  
+  
+  <filter-mapping>
+  	<filter-name>CorsFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   <filter-mapping>
   	<filter-name>LoginFilter</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
+  
   <servlet>
   	<servlet-name>MainServlet</servlet-name>
   	<display-name>MainServlet</display-name>
