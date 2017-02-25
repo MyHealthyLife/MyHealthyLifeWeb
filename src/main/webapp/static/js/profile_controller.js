@@ -23,7 +23,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
 	
 	$scope.loadUserData = function () {
         console.log('loadUserData called.');
-       
+        $(".loading_data").show();
         
         $http({
             url: centric01_basic+"/user/data/"+global_username,
@@ -32,6 +32,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
             }
         }).then(function(success) {
             $scope.user_data = success.data;
+            $(".loading_data").hide();
         }, function(error){
         	console.log('error');
         });
@@ -57,6 +58,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
     	$scope.user_data.sex=$scope.edit_sex;
     	$scope.user_data.birthdate=$scope.edit_birthdate;
     	$("#editDataModal").modal('hide');
+    	$(".loading_data").show();
     	
     	//$http.put(centric01_basic+"/user/data/"+global_username, $scope.user_data)
     	

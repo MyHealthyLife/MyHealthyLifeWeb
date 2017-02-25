@@ -19,6 +19,8 @@
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
     
 	<link rel="stylesheet" type="text/css" href="static/css/profile-card.css" />
+	
+	<link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css" />
     
 </head>
 <body>
@@ -97,17 +99,17 @@
                 </div>
                 <div class="info">
                     <div class="title">
-                        <a target="_blank" href="#">{{user_data.username}} </a>
+                        <a target="_blank" href="#">{{user_data.username}}<i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i> </a>
                     </div>
-                    <div class="desc">Firstname: {{user_data.firstname}} </div>
-                    <div class="desc">Lastname: {{user_data.lastname}} </div>
+                    <div class="desc">Firstname: {{user_data.firstname}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+                    <div class="desc">Lastname: {{user_data.lastname}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
                     <div class="desc">Sex: {{user_data.sex}} </div>
-                    <div class="desc">Birthdate: {{user_data.birthdate}} </div>
+                    <div class="desc">Birthdate: {{user_data.birthdate}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
                     
                     <div class="desc"><br><button class="btn btn-primary" ng-click="editData()"><span class="	glyphicon glyphicon-pencil"></span>Edit data</button></div>
                 </div>
                 <div class="bottom">
-                    
+       
                 </div>
             </div>
 
