@@ -1,28 +1,30 @@
 var app=angular.module('profile', []);
 
-var cemtric01_basic="https://centric01-main.herokuapp.com";
+var centric01_basic="https://centric01-main.herokuapp.com";
 
 app.controller('user_data', function ($scope,$rootScope, $http) {
+	
+	$scope.user_data
 	
 	$scope.loadUserData = function () {
         console.log('loadFeeds called.');
        
-        //$scope.loadData();
+        
         $http({
-            url: cemtric01_basic+"/user/data/morpheuss93",
+            url: centric01_basic+"/user/data/morpheuss93",
             method: 'GET',
             params: {
             }
-        }).success(function (data) {
-            $scope.user_data = data;
+        }).then(function(success) {
+            $scope.user_data = success.data;
+        }, function(error){
+        	console.log('error');
         });
+        
         console.log($scope.user_data);
        
     };
     
     $scope.loadUserData();
 	
-    $scope.loadData=function(){
-        
-    };
 });
