@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="progress">
 <head>
 <meta charset="ISO-8859-1">
 
 <title>MyHealthyLife</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
-	 <script src="static/js/jquery-3.1.1.min.js"></script>
+	<script src="static/js/jquery-3.1.1.min.js"></script>
     <script src="static/js/angular.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	global_username="<%= session.getAttribute("USERNAME") %>";
+    </script>
     
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
     
+    <script src="static/js/progress_controller.js"></script>
     <script src="static/js/progress-bar.js"></script>
 	<link rel="stylesheet" href="static/css/progress-bar.css" />
 
@@ -154,33 +158,35 @@
 			</form>
 			<br><br>
 		
+		<div ng-controller="currentHealthController">
 	    	<h2>Current Health</h2>
 			<form class="form-horizontal">
 			  	<div class="form-group">
 				    <label for="weight" class="col-sm-4 control-label">Weight:</label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="weight" placeholder="Weight" disabled>
+				      <input type="text" class="form-control" id="weight" placeholder="Weight" value={{weight}} disabled>
 				    </div>
 			  	</div>
 				  <div class="form-group">
 				    <label for="height" class="col-sm-4 control-label">Height:</label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="height" placeholder="Height" disabled>
+				      <input type="text" class="form-control" id="height" placeholder="Height" value={{height}} disabled>
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="steps" class="col-sm-4 control-label">Steps:</label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="steps" placeholder="Steps" disabled>
+				      <input type="text" class="form-control" id="steps" placeholder="Steps" value={{steps}} disabled>
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="bloodpressure" class="col-sm-4 control-label">Blood pressure:</label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="bloodpressure" placeholder="Blood pressure" disabled>
+				      <input type="text" class="form-control" id="bloodpressure" placeholder="Blood pressure" value={{bloodpressure}} disabled>
 				    </div>
 				  </div>
 				</form>
+			</div>
 			</div></div>
 			
 			
