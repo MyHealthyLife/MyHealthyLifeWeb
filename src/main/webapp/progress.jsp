@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="progress">
 <head>
 <meta charset="ISO-8859-1">
 
 <title>MyHealthyLife</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
-	 <script src="static/js/jquery-3.1.1.min.js"></script>
+	<script src="static/js/jquery-3.1.1.min.js"></script>
     <script src="static/js/angular.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	global_username="<%= session.getAttribute("USERNAME") %>";
+    </script>
     
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
     
+    <script src="static/js/progress_controller.js"></script>
     <script src="static/js/progress-bar.js"></script>
 	<link rel="stylesheet" href="static/css/progress-bar.css" />
 
@@ -84,28 +88,28 @@
 	
 	
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-12" ng-controller="progressBarController">
 		 <!-- Skill Bars -->
             <div class="progress skill-bar ">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{weightBar}} aria-valuemin="0" aria-valuemax="100">
                     <span class="skill">Weight <i class="val">100%</i></span>
                 </div>
             </div>
                 
             <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" >
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow={{heightBar}} aria-valuemin="0" aria-valuemax="100" >
                     <span class="skill">Height<i class="val">90%</i></span>
                 </div>
             </div>
             
             <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={{stepsBar}} aria-valuemin="0" aria-valuemax="100">
                     <span class="skill">Steps<i class="val">75%</i></span>
                 </div>
             </div>  
             
             <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={{bpBar}} aria-valuemin="0" aria-valuemax="100">
                     <span class="skill">Blood pressure<i class="val">55%</i></span>
                 </div>
             </div>  
@@ -154,33 +158,35 @@
 			</form>
 			<br><br>
 		
+		<div ng-controller="currentHealthController">
 	    	<h2>Current Health</h2>
 			<form class="form-horizontal">
 			  	<div class="form-group">
 				    <label for="weight" class="col-sm-4 control-label">Weight:</label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="weight" placeholder="Weight" disabled>
+				      <input type="text" class="form-control" id="weight" placeholder="Weight" value={{weight}} disabled>
 				    </div>
 			  	</div>
 				  <div class="form-group">
 				    <label for="height" class="col-sm-4 control-label">Height:</label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="height" placeholder="Height" disabled>
+				      <input type="text" class="form-control" id="height" placeholder="Height" value={{height}} disabled>
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="steps" class="col-sm-4 control-label">Steps:</label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="steps" placeholder="Steps" disabled>
+				      <input type="text" class="form-control" id="steps" placeholder="Steps" value={{steps}} disabled>
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="bloodpressure" class="col-sm-4 control-label">Blood pressure:</label>
 				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="bloodpressure" placeholder="Blood pressure" disabled>
+				      <input type="text" class="form-control" id="bloodpressure" placeholder="Blood pressure" value={{bloodpressure}} disabled>
 				    </div>
 				  </div>
 				</form>
+			</div>
 			</div></div>
 			
 			
