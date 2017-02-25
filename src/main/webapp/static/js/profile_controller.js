@@ -11,7 +11,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
        
         
         $http({
-            url: centric01_basic+"/user/data/morpheuss93",
+            url: centric01_basic+"/user/data/"+global_username,
             method: 'GET',
             params: {
             }

@@ -4,6 +4,10 @@
 	<title>MyHealthyLife</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+    <script type="text/javascript">
+    	global_username="<%= session.getAttribute("USERNAME") %>";
+    </script>
+    
     <!-- <script src="static/js/ui-bootstrap-tpls-2.4.0.min.js"></script>-->
     <script src="static/js/jquery-3.1.1.min.js"></script>
     <script src="static/js/angular.min.js"></script>
