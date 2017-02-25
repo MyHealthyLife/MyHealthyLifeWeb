@@ -88,28 +88,28 @@
 	
 	
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-12" ng-controller="progressBarController">
 		 <!-- Skill Bars -->
             <div class="progress skill-bar ">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{weightBar}} aria-valuemin="0" aria-valuemax="100">
                     <span class="skill">Weight <i class="val">100%</i></span>
                 </div>
             </div>
                 
             <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" >
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow={{heightBar}} aria-valuemin="0" aria-valuemax="100" >
                     <span class="skill">Height<i class="val">90%</i></span>
                 </div>
             </div>
             
             <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={{stepsBar}} aria-valuemin="0" aria-valuemax="100">
                     <span class="skill">Steps<i class="val">75%</i></span>
                 </div>
             </div>  
             
             <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={{bpBar}} aria-valuemin="0" aria-valuemax="100">
                     <span class="skill">Blood pressure<i class="val">55%</i></span>
                 </div>
             </div>  
