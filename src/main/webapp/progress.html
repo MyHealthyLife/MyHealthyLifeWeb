@@ -122,7 +122,7 @@
    	    		<h2>Add measure</h2>
 				<label for="type">Measure type:</label>	
 				<div class="btn-group">
-		          	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		          	<button type="button" class="btn-drop btn btn-default dropdown-toggle" data-toggle="dropdown">
 		            	Select measure type <span class="caret"></span>
 		          	</button>
 		          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
@@ -200,8 +200,8 @@
 	$(function(){
 	
 	    $(".dropdown-menu").on('click', 'li a', function(){
-	      $(".btn:first-child").text($(this).text());
-	      $(".btn:first-child").val($(this).text());
+	      $(".btn-drop:first-child").text($(this).text());
+	      $(".btn-drop:first-child").val($(this).text());
 	   });
 	
 	});</script>
