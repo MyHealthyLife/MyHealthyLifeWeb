@@ -125,7 +125,7 @@
 		          	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 		            	Select measure type <span class="caret"></span>
 		          	</button>
-		          	<ul class="dropdown-menu" role="menu">
+		          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
 		            	<li><a href="#">Weight</a></li>
 			            <li><a href="#">Height</a></li>
 			            <li><a href="#">Steps</a></li>
@@ -195,6 +195,16 @@
 	</div>
 	
 	<br><br><br>
+	
+	<script type="text/javascript">
+	$(function(){
+	
+	    $(".dropdown-menu").on('click', 'li a', function(){
+	      $(".btn:first-child").text($(this).text());
+	      $(".btn:first-child").val($(this).text());
+	   });
+	
+	});</script>
 
 </body>
 </html>
