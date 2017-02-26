@@ -89,6 +89,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
 app.controller('sentence_receviver', function ($scope,$rootScope, $http){
 	$scope.myData;
 	
+	
 	$scope.loadData=function(){
 		$http({
             url: centric02_basic+"/sentence/"+global_username,
@@ -103,7 +104,8 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
         });
 	}
 	
-	
+	//$interval($scope.loadData,5000)
+	setInterval($scope.loadData,5000);
 	$scope.loadData();
 	
 });

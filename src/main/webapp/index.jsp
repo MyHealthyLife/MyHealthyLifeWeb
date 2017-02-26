@@ -180,12 +180,23 @@
 					<div class="col-sm-12">
 					    <div class="form-group">
 				    	    <h2>Sentences</h2>
+				    	    <!-- <h1 ng-repeat="x in myData">{{x}}</h1>
+				    	    <button class="btn btn-primary" ng-click="loadData()">Load</button>-->
 				    	</div>
 				    </div>
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
-					  <div ui-grid="{ data: myData }" class="myGrid"></div>
+					  <!-- <div ui-grid="{ data: myData }" class="myGrid"></div> -->
+					  
+					  <div class="card" ng-repeat="x in myData">
+						  <!-- <img class="card-img-top" src="http://stock.wikimini.org/w/images/9/95/Gnome-stock_person-avatar-profile.png" alt="Card image cap">-->
+						  <div class="card-block">
+						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> {{x.usernameOne}}</h4>
+						    <p class="card-text"> {{x.sentenceText}}</p>
+						    <a href="#" class="btn btn-primary">Dismiss TODO</a>
+						  </div>
+						</div>
 				</div>
 			
 			</div>
