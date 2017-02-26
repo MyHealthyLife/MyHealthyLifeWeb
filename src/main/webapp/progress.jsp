@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="progress">
 <head>
-<meta charset="ISO-8859-1">
 
 <title>MyHealthyLife</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -18,6 +17,8 @@
     <script src="static/js/progress_controller.js"></script>
     <script src="static/js/progress-bar.js"></script>
 	<link rel="stylesheet" href="static/css/progress-bar.css" />
+	
+	<link rel="styleSheet" href="static/css/ui-grid.min.css"/>
 
 </head>
 <body>
@@ -131,12 +132,12 @@
 		            	Select measure type <span class="caret"></span>
 		          	</button>
 		          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-		            	<li><a href="#">Weight</a></li>
-			            <li><a href="#">Height</a></li>
-			            <li><a href="#">Steps</a></li>
-			            <li><a href="#">Blood pressure</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">Help me choose</a></li>
+			            	<li><a href="#">Weight</a></li>
+				            <li><a href="#">Height</a></li>
+				            <li><a href="#">Steps</a></li>
+				            <li><a href="#">Blood pressure</a></li>
+				            <li class="divider"></li>
+				            <li><a href="#">Help me choose</a></li>
 		          	</ul>
 	        	</div>
 	        

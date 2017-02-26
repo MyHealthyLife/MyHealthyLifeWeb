@@ -1,6 +1,9 @@
 var app=angular.module('progress', []);
 
+
+
 var centric01_basic="https://centric01-main.herokuapp.com";
+var centric02_basic="https://centric02-social.herokuapp.com";
 
 app.controller('currentHealthController', function ($scope,$rootScope, $http) {
 	
@@ -48,10 +51,13 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
 
 
 
+
+
+
+
+
 app.controller('progressBarController', function ($scope,$rootScope, $http) {
 	
-	   
-	   
 	
 	$scope.goal_data
 	$scope.weightBar = 100;
@@ -98,7 +104,7 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
     $scope.loadProgressBars();
     
     $rootScope.updateProgressBars = (function() {
-		   console.log("Hello");
+		   	console.log("Hello");
 		    $('.progress .progress-bar').css("width",
 		              function() {
 		                  return $(this).attr("aria-valuenow") + "%";
@@ -108,6 +114,44 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
     $rootScope.updateProgressBars();
     
 });
+
+
+
+
+
+app.controller('measureTypesController', function ($scope,$rootScope, $http) {
+	
+	
+	$scope.measureTypes
+	
+	$scope.loadMeasureTypes = function () {
+        console.log('loadFeeds called.');
+       
+        
+        $http({
+            url: centric01_basic+"/measuretypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+            
+        	$scope.measureTypes = success.data;
+            console.log($scope.measureTypes);
+            
+            
+            
+        }, function(error){
+        	console.log('error');
+        });
+        
+        console.log($scope.measureTypes);
+       
+    };
+    
+    $scope.loadMeasureTypes();
+	
+});
+
 
 
 
