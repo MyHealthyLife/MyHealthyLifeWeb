@@ -12,6 +12,7 @@
     <script src="static/js/jquery-3.1.1.min.js"></script>
     <script src="static/js/angular.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/ui-grid.min.js"></script>
     
     <script src="static/js/profile_controller.js"></script>
     
@@ -21,6 +22,8 @@
 	<link rel="stylesheet" type="text/css" href="static/css/profile-card.css" />
 	
 	<link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css" />
+	
+	<link rel="styleSheet" href="static/css/ui-grid.min.css"/>
     
 </head>
 <body>
@@ -172,15 +175,23 @@
 	
 </div>
 
-		<div class="col-sm-6">
-		<div class="row">
-		<div class="col-sm-12">
-		    <div class="form-group">
-	    	    <h2>Sentences</h2>
-	    	</div>
-	    </div>
-	</div><br>
-	</div></div></div>
+		<div class="col-sm-6" ng-controller='sentence_receviver'>
+			<div class="row">
+					<div class="col-sm-12">
+					    <div class="form-group">
+				    	    <h2>Sentences</h2>
+				    	</div>
+				    </div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					  <div ui-grid="{ data: myData }" class="myGrid"></div>
+				</div>
+			
+			</div>
+		<br>
+		</div>
+	</div></div>
 	
 
 

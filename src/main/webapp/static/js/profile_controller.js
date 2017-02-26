@@ -1,4 +1,4 @@
-var app=angular.module('profile', []);
+var app=angular.module('profile', ['ui.grid']);
 
 app.config(['$httpProvider', function ($httpProvider) {
 	  //Reset headers to avoid OPTIONS request (aka preflight)
@@ -9,6 +9,7 @@ app.config(['$httpProvider', function ($httpProvider) {
 	}]);
 
 var centric01_basic="https://centric01-main.herokuapp.com";
+var centric02_basic="https://centric02-social.herokuapp.com";
 
 app.controller('user_data', function ($scope,$rootScope, $http) {
 	
@@ -84,3 +85,27 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
     
 	
 });
+
+app.controller('sentence_receviver', function ($scope,$rootScope, $http){
+	$scope.myData;
+	
+	$scope.loadData=function(){
+		$http({
+            url: centric02_basic+"/sentence/"+global_username,
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+            $scope.myData = success.data;
+            
+        }, function(error){
+        	console.log('error');
+        });
+	}
+	
+	
+	$scope.loadData();
+	
+});
+
+
