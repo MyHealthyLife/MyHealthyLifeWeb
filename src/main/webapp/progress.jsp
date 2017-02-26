@@ -131,7 +131,7 @@
 		          	<button type="button" class="btn-drop btn btn-default dropdown-toggle" data-toggle="dropdown">
 		            	Select measure type <span class="caret"></span>
 		          	</button>
-		          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+		          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" ng-controller="measureTypesController">
 			            	<li><a href="#">Weight</a></li>
 				            <li><a href="#">Height</a></li>
 				            <li><a href="#">Steps</a></li>
