@@ -132,10 +132,7 @@
 		            	Select measure type <span class="caret"></span>
 		          	</button>
 		          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" ng-controller="measureTypesController">
-			            	<li><a href="#">Weight</a></li>
-				            <li><a href="#">Height</a></li>
-				            <li><a href="#">Steps</a></li>
-				            <li><a href="#">Blood pressure</a></li>
+			            	<li ng-repeat="singleMeasure in measureTypes"><a href="#">{{singleMeasure}}</a></li>
 				            <li class="divider"></li>
 				            <li><a href="#">Help me choose</a></li>
 		          	</ul>

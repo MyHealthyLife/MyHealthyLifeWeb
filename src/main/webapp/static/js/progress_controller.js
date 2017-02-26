@@ -135,7 +135,7 @@ app.controller('measureTypesController', function ($scope,$rootScope, $http) {
             }
         }).then(function(success) {
             
-        	$scope.measureTypes = success.data;
+        	$scope.measureTypes = success.data.measureType;
             console.log($scope.measureTypes);
             
             
