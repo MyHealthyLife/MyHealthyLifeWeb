@@ -86,11 +86,11 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
             	if(goals[i].goalName=='weight')
             		$scope.weightBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
             	if(goals[i].goalName=='height')
-            		$scope.heightBar = 100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue)));
+            		$scope.heightBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
             	if(goals[i].goalName=='steps')
-            		$scope.stepsBar = 100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue)));
+            		$scope.stepsBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
             	if(goals[i].goalName=='bloodpressure')
-            		$scope.bpBar = 100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue)));
+            		$scope.bpBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
             	
             }
             
