@@ -122,77 +122,124 @@
 		<div class="row">
 		
 	    	<div class="col-sm-6">
-   	    
-				<div class="panel panel-default">
-			<form class="form-horizontal" role="form" name="addMeasureModule" onsubmit="return fun();" action="" method="POST">
-   	    		<h2>Add measure</h2>
-				<label for="type">Measure type:</label>	
-				<div class="btn-group">
-		          	<button type="button" class="btn-drop btn btn-default dropdown-toggle" data-toggle="dropdown">
-		            	Select measure type <span class="caret"></span>
-		          	</button>
-		          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" ng-controller="measureTypesController">
-			            	<li ng-repeat="singleMeasure in measureTypes"><a href="#">{{singleMeasure}}</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Help me choose</a></li>
-		          	</ul>
-	        	</div>
-	        
-		        <div class="row">
-					<div class="col-sm-6">
-				    	<div class="form-group">
-						    <label for="measureValue" class="col-sm-4 control-label">Value:</label>
-						    <div class="col-sm-8">
-						      <input type="text" class="form-control" id="measureValue" placeholder="Measure Value">
-						    </div>
-					  	</div>
-			      	</div>
-			      	
-					<div class="col-sm-6">
-			      		<button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> Add Measure</button>
-        			</div>
+    			<div class="panel panel-primary">
+		        <div class="panel-heading">
+		            <h3 class="panel-title">Add Measure</h3>
+		        </div>            
+		        <div class="panel-body">
+		            <div class="tab-content">
+		                <div class="tab-pane active" id="test">
+				
+						<form class="form-horizontal" role="form" name="addMeasureModule" onsubmit="return fun();" action="" method="POST">
+							<label for="type">Measure type:</label>	
+							<div class="btn-group">
+					          	<button type="button" class="btn-drop btn btn-default dropdown-toggle" data-toggle="dropdown">
+					            	Select measure type <span class="caret"></span>
+					          	</button>
+					          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" ng-controller="measureTypesController">
+						            	<li ng-repeat="singleMeasure in measureTypes"><a href="#">{{singleMeasure}}</a></li>
+							            <li class="divider"></li>
+							            <li><a href="#">Help me choose</a></li>
+					          	</ul>
+				        	</div>
+				        
+					        <div class="row">
+								<div class="col-sm-6">
+							    	<div class="form-group">
+									    <label for="measureValue" class="col-sm-4 control-label">Value:</label>
+									    <div class="col-sm-8">
+									      <input type="text" class="form-control" id="measureValue" placeholder="Measure Value">
+									    </div>
+								  	</div>
+						      	</div>
+						      	
+								<div class="col-sm-6">
+						      		<button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> Add Measure</button>
+			        			</div>
+							</div>
+							      
+						</form>
+						</div>
+					</div>
 				</div>
-				      
-			</form>
-			<br><br>
+			</div>
 		
 		<div ng-controller="currentHealthController">
-	    	<h2>Current Health</h2>
-			<form class="form-horizontal">
-			  	<div class="form-group">
-				    <label for="weight" class="col-sm-4 control-label">Weight:</label>
-				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="weight" placeholder="Weight" value={{weight}} disabled>
-				    </div>
-			  	</div>
-				  <div class="form-group">
-				    <label for="height" class="col-sm-4 control-label">Height:</label>
-				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="height" placeholder="Height" value={{height}} disabled>
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="steps" class="col-sm-4 control-label">Steps:</label>
-				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="steps" placeholder="Steps" value={{steps}} disabled>
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="bloodpressure" class="col-sm-4 control-label">Blood pressure:</label>
-				    <div class="col-sm-8">
-				      <input type="text" class="form-control" id="bloodpressure" placeholder="Blood pressure" value={{bloodpressure}} disabled>
-				    </div>
-				  </div>
-				</form>
+	    	
+	    	<div class="panel panel-primary">
+	        <div class="panel-heading">
+	            <h3 class="panel-title">Current Health</h3>
+	        </div>            
+	        <div class="panel-body">
+	            <div class="tab-content">
+	                <div class="tab-pane active" id="test">
+			
+					<form class="form-horizontal">
+					  	<div class="form-group">
+						    <label for="weight" class="col-sm-4 control-label">Weight:</label>
+						    <div class="col-sm-8">
+						      <input type="text" class="form-control" id="weight" placeholder="No value" value={{weight}} disabled>
+						    </div>
+					  	</div>
+						  <div class="form-group">
+						    <label for="height" class="col-sm-4 control-label">Height:</label>
+						    <div class="col-sm-8">
+						      <input type="text" class="form-control" id="height" placeholder="No value" value={{height}} disabled>
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="steps" class="col-sm-4 control-label">Steps:</label>
+						    <div class="col-sm-8">
+						      <input type="text" class="form-control" id="steps" placeholder="No value" value={{steps}} disabled>
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="bloodpressure" class="col-sm-4 control-label">Blood pressure:</label>
+						    <div class="col-sm-8">
+						      <input type="text" class="form-control" id="bloodpressure" placeholder="No value" value={{bloodpressure}} disabled>
+						    </div>
+						  </div>
+						</form>
+				
+				
+					                  </div>
+					            </div>
+					        </div>
+					    </div>
 			</div>
-			</div></div>
+			</div>
 			
 			
 			
-			<div class="col-sm-6">
-				<div class="panel panel-default">
-		 			<h2>Measure History</h2>
-				</div>
+			<div class="col-sm-6" ng-controller="measureHistoryController">
+	 			
+					    <div class="panel panel-primary">
+					        <div class="panel-heading">
+					            <h3 class="panel-title">Measure History</h3>
+					        </div>            
+					        <div class="panel-body">
+					            <div class="tab-content">
+					                <div class="tab-pane active" id="test">
+					                
+					                <div class="card" ng-repeat="singleMeasure in measureHistory">
+						 				<div class="card-block">
+									  		
+										    <h4 class="card-title"><span class="glyphicon glyphicon-object-align-left"></span> {{singleMeasure.measureType}}</h4>
+										    
+										    <p class="card-text">Value: {{singleMeasure.measureValue}}</p>
+										    <p class="card-text">Registered: {{singleMeasure.dateRegistered}}</p>
+										    
+										  </div>
+										</div>
+										
+					                  </div>
+					            </div>
+					        </div>
+					    </div>
+	 			
+	 			
+			   
+		  		</div>
 			</div>
 		
 	</div>

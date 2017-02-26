@@ -155,3 +155,39 @@ app.controller('measureTypesController', function ($scope,$rootScope, $http) {
 
 
 
+app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
+	
+	
+	$scope.measureHistory
+	
+	$scope.loadMeasureHistory = function () {
+        console.log('loadFeeds called.');
+       
+        
+        $http({
+            url: centric01_basic+"/measure/"+global_username+"/history",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+            
+        	$scope.measureHistory = success.data.measures;
+            console.log($scope.measureHistory);
+            
+            
+            
+        }, function(error){
+        	console.log('error');
+        });
+        
+        console.log($scope.measureTypes);
+       
+    };
+    
+    $scope.loadMeasureHistory();
+	
+});
+
+
+
+
