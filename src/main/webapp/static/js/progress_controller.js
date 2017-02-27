@@ -119,10 +119,11 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
 
 
 
-app.controller('measureTypesController', function ($scope,$rootScope, $http) {
+app.controller('addMeasureController', function ($scope,$rootScope, $http) {
 	
 	
 	$scope.measureTypes
+	$scope.measureData = {}
 	
 	$scope.loadMeasureTypes = function () {
         console.log('loadFeeds called.');
@@ -147,6 +148,30 @@ app.controller('measureTypesController', function ($scope,$rootScope, $http) {
         console.log($scope.measureTypes);
        
     };
+    
+    $scope.addMeasureSave=function(){
+    	$scope.measureData.measureType=$scope.add_measureType;
+    	$scope.measureData.measureValue=$scope.add_measureValue;
+    	$scope.measureData.dateRegistered=$scope.add_measureDate;
+    	
+    	
+    	$http({
+            url: centric01_basic+"/measure/"+global_username,
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data: $scope.measureData
+        }).then(function(success)
+        {
+            console.log('saved');
+            $scope.loadMeasureTypes();
+        },function(error)
+        {
+            console.log('error');
+        });
+    }
+    
     
     $scope.loadMeasureTypes();
 	

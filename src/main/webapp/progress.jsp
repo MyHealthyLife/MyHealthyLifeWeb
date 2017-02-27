@@ -137,32 +137,45 @@
 		            <div class="tab-content">
 		                <div class="tab-pane add-measure active" id="test">
 				
-						<form class="form-horizontal" role="form" name="addMeasureModule" onsubmit="return fun();" action="" method="POST">
-							<label for="type">Measure type:</label>	
-							<div class="btn-group">
-					          	<button type="button" class="btn-drop btn btn-default dropdown-toggle" data-toggle="dropdown">
-					            	Select measure type <span class="caret"></span>
-					          	</button>
-					          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" ng-controller="measureTypesController">
-            						<li ng-repeat="singleMeasure in measureTypes"><a href="#">{{singleMeasure}}</a></li>
-					          	</ul>
+						<form class="form-horizontal" ng-controller="addMeasureController" role="form" name="addMeasureModule" onsubmit="return fun();" action="" method="POST">
+							
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Measure type:</label>	
+								</div>
+				        		<div class="col-sm-9">
+						        	<select class="form-control" name="type" ng-model="add_measureType">
+		            					<option ng-repeat="singleMeasure in measureTypes">{{singleMeasure}}</option>
+		                       		</select><br>
+	                       		</div>
 				        	</div>
-				        
+				        	
+				        	
+							<div class="row">
+								<div class="col-sm-3">
+			        				<label class="control-label" for="measureDate" class="col-sm-4 control-label">Registered:</label>
+			        			</div>
+			        			
+								<div class="col-sm-9">
+	                        		<input class="form-control" type="date" name="measureDate" ng-model="add_measureDate"><br>
+					        	</div>
+				        	</div>
+				        	
 					        <div class="row">
-								<div class="col-sm-6">
-							    	<div class="form-group">
-									    <label for="measureValue" class="col-sm-4 control-label">Value:</label>
-									    <div class="col-sm-8">
-									      <input type="text" class="form-control" id="measureValue" placeholder="Measure Value">
-									    </div>
-								  	</div>
+								<div class="col-sm-3">
+								    <label for="measureValue" class="col-sm-4 control-label">Value:</label>
+								    
 						      	</div>
+							    <div class="col-sm-3">
+							    	<input type="text" class="form-control" id="measureValue" placeholder="e.g. 80,9" ng-model="add_measureValue">
+							    </div>
+		      	
 						      	
 								<div class="col-sm-6">
-						      		<button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> Add Measure</button>
+						      		<button ng-click="addMeasureSave()" type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> Add Measure</button>
 			        			</div>
 							</div>
-							      
+							     <br> 
 						</form>
 						</div>
 					</div>
