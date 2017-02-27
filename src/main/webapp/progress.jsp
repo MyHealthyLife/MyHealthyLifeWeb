@@ -14,9 +14,9 @@
     
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
     
-    <script src="static/js/progress_controller.js"></script>
     <script src="static/js/progress-bar.js"></script>
 	<link rel="stylesheet" href="static/css/progress-bar.css" />
+    <script src="static/js/progress_controller.js"></script>
 	
 	<link rel="styleSheet" href="static/css/ui-grid.min.css"/>
 

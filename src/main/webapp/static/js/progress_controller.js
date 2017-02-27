@@ -79,7 +79,7 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
        
         
         $http({
-            url: centric01_basic+"/user/goals/pbitta1",
+            url: centric01_basic+"/user/goals/"+global_username,
             method: 'GET',
             params: {
             }
