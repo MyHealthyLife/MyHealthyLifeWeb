@@ -11,8 +11,9 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
 	$scope.user_data
 	
 	$scope.loadCurrentHealth = function () {
-        console.log('loadFeeds called.');
-       
+
+        $(".showOnLoadCurrentHealth").hide();
+        $(".loaderCurrentHealth").show();
         
         $http({
             url: centric01_basic+"/user/data/"+global_username,
@@ -37,6 +38,10 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
             		$scope.bloodpressure = measures[i].measureValue;
             }
             
+
+            $(".loaderCurrentHealth").hide();
+            $(".showOnLoadCurrentHealth").show();
+            
         }, function(error){
         	console.log('error');
         });
@@ -46,6 +51,7 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
     };
     
     $scope.loadCurrentHealth();
+    
 	
 });
 
@@ -67,7 +73,9 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
 	
 	
 	$scope.loadProgressBars = function () {
-        console.log('loadFeeds called.');
+
+        $(".showOnLoadProgressBars").hide();
+        $(".loaderProgressBars").show();
        
         
         $http({
@@ -93,6 +101,10 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
             		$scope.bpBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
             	
             }
+
+
+            $(".loaderProgressBars").hide();
+            $(".showOnLoadProgressBars").show();
             
         }, function(error){
         	console.log('error');
@@ -126,7 +138,9 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
 	$scope.measureData = {}
 	
 	$scope.loadMeasureTypes = function () {
-        console.log('loadFeeds called.');
+
+        $(".showOnLoadAddMeasure").hide();
+        $(".loaderAddMeasure").show();
        
         
         $http({
@@ -138,7 +152,9 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
             
         	$scope.measureTypes = success.data.measureType;
             console.log($scope.measureTypes);
-            
+
+            $(".loaderAddMeasure").hide();
+            $(".showOnLoadAddMeasure").show();
             
             
         }, function(error){
@@ -187,7 +203,8 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
 	
 	
 	$scope.loadMeasureHistory = function () {
-        console.log('loadFeeds called.');
+        $(".showOnLoadHistory").hide();
+        $(".loaderHistory").show();
        
         
         $http({
@@ -214,7 +231,9 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
         	}
         	
             console.log($scope.measureHistory);
-            
+
+            $(".loaderHistory").hide();
+            $(".showOnLoadHistory").show();
             
             
         }, function(error){

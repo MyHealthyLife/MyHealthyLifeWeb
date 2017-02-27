@@ -80,50 +80,57 @@
 	
 	<div class="container">
 	<div class="panel panel-primary">
-		        <div class="panel-heading">
-		            <h3 class="panel-title">Goal Progress</h3>
-		        </div>            
-		        <div class="panel-body">
-		            <div class="tab-content">
-		                <div class="tab-pane goal-progress active" id="test">
-	<div class="row">
-		<div class="col-sm-12">
-		
-		    <div class="form-group">
-	    	</div>
-	    </div>
-	</div>
+    	<div class="panel-heading">
+         	<h3 class="panel-title">Goal Progress</h3>
+     	</div>
+     
+	<center><div class="loader loaderProgressBars"></div></center>
+
+    	<div class="panel-body showOnLoadProgressBars">
+        	<div class="tab-content">
+            	<div class="tab-pane goal-progress active" id="test">
+				
+				<div class="row">
+					<div class="col-sm-12">
+					
+					    <div class="form-group">
+				    	</div>
+				    </div>
+				</div>
 	
 	
-	<div class="row">
-		<div class="col-sm-12" ng-controller="progressBarController">
-		 <!-- Skill Bars -->
-            <div class="progress skill-bar ">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{weightBar}} aria-valuemin="0" aria-valuemax="100">
-                    <span class="skill">Weight <i class="val">{{weightBar}}%</i></span>
-                </div>
-            </div>
-                
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow={{heightBar}} aria-valuemin="0" aria-valuemax="100" >
-                    <span class="skill">Height<i class="val">{{heightBar}}%</i></span>
-                </div>
-            </div>
-            
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={{stepsBar}} aria-valuemin="0" aria-valuemax="100">
-                    <span class="skill">Steps<i class="val">{{stepsBar}}%</i></span>
-                </div>
-            </div>  
-            
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={{bpBar}} aria-valuemin="0" aria-valuemax="100">
-                    <span class="skill">Blood pressure<i class="val">{{bpBar}}%</i></span>
-                </div>
-            </div>  
-            </div>
+				<div class="row">
+					<div class="col-sm-12" ng-controller="progressBarController">
+					 <!-- Skill Bars -->
+			            <div class="progress skill-bar ">
+			                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow={{weightBar}} aria-valuemin="0" aria-valuemax="100">
+			                    <span class="skill">Weight <i class="val">{{weightBar}}%</i></span>
+			                </div>
+			            </div>
+			                
+			            <div class="progress skill-bar">
+			                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow={{heightBar}} aria-valuemin="0" aria-valuemax="100" >
+			                    <span class="skill">Height<i class="val">{{heightBar}}%</i></span>
+			                </div>
+			            </div>
+			            
+			            <div class="progress skill-bar">
+			                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={{stepsBar}} aria-valuemin="0" aria-valuemax="100">
+			                    <span class="skill">Steps<i class="val">{{stepsBar}}%</i></span>
+			                </div>
+			            </div>  
+			            
+			            <div class="progress skill-bar">
+			                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={{bpBar}} aria-valuemin="0" aria-valuemax="100">
+			                    <span class="skill">Blood pressure<i class="val">{{bpBar}}%</i></span>
+			                </div>
+			            </div>  
+			            </div>
+					</div>
+				</div>
+			</div>
 		</div>
-		</div></div></div></div>
+	</div>
 		
 		       
 		<div class="row">
@@ -132,8 +139,11 @@
     			<div class="panel panel-primary">
 		        <div class="panel-heading">
 		            <h3 class="panel-title">Add Measure</h3>
-		        </div>            
-		        <div class="panel-body">
+		        </div>
+       
+				<center><div class="loader loaderAddMeasure"></div></center>
+				
+		        <div class="panel-body showOnLoadAddMeasure">
 		            <div class="tab-content">
 		                <div class="tab-pane add-measure active" id="test">
 				
@@ -181,14 +191,17 @@
 					</div>
 				</div>
 			</div>
-		
+			
 		<div ng-controller="currentHealthController">
 	    	
 	    	<div class="panel panel-primary">
 	        <div class="panel-heading">
 	            <h3 class="panel-title">Current Health</h3>
-	        </div>            
-	        <div class="panel-body">
+	        </div>
+	        
+			<center><div class="loader loaderCurrentHealth"></div></center>
+							
+	        <div class="panel-body showOnLoadCurrentHealth">
 	            <div class="tab-content">
 	                <div class="tab-pane current-health active" id="test">
 			
@@ -197,6 +210,7 @@
 						    <label for="weight" class="col-sm-4 control-label">Weight:</label>
 						    <div class="col-sm-8">
 						      <input type="text" class="form-control" id="weight" placeholder="No value" value={{weight}} disabled>
+						      <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i>
 						    </div>
 					  	</div>
 						  <div class="form-group">
@@ -235,10 +249,12 @@
 					        <div class="panel-heading">
 					            <h3 class="panel-title">Measure History</h3>
 					        </div>            
-					        <div class="panel-body">
+					        
+							<center><div class="loader loaderHistory"></div></center>
+							
+					        <div class="panel-body showOnLoadHistory">
 					            <div class="tab-content">
 					                <div class="tab-pane measure-history active" id="test">
-					                
 					                <div class="card" ng-repeat="singleMeasure in measureHistory">
 						 				<div class="card-block">
 									  		
