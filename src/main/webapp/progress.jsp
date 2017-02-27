@@ -265,9 +265,15 @@
 												    <label class="card-text">Registered: {{singleMeasure.dateRegistered}}</label>
 												    
 											    </div>
-									    		<div class="col-sm-5">
+									    		<div class="col-sm-4">
 												    <br><br>
 												    <h4 class="card-text">Value: {{singleMeasure.measureValue}}</h4>
+											    </div>
+											    
+											    <div class="col-sm-3">
+											    	<br><br>
+											    	<button type="button" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+			        			
 											    </div>
 										    </div>
 										    <hr>
