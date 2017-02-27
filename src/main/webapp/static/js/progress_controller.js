@@ -166,6 +166,10 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
     };
     
     $scope.addMeasureSave=function(){
+    	
+    	$(".showOnLoadAddMeasure").hide();
+        $(".loaderAddMeasure").show();
+        
     	$scope.measureData.measureType=$scope.add_measureType;
     	$scope.measureData.measureValue=$scope.add_measureValue;
     	$scope.measureData.dateRegistered=$scope.add_measureDate;
@@ -181,9 +185,11 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
         }).then(function(success)
         {
         	$rootScope.loadProgressBars();
-            $rootScope.loadAddMeasure();
             $rootScope.loadMeasureHistory();
             $rootScope.loadCurrentHealth();
+
+            $(".loaderAddMeasure").hide();
+            $(".showOnLoadAddMeasure").show();
             console.log('saved');
         },function(error)
         {
@@ -218,7 +224,7 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
         }).then(function(success) {
             
         	$scope.measureHistory = success.data.measures;
-        	
+        	var j = $scope.measureHistory.length-1;
         	for(i=0;i<$scope.measureHistory.length;i++) {
         		var dateToFormat = $scope.measureHistory[i].dateRegistered;
         		console.log((new Date(dateToFormat)).toString("MMM dd"))
@@ -233,7 +239,7 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
         		$scope.measureHistory[i].dateRegistered = newdate;
         	}
         	
-            console.log($scope.measureHistory);
+        	$scope.measureHistory = $scope.measureHistory.reverse();
 
             $(".loaderHistory").hide();
             $(".showOnLoadHistory").show();
