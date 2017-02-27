@@ -92,7 +92,7 @@
 		    <div class="form-group">
 	    	</div>
 	    </div>
-	</div><br>
+	</div>
 	
 	
 	<div class="row">
@@ -144,9 +144,7 @@
 					            	Select measure type <span class="caret"></span>
 					          	</button>
 					          	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" ng-controller="measureTypesController">
-						            	<li ng-repeat="singleMeasure in measureTypes"><a href="#">{{singleMeasure}}</a></li>
-							            <li class="divider"></li>
-							            <li><a href="#">Help me choose</a></li>
+            						<li ng-repeat="singleMeasure in measureTypes"><a href="#">{{singleMeasure}}</a></li>
 					          	</ul>
 				        	</div>
 				        
@@ -231,11 +229,19 @@
 					                <div class="card" ng-repeat="singleMeasure in measureHistory">
 						 				<div class="card-block">
 									  		
-										    <h4 class="card-title"><span class="glyphicon glyphicon-object-align-left"></span> {{singleMeasure.measureType}}</h4>
-										    
-										    <p class="card-text">Value: {{singleMeasure.measureValue}}</p>
-										    <p class="card-text">Registered: {{singleMeasure.dateRegistered}}</p>
-										    
+									  		<div class="row">
+											    <div class="col-sm-5">
+												    <h3 class="card-title"><span class="glyphicon glyphicon-object-align-left"></span> {{singleMeasure.measureType}}</h3>
+												    
+												    <label class="card-text">Registered: {{singleMeasure.dateRegistered}}</label>
+												    
+											    </div>
+									    		<div class="col-sm-5">
+												    <br><br>
+												    <h4 class="card-text">Value: {{singleMeasure.measureValue}}</h4>
+											    </div>
+										    </div>
+										    <hr>
 										  </div>
 										</div>
 										
