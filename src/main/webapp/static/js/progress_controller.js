@@ -185,6 +185,7 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
 	
 	$scope.measureHistory
 	
+	
 	$scope.loadMeasureHistory = function () {
         console.log('loadFeeds called.');
        
@@ -197,6 +198,21 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
         }).then(function(success) {
             
         	$scope.measureHistory = success.data.measures;
+        	
+        	for(i=0;i<$scope.measureHistory.length;i++) {
+        		var dateToFormat = $scope.measureHistory[i].dateRegistered;
+        		console.log((new Date(dateToFormat)).toString("MMM dd"))
+        		var dateObj = new Date(dateToFormat);
+				var month = dateObj.getUTCMonth() + 1;
+				var day = dateObj.getUTCDate();
+				var year = dateObj.getUTCFullYear();
+				var seconds = dateObj.getSeconds();
+				var minutes = dateObj.getMinutes();
+				var hour = dateObj.getHours();
+				var newdate = year + "/" + month + "/" + day + " " + hour + ":" + minutes + ":" + seconds
+        		$scope.measureHistory[i].dateRegistered = newdate;
+        	}
+        	
             console.log($scope.measureHistory);
             
             
