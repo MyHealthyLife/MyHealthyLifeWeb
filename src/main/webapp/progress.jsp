@@ -79,10 +79,17 @@
 	<br><br><br>
 	
 	<div class="container">
+	<div class="panel panel-primary">
+		        <div class="panel-heading">
+		            <h3 class="panel-title">Goal Progress</h3>
+		        </div>            
+		        <div class="panel-body">
+		            <div class="tab-content">
+		                <div class="tab-pane goal-progress active" id="test">
 	<div class="row">
 		<div class="col-sm-12">
+		
 		    <div class="form-group">
-	    	    <h2>Goals progress</h2>
 	    	</div>
 	    </div>
 	</div><br>
@@ -116,7 +123,7 @@
             </div>  
             </div>
 		</div>
-		
+		</div></div></div></div>
 		
 		       
 		<div class="row">
@@ -128,7 +135,7 @@
 		        </div>            
 		        <div class="panel-body">
 		            <div class="tab-content">
-		                <div class="tab-pane active" id="test">
+		                <div class="tab-pane add-measure active" id="test">
 				
 						<form class="form-horizontal" role="form" name="addMeasureModule" onsubmit="return fun();" action="" method="POST">
 							<label for="type">Measure type:</label>	
@@ -172,7 +179,7 @@
 	        </div>            
 	        <div class="panel-body">
 	            <div class="tab-content">
-	                <div class="tab-pane active" id="test">
+	                <div class="tab-pane current-health active" id="test">
 			
 					<form class="form-horizontal">
 					  	<div class="form-group">
@@ -219,7 +226,7 @@
 					        </div>            
 					        <div class="panel-body">
 					            <div class="tab-content">
-					                <div class="tab-pane active" id="test">
+					                <div class="tab-pane measure-history active" id="test">
 					                
 					                <div class="card" ng-repeat="singleMeasure in measureHistory">
 						 				<div class="card-block">

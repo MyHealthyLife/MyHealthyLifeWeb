@@ -3,9 +3,9 @@
 
 }
 .progress .skill {
-  font: normal 24px "Open Sans Web";
+  font: normal 12px;
   line-height: 35px;
-  color: #00ff00;
+  color: black;
   padding: 0;
   margin: 0 0 0 20px;
   text-transform: uppercase;
@@ -22,8 +22,24 @@
   color: black;
 }
 
-.tab-pane{
-  height:300px;
+.measure-history{
+  height:390px;
   overflow-y:scroll;
+  width:100%;
+}
+
+.add-measure{
+  height:200px;
+  overflow:hidden;
+  width:100%;
+}
+.current-health{
+  height:200px;
+  overflow:hidden;
+  width:100%;
+}
+.goal-progress{
+  height:250px;
+  overflow:hidden;
   width:100%;
 }
