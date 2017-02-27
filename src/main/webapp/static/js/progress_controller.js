@@ -10,7 +10,7 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
 	
 	$scope.user_data
 	
-	$scope.loadCurrentHealth = function () {
+	$rootScope.loadCurrentHealth = function () {
 
         $(".showOnLoadCurrentHealth").hide();
         $(".loaderCurrentHealth").show();
@@ -50,7 +50,7 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
        
     };
     
-    $scope.loadCurrentHealth();
+    $rootScope.loadCurrentHealth();
     
 	
 });
@@ -72,7 +72,7 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
 	$scope.bpBar = 100;
 	
 	
-	$scope.loadProgressBars = function () {
+	$rootScope.loadProgressBars = function () {
 
         $(".showOnLoadProgressBars").hide();
         $(".loaderProgressBars").show();
@@ -113,7 +113,7 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
         console.log($scope.goal_data);
     };
     
-    $scope.loadProgressBars();
+    $rootScope.loadProgressBars();
     
     $rootScope.updateProgressBars = (function() {
 		   	console.log("Hello");
@@ -137,7 +137,7 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
 	$scope.measureTypes
 	$scope.measureData = {}
 	
-	$scope.loadMeasureTypes = function () {
+	$rootScope.loadAddMeasure = function () {
 
         $(".showOnLoadAddMeasure").hide();
         $(".loaderAddMeasure").show();
@@ -180,8 +180,11 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
             data: $scope.measureData
         }).then(function(success)
         {
+        	$rootScope.loadProgressBars();
+            $rootScope.loadAddMeasure();
+            $rootScope.loadMeasureHistory();
+            $rootScope.loadCurrentHealth();
             console.log('saved');
-            $scope.loadMeasureTypes();
         },function(error)
         {
             console.log('error');
@@ -189,7 +192,7 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
     }
     
     
-    $scope.loadMeasureTypes();
+    $rootScope.loadAddMeasure();
 	
 });
 
@@ -202,7 +205,7 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
 	$scope.measureHistory
 	
 	
-	$scope.loadMeasureHistory = function () {
+	$rootScope.loadMeasureHistory = function () {
         $(".showOnLoadHistory").hide();
         $(".loaderHistory").show();
        
@@ -244,7 +247,7 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
        
     };
     
-    $scope.loadMeasureHistory();
+    $rootScope.loadMeasureHistory();
 	
 });
 

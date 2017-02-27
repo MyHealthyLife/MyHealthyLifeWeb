@@ -177,7 +177,7 @@
 								    
 						      	</div>
 							    <div class="col-sm-3">
-							    	<input type="text" class="form-control" id="measureValue" placeholder="e.g. 80,9" ng-model="add_measureValue">
+							    	<input type="text" class="form-control" id="measureValue" placeholder="e.g. 80.9" ng-model="add_measureValue">
 							    </div>
 		      	
 						      	
