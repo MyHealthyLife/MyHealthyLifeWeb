@@ -253,6 +253,36 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
        
     };
     
+    
+    
+    $scope.deleteMeasure=function(measureId){
+    	
+    	$(".showOnLoadHistory").hide();
+        $(".loaderHistory").show();
+        
+        console.log(measureId);
+    	
+    	$http({
+            url: centric01_basic+"/measure/"+global_username+"/"+measureId,
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(function(success)
+        {
+        	$rootScope.loadProgressBars();
+            $rootScope.loadMeasureHistory();
+            $rootScope.loadCurrentHealth();
+
+            $(".loaderHistory").hide();
+            $(".showOnLoadHistory").show();
+            console.log('saved');
+        },function(error)
+        {
+            console.log('error');
+        });
+    }
+    
     $rootScope.loadMeasureHistory();
 	
 });

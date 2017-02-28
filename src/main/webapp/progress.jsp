@@ -272,7 +272,7 @@
 											    
 											    <div class="col-sm-3">
 											    	<br><br>
-											    	<button type="button" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+											    	<button ng-click="deleteMeasure(singleMeasure.mid)" type="button" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-remove"></span> Delete</button>
 			        			
 											    </div>
 										    </div>
