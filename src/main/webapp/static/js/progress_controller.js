@@ -13,7 +13,7 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
         $(".showOnLoadCurrentHealth").hide();
         $(".loaderCurrentHealth").show();
         
-        // Request to get the data of a user (including his/her health status
+        // Request to get the data of a user (including his/her health status)
         $http({
             url: centric01_basic+"/user/data/"+global_username,
             method: 'GET',
@@ -66,31 +66,34 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
 
 app.controller('progressBarController', function ($scope,$rootScope, $http) {
 	
-	
 	$scope.goal_data
 	$scope.weightBar = 100;
 	$scope.heightBar = 100;
 	$scope.stepsBar = 100;
 	$scope.bpBar = 100;
 	
-	
+	// Function to load the section 'Goals Progress'
 	$rootScope.loadProgressBars = function () {
 
+		// Shows the loader
         $(".showOnLoadProgressBars").hide();
         $(".loaderProgressBars").show();
-       
         
+        // Request to get the goals of a user
         $http({
             url: centric01_basic+"/user/goals/"+global_username,
             method: 'GET',
             params: {
             }
         }).then(function(success) {
-            
+
+        	// Memorizes the data in the scope
         	$scope.goal_data = success.data;
-            console.log($scope.goal_data);
-            
+
+        	// Gets the list of goals in the data returned from the server
             var goals = $scope.goal_data.goals;
+
+            // For each goal it checks the type and calculates the percentage
             for (i = 0; i < goals.length; i++) { 
             	
             	if(goals[i].goalName=='weight')
@@ -104,28 +107,19 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
             	
             }
 
-
+            // Hides the loader and shows the content
             $(".loaderProgressBars").hide();
             $(".showOnLoadProgressBars").show();
             
         }, function(error){
-        	console.log('error');
+        	console.log('Error progress bars');
         });
         
-        console.log($scope.goal_data);
     };
-    
+
+    // Calls instantly the function to load the progress bars as soon as the controller is ready
     $rootScope.loadProgressBars();
     
-    $rootScope.updateProgressBars = (function() {
-		   	console.log("Hello");
-		    $('.progress .progress-bar').css("width",
-		              function() {
-		                  return $(this).attr("aria-valuenow") + "%";
-		              }
-		      )
-		  });
-    $rootScope.updateProgressBars();
     
 });
 
