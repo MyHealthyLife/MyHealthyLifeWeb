@@ -1,20 +1,19 @@
 var app=angular.module('progress', []);
 
-
-
 var centric01_basic="https://centric01-main.herokuapp.com";
-var centric02_basic="https://centric02-social.herokuapp.com";
 
 app.controller('currentHealthController', function ($scope,$rootScope, $http) {
 	
-	
 	$scope.user_data
 	
+	// Function to load the section 'Current Health'
 	$rootScope.loadCurrentHealth = function () {
-
+		
+		// Shows the loader
         $(".showOnLoadCurrentHealth").hide();
         $(".loaderCurrentHealth").show();
         
+        // Request to get the data of a user (including his/her health status
         $http({
             url: centric01_basic+"/user/data/"+global_username,
             method: 'GET',
@@ -22,10 +21,13 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
             }
         }).then(function(success) {
             
+        	// Memorizes the data in the scope
         	$scope.user_data = success.data;
-            console.log($scope.user_data.healthProfile.currentHealth.measure[0]);
             
+        	// Gets the list of measures in the health profile
             var measures = $scope.user_data.healthProfile.currentHealth.measure;
+            
+            // For each measure it checks the type
             for (i = 0; i < measures.length; i++) { 
                 
             	if(measures[i].measureType=='weight')
@@ -38,18 +40,18 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
             		$scope.bloodpressure = measures[i].measureValue;
             }
             
-
+            // Hides the loader and shows the content
             $(".loaderCurrentHealth").hide();
             $(".showOnLoadCurrentHealth").show();
             
         }, function(error){
-        	console.log('error');
+        	console.log('Error current health');
         });
         
-        console.log($scope.user_data);
        
     };
     
+    // Calls instantly the function to load the current health as soon as the controller is ready
     $rootScope.loadCurrentHealth();
     
 	
