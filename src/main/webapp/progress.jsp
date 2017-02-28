@@ -13,6 +13,7 @@
     </script>
     
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="static/css/loaders.css" />
     
     <script src="static/js/progress-bar.js"></script>
 	<link rel="stylesheet" href="static/css/progress-bar.css" />
