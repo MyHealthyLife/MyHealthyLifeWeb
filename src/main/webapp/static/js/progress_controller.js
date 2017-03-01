@@ -194,7 +194,7 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
             
         },function(error)
         {
-            console.log('error');
+            console.log('Error save measure');
         });
     }
     
@@ -209,27 +209,31 @@ app.controller('addMeasureController', function ($scope,$rootScope, $http) {
 
 app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
 	
-	
 	$scope.measureHistory
-	
-	
+
+	// Function to load the section 'Measure History'
 	$rootScope.loadMeasureHistory = function () {
+		
+		// Shows the loader
         $(".showOnLoadHistory").hide();
         $(".loaderHistory").show();
-       
         
+        // Request to get the measure history of the user
         $http({
             url: centric01_basic+"/measure/"+global_username+"/history",
             method: 'GET',
             params: {
             }
         }).then(function(success) {
-            
+
+        	// Memorizes the data in the scope
         	$scope.measureHistory = success.data.measures;
         	var j = $scope.measureHistory.length-1;
+        	
+        	// Cycle to get a readable date object in a string representation format
         	for(i=0;i<$scope.measureHistory.length;i++) {
+        		
         		var dateToFormat = $scope.measureHistory[i].dateRegistered;
-        		console.log((new Date(dateToFormat)).toString("MMM dd"))
         		var dateObj = new Date(dateToFormat);
 				var month = dateObj.getUTCMonth() + 1;
 				var day = dateObj.getUTCDate();
@@ -238,32 +242,34 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
 				var minutes = dateObj.getMinutes();
 				var hour = dateObj.getHours();
 				var newdate = year + "/" + month + "/" + day + " " + hour + ":" + minutes + ":" + seconds
-        		$scope.measureHistory[i].dateRegistered = newdate;
+        		
+				// Saves the new format in the scope
+				$scope.measureHistory[i].dateRegistered = newdate;
         	}
         	
         	$scope.measureHistory = $scope.measureHistory.reverse();
 
+            // Hides the loader and shows the content
             $(".loaderHistory").hide();
             $(".showOnLoadHistory").show();
             
             
         }, function(error){
-        	console.log('error');
+        	console.log('Error load measure history');
         });
         
-        console.log($scope.measureTypes);
        
     };
     
-    
-    
+
+    // Function to send a request to delete an existing measure from the history   
     $scope.deleteMeasure=function(measureId){
-    	
+
+		// Shows the loader
     	$(".showOnLoadHistory").hide();
         $(".loaderHistory").show();
-        
-        console.log(measureId);
-    	
+
+        // Request to delete a measure in the history
     	$http({
             url: centric01_basic+"/measure/"+global_username+"/"+measureId,
             method: 'DELETE',
@@ -272,19 +278,23 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
             },
         }).then(function(success)
         {
+
+        	// Reloads all the components in the page
         	$rootScope.loadProgressBars();
             $rootScope.loadMeasureHistory();
             $rootScope.loadCurrentHealth();
 
+            // Hides the loader and shows the content
             $(".loaderHistory").hide();
             $(".showOnLoadHistory").show();
-            console.log('saved');
+            
         },function(error)
         {
-            console.log('error');
+            console.log('Error delete measure from history');
         });
     }
-    
+
+    // Calls instantly the function to load the progress bars as soon as the controller is ready
     $rootScope.loadMeasureHistory();
 	
 });
