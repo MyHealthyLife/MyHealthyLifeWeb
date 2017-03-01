@@ -95,15 +95,23 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
 
             // For each goal it checks the type and calculates the percentage
             for (i = 0; i < goals.length; i++) { 
+            	console.log(goals[i]);
+            	
+            	if(goals[i].actualValue > goals[i].valueToReach) {
+            		goals[i].actualValue = goals[i].actualValue - (Math.abs(goals[i].difference)) * 2;
+            		
+            		if(goals[i].actualValue < 0)
+            			goals[i].actualValue = 0;
+            	}
             	
             	if(goals[i].goalName=='weight')
-            		$scope.weightBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
+            		$scope.weightBar = parseInt(100 * ((Math.abs(goals[i].actualValue) / Math.abs(goals[i].valueToReach))));
             	if(goals[i].goalName=='height')
-            		$scope.heightBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
+            		$scope.heightBar = parseInt(100 * ((Math.abs(goals[i].actualValue) / Math.abs(goals[i].valueToReach))));
             	if(goals[i].goalName=='steps')
-            		$scope.stepsBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
+            		$scope.stepsBar = parseInt(100 * ((Math.abs(goals[i].actualValue) / Math.abs(goals[i].valueToReach))));
             	if(goals[i].goalName=='bloodpressure')
-            		$scope.bpBar = parseInt(100 * (1 - (Math.abs(goals[i].difference) / Math.abs(goals[i].actualValue))));
+            		$scope.bpBar = parseInt(100 * ((Math.abs(goals[i].actualValue) / Math.abs(goals[i].valueToReach))));
             	
             }
 
