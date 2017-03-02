@@ -33,6 +33,19 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
             }
         }).then(function(success) {
             $scope.user_data = success.data;
+            
+            var dateToFormat = $scope.user_data.birthdate;
+    		var dateObj = new Date(dateToFormat);
+			var month = dateObj.getUTCMonth() + 1;
+			var day = dateObj.getUTCDate() + 1;
+			var year = dateObj.getUTCFullYear();
+			var seconds = dateObj.getSeconds();
+			var minutes = dateObj.getMinutes();
+			var hour = dateObj.getHours();
+			var newdate = year + "/" + month + "/" + day
+			
+			$scope.user_data.birthdate = newdate;
+            
             $(".loading_data").hide();
         }, function(error){
         	console.log('error');

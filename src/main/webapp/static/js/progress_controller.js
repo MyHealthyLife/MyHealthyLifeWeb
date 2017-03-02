@@ -244,7 +244,7 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
         		var dateToFormat = $scope.measureHistory[i].dateRegistered;
         		var dateObj = new Date(dateToFormat);
 				var month = dateObj.getUTCMonth() + 1;
-				var day = dateObj.getUTCDate();
+				var day = dateObj.getUTCDate() + 1;
 				var year = dateObj.getUTCFullYear();
 				var seconds = dateObj.getSeconds();
 				var minutes = dateObj.getMinutes();
