@@ -73,6 +73,45 @@
     </div>
 	</nav>
 	
+	
+	
+	<br><br><br>
+	
+	<div class="container">
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+         	<h3 class="panel-title">Goal Progress</h3>
+     	</div>
+     
+	<center><div class="loader loaderRanking"></div></center>
+
+    	<div class="panel-body showOnLoadRanking">
+        	<div class="tab-content">
+            	<div class="tab-pane goal-progress active" id="test">
+				
+				<div class="row">
+					<div class="col-sm-12">
+					
+					    <div class="form-group">
+				    	</div>
+				    </div>
+				</div>
+	
+	
+				<div class="row">
+					<div class="col-sm-12" ng-controller="progressBarController">
+					  
+					  
+					  
+					  
+					  
+			            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 
 
 </body>
