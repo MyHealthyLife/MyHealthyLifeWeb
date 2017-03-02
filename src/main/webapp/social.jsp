@@ -9,6 +9,16 @@
     <script src="static/js/jquery-3.1.1.min.js"></script>
     <script src="static/js/angular.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	global_username="<%= session.getAttribute("USERNAME") %>";
+    </script>
+    
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="static/css/loaders.css" />
+	
+    <script src="static/js/progress_controller.js"></script>
+	
+	<link rel="styleSheet" href="static/css/ui-grid.min.css"/>
 </head>
 <body>
 
