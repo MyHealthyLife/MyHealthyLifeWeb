@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="progress">
 <head>
 <meta charset="ISO-8859-1">
 <title>MyHealthyLife</title>
@@ -105,7 +105,7 @@
 					  
 					  
 					  
-					  <div class="row">
+					  <div class="row" ng-controller="rankingController">
 						<div class="[ col-xs-12 col-sm-12 ]">
 							<ul class="event-list">
 								<li>
