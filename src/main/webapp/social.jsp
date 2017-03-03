@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="progress">
+<html ng-app="social">
 <head>
-<meta charset="ISO-8859-1">
+
 <title>MyHealthyLife</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="static/css/bootstrap.min.css" />
     
     <script src="static/js/jquery-3.1.1.min.js"></script>
     <script src="static/js/angular.min.js"></script>
@@ -14,9 +13,10 @@
     </script>
     
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="static/css/loaders.css" />
 	
-    <script src="static/js/social_controller.js"></script>
 	<link rel="styleSheet" href="static/css/ranking.css"/>
+    <script src="static/js/social_controller.js"></script>
 	
 	<link rel="styleSheet" href="static/css/ui-grid.min.css"/>
 </head>
@@ -85,10 +85,12 @@
          	<h3 class="panel-title">Ranking</h3>
      	</div>
      
+     	
+		<center><div class="loader loaderRanking"></div></center>
 
     	<div class="panel-body showOnLoadRanking">
-        	<div class="tab-content ranking">
-            	<div class="tab-pane goal-progress active" id="test">
+        	<div class="tab-content">
+            	<div class="tab-pane ranking active" id="test">
 				
 				<div class="row">
 					<div class="col-sm-6">
@@ -108,62 +110,18 @@
 					  <div class="row" ng-controller="rankingController">
 						<div class="[ col-xs-12 col-sm-12 ]">
 							<ul class="event-list">
-								<li>
+								<li ng-repeat="singlePerson in rankingSplitted">
 									<time datetime="2014-07-20">
-										<span class="day">1</span>
+										<span class="day">{{singlePerson.position}}</span>
 										<span class="month">Pos</span>
 										<span class="year">2014</span>
 										<span class="time">ALL DAY</span>
 									</time>
 									
 									<div class="info">
-										<h2 class="title">Username</h2>
-										<p class="desc">Name and surname</p>
-										<p class="desc">S</p>
-									</div>
-									<div class="social">
-										<ul>
-											<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-											<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-											<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
-										</ul>
-									</div>
-								</li>
-			
-								<li>
-									<time datetime="2014-07-20 0000">
-										<span class="day">2</span>
-										<span class="month">Pos</span>
-									</time>
-									<div class="info">
-										<h2 class="title">Me</h2>
-										<p class="desc">Name and surname</p>
-										<ul>
-											<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
-											<li style="width:50%;"><span class="fa fa-money"></span> $39.99</li>
-										</ul>
-									</div>
-									<div class="social">
-										<ul>
-											<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-											<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-											<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
-										</ul>
-									</div>
-								</li>
-			
-								
-			
-								<li>
-									<time datetime="2014-07-31 1600">
-										<span class="day">3</span>
-										<span class="month">Pos</span>
-									</time>
-									
-									<div class="info">
-										<h2 class="title">Username</h2>
-										<p class="desc"> Name and surname</p>
-										<p class="desc"> S</p>
+										<h2 class="title">{{singlePerson.username}}</h2>
+										<p class="desc">Points: {{singlePerson.points}}</p>
+										<p class="desc"></p>
 										<ul>
 											<li style="width:33%;">80 kg <span class="fa fa-male"></span></li>
 											<li style="width:34%;">1200 steps <span class="fa fa-child"></span></li>
@@ -177,6 +135,10 @@
 										</ul>
 									</div>
 								</li>
+			
+								
+								
+			
 							</ul>
 						</div>
 					</div>
