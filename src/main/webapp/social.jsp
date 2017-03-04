@@ -112,8 +112,8 @@
 							<ul class="event-list">
 								<li ng-repeat="singlePerson in rankingSplitted">
 									<time datetime="2014-07-20">
-										<span class="day">{{singlePerson.position}}</span>
-										<span class="month">Pos</span>
+										<span class="day">POS</span>
+										<span class="month">{{singlePerson.position}}</span>
 										<span class="year">2014</span>
 										<span class="time">ALL DAY</span>
 									</time>
