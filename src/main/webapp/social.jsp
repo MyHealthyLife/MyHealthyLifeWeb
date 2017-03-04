@@ -110,7 +110,7 @@
 					  <div class="row" ng-controller="rankingController">
 						<div class="[ col-xs-12 col-sm-12 ]">
 							<ul class="event-list">
-								<li ng-repeat="singlePerson in rankingSplitted">
+								<li ng-repeat="singlePerson in rankingDetailed">
 									<time datetime="2014-07-20">
 										<span class="day">POS</span>
 										<span class="month">{{singlePerson.position}}</span>
@@ -120,8 +120,9 @@
 									
 									<div class="info">
 										<h2 class="title">{{singlePerson.username}}</h2>
+										<p class="desc">{{singlePerson.firstname}} {{singlePerson.lastname}}</p>
+										<p class="desc">Sex: {{singlePerson.sex}}</p>
 										<p class="desc">Points: {{singlePerson.points}}</p>
-										<p class="desc"></p>
 										<ul>
 											<li style="width:33%;">80 kg <span class="fa fa-male"></span></li>
 											<li style="width:34%;">1200 steps <span class="fa fa-child"></span></li>

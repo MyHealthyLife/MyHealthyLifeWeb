@@ -6,7 +6,7 @@ var centric02_basic="https://centric02-social.herokuapp.com";
 app.controller('rankingController', function ($scope,$rootScope, $http) {
 	
 	$scope.ranking
-	$scope.rankingSplitted = {};
+	$scope.rankingDetailed = {};
 	
 	$rootScope.loadRanking = function () {
 		
@@ -15,7 +15,7 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
         $(".loaderRanking").show();
         
         $http({
-            url: centric02_basic+"/ranking/"+global_username,
+            url: centric02_basic+"/ranking/"+global_username+"?bot=false",
             method: 'GET',
             params: {
             }
@@ -24,19 +24,16 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
         	$scope.ranking = success.data;
             console.log($scope.ranking);
             
-            console.log($scope.ranking.compactRanking.length);
-            
-            for(i=0;i<$scope.ranking.compactRanking.length;i++) {
-
-                var res = $scope.ranking.compactRanking[i].split(" ");
-                res[1] = res[1].substring(0, res[1].length - 1);
-                console.log(res[1]);
-                $scope.rankingSplitted[i] = {};
-                $scope.rankingSplitted[i].position = res[0];
-                $scope.rankingSplitted[i].username = res[1];
-                $scope.rankingSplitted[i].points = res[2];
-                
-                console.log($scope.rankingSplitted[i]);
+            for(i=0;i<$scope.ranking.length;i++) {
+            	
+            	$scope.rankingDetailed[i] = {};
+            	$scope.rankingDetailed[i].username = $scope.ranking[i].username;
+            	$scope.rankingDetailed[i].idPerson = $scope.ranking[i].idPerson;
+            	$scope.rankingDetailed[i].firstname = $scope.ranking[i].firstname;
+            	$scope.rankingDetailed[i].lastname = $scope.ranking[i].lastname;
+            	$scope.rankingDetailed[i].sex = $scope.ranking[i].sex;
+            	$scope.rankingDetailed[i].points = $scope.ranking[i].points;
+            	$scope.rankingDetailed[i].position = i + 1;
                 
             }
             
