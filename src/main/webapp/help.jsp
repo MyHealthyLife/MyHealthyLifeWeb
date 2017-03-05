@@ -67,9 +67,7 @@
 	</nav>
 	
 	
-	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Patua+One|Roboto+Condensed:700" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<section id="contact" class="content-section text-center">
+	<section id="contact" class="content-section text-center">
         <div class="contact-section">
             <div class="container">
             

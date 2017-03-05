@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="static/css/loaders.css" />
 	<link rel="stylesheet" href="static/css/font-awesome.min.css">
 	
+	<link rel="styleSheet" href="static/css/social.css"/>
 	<link rel="styleSheet" href="static/css/ranking.css"/>
     <script src="static/js/social_controller.js"></script>
 	

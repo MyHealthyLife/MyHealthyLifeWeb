@@ -19,6 +19,7 @@
     
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
     
+	<link rel="stylesheet" type="text/css" href="static/css/my-profile.css" />
 	<link rel="stylesheet" type="text/css" href="static/css/profile-card.css" />
 	
 	<link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css" />

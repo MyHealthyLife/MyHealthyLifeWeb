@@ -16,6 +16,8 @@
 	<link rel="stylesheet" href="static/css/loaders.css" />
     
     <script src="static/js/progress-bar.js"></script>
+	
+	<link rel="styleSheet" href="static/css/progress.css"/>
 	<link rel="stylesheet" href="static/css/progress-bar.css" />
     <script src="static/js/progress_controller.js"></script>
 	
