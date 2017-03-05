@@ -126,7 +126,7 @@
 											<li style="width:33%;">{{singlePerson.steps}} steps (current) <span class="fa fa-child"></span></li>
 										</ul>
 									</div>
-									<div class="social">
+									<div class="social" ng-if="singlePerson.telegramUsernameAvailable == true">
 										<ul>
 											<li class="facebook" style="width:33%;"><a href="#telegram"><span class="fa fa-telegram"></span></a></li>
 										</ul>
