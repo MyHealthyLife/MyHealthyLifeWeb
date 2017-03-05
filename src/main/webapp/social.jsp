@@ -14,6 +14,7 @@
     
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="static/css/loaders.css" />
+	<link rel="stylesheet" href="static/css/font-awesome.min.css">
 	
 	<link rel="styleSheet" href="static/css/ranking.css"/>
     <script src="static/js/social_controller.js"></script>
@@ -75,7 +76,6 @@
 	
 	
 	
-	<br><br><br>
 	
 	<div class="container">
 	<div class="row">
@@ -114,8 +114,6 @@
 									<time datetime="2014-07-20">
 										<span class="day">POS</span>
 										<span class="month">{{singlePerson.position}}</span>
-										<span class="year">2014</span>
-										<span class="time">ALL DAY</span>
 									</time>
 									
 									<div class="info">
@@ -124,15 +122,13 @@
 										<p class="desc">Sex: {{singlePerson.sex}}</p>
 										<p class="desc">Points: {{singlePerson.points}}</p>
 										<ul>
-											<li style="width:33%;">80 kg <span class="fa fa-male"></span></li>
-											<li style="width:34%;">1200 steps <span class="fa fa-child"></span></li>
+											<li style="width:33%;">{{singlePerson.weight}} kg (current) <span class="fa fa-male"></span></li>
+											<li style="width:33%;">{{singlePerson.steps}} steps (current) <span class="fa fa-child"></span></li>
 										</ul>
 									</div>
 									<div class="social">
 										<ul>
-											<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-											<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-											<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+											<li class="facebook" style="width:33%;"><a href="#telegram"><span class="fa fa-telegram"></span></a></li>
 										</ul>
 									</div>
 								</li>

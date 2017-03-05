@@ -191,8 +191,8 @@
 	}
 	
 	.ranking{
-  height:490px;
-  overflow-y:scroll;
-  overflow-x:hidden;
-  width:100%;
-}
+	  height:430px;
+	  overflow-y:auto;
+	  overflow-x:hidden;
+	  width:100%;
+	}

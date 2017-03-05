@@ -32,8 +32,11 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
             	$scope.rankingDetailed[i].firstname = $scope.ranking[i].firstname;
             	$scope.rankingDetailed[i].lastname = $scope.ranking[i].lastname;
             	$scope.rankingDetailed[i].sex = $scope.ranking[i].sex;
+            	$scope.rankingDetailed[i].weight = $scope.ranking[i].weight;
+            	$scope.rankingDetailed[i].steps = $scope.ranking[i].steps;
             	$scope.rankingDetailed[i].points = $scope.ranking[i].points;
             	$scope.rankingDetailed[i].position = i + 1;
+            	
                 
             }
             
