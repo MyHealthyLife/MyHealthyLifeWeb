@@ -80,6 +80,8 @@
 	
 	
 	<br><br><br>
+	
+	
 	<div class="container">
 	
 	<div class="row">
@@ -177,10 +179,29 @@
 </div>
 
 		<div class="col-sm-6" ng-controller='sentence_receviver'>
+			
+			<div class="panel panel-primary">
+    	<div class="panel-heading">
+         	<h3 class="panel-title">Sentences</h3>
+     	</div>
+     
+     	
+		<center><div class="loader loaderSentences"></div></center>
+
+    	<div class="panel-body showOnLoadSentences">
+        	<div class="tab-content">
+            	<div class="tab-pane ranking active" id="test">
+				
+				<div class="row">
+					<div class="col-sm-6">
+					
+					    <div class="form-group">
+				    	</div>
+				    </div>
+				</div>
 			<div class="row">
 					<div class="col-sm-12">
 					    <div class="form-group">
-				    	    <h2>Sentences</h2>
 				    	    <!-- <h1 ng-repeat="x in myData">{{x}}</h1>
 				    	    <button class="btn btn-primary" ng-click="loadData()">Load</button>-->
 				    	</div>
@@ -200,7 +221,10 @@
 						</div>
 				</div>
 			
+			</div></div>
 			</div>
+		</div>
+	</div>
 		<br>
 		</div>
 	</div></div>
