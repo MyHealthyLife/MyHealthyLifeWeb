@@ -128,7 +128,7 @@
 									</div>
 									<div class="social" ng-if="singlePerson.telegramUsernameAvailable == true">
 										<ul>
-											<li class="facebook" style="width:33%;"><a href="#telegram"><span class="fa fa-telegram"></span></a></li>
+											<li class="facebook" style="width:33%;"><a href="#telegram"><span class="fa fa-telegram">Connected</span></a></li>
 										</ul>
 									</div>
 								</li>
