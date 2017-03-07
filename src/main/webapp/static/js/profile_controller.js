@@ -61,7 +61,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
     	$scope.edit_firstname=$scope.user_data.firstname;
     	$scope.edit_lastname=$scope.user_data.lastname;
     	$scope.edit_sex=$scope.user_data.sex;
-    	$scope.edit_birthdate=$scope.user_data.birthdate;
+    	$scope.edit_birthdate=new Date($scope.user_data.birthdate);
     	$("#editDataModal").modal('show');
     }
     
@@ -70,7 +70,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
     	$scope.user_data.firstname=$scope.edit_firstname;
     	$scope.user_data.lastname=$scope.edit_lastname;
     	$scope.user_data.sex=$scope.edit_sex;
-    	$scope.user_data.birthdate=$scope.edit_birthdate;
+    	$scope.user_data.birthdate=$scope.edit_birthdate.getTime();
     	$("#editDataModal").modal('hide');
     	$(".loading_data").show();
     	
