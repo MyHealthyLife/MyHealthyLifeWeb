@@ -36,6 +36,8 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
             	$scope.rankingDetailed[i].steps = $scope.ranking[i].steps;
             	$scope.rankingDetailed[i].points = $scope.ranking[i].points;
             	$scope.rankingDetailed[i].telegramUsernameAvailable = $scope.ranking[i].telegramUsernameAvailable;
+            	$scope.rankingDetailed[i].telegramUsernameVisible = $scope.ranking[i].telegramUsernameVisible;
+            	$scope.rankingDetailed[i].telegramUsername = $scope.ranking[i].telegramUsername;
             	$scope.rankingDetailed[i].position = i + 1;
             	
                 
