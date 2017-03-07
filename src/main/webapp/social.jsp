@@ -156,6 +156,38 @@
 		</div>
 	</div>
 	</div>
+	
+	
+	<div class="col-sm-6">
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+         	<h3 class="panel-title">Add Food</h3>
+     	</div>
+     
+     	
+		<center><div class="loader loaderFoods"></div></center>
+
+    	<div class="panel-body showOnLoadFoods">
+        	<div class="tab-content">
+            	<div class="tab-pane ranking active" id="test">
+				
+				<div class="row">
+					<div class="col-sm-6">
+					
+					    <div class="form-group">
+				    	</div>
+				    </div>
+				</div>
+				
+				
+				
+				
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 	</div>
 	</div>
 	
