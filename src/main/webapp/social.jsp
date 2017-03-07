@@ -129,8 +129,11 @@
 									</div>
 									<div class="social" ng-if="singlePerson.telegramUsernameAvailable == true">
 										<ul>
-											<li class="facebook" style="width:33%;">
-												<a href="#telegram"><span class="fa fa-telegram"><div ng-if="singlePerson.telegramUsernameVisible == true">{{singlePerson.telegramUsername}}</div></span></a>
+											<li class="telegram" style="width:33%;" ng-if="singlePerson.telegramUsernameVisible == true">
+												<a href="http://t.me/{{singlePerson.telegramUsername}}" target="_blank"><span class="fa fa-telegram"><div>{{singlePerson.telegramUsername}}</div></span></a>
+											</li>
+											<li class="telegram" style="width:33%;" ng-if="singlePerson.telegramUsernameVisible == false">
+												<a href="#telegram"><span class="fa fa-telegram"></span></a>
 											</li>
 										</ul>
 									</div>
