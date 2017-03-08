@@ -262,8 +262,14 @@
 								<div class="col-sm-3">
 									<label class="control-label" for="type">Sentence type:</label>	
 								</div>
-				        		<div class="col-sm-9">
+				        		<div class="col-sm-5">
 						        	<input class="form-control" type="text" name="sentenceType" ng-model="add_sentenceType"><br>
+	                       		</div>
+	                       		<div class="col-sm-4">
+						        	<select class="form-control" name="motive" ng-model="add_sentenceTypeMotive">
+		            					<option>gain</option>
+		            					<option>loss</option>
+		                       		</select><br>
 	                       		</div>
 				        	</div>
 				        	

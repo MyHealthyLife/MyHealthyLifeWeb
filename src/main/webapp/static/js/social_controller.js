@@ -122,3 +122,71 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
     $rootScope.loadAddFood();
 	
 });
+
+
+
+
+app.controller('addSentenceController', function ($scope,$rootScope, $http) {
+	
+	$scope.sentenceData = {}
+
+	// Function to load the section 'Add Sentence'
+	$rootScope.loadAddSentence = function () {
+		
+		// Shows the loader
+        $(".showOnLoadAddSentence").hide();
+        $(".loaderAddSentence").show();
+
+		
+	    // Hides the loader and shows the content
+	    $(".loaderAddSentence").hide();
+	    $(".showOnLoadAddSentence").show();
+       
+    };
+    
+    // Function to send a request for adding a new sentence
+    $scope.addSentenceSave=function(){
+
+		// Shows the loader
+    	$(".showOnLoadAddSentence").hide();
+        $(".loaderAddSentence").show();
+        
+        // Gets the data the user inserted in the form
+    	$scope.sentenceData.text=$scope.add_sentenceText;
+    	$scope.sentenceData.url=$scope.add_imageURL;
+    	$scope.sentenceData.sentenceType={};
+    	$scope.sentenceData.sentenceType.name=$scope.add_sentenceType;
+    	if($scope.add_sentenceTypeMotive=="gain") 
+        	$scope.sentenceData.sentenceType.motive=true;
+    	else
+    		$scope.sentenceData.sentenceType.motive=false;
+
+        // Request to post the food the user wants to insert
+    	$http({
+            url: centric02_basic+"/sentence",
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data: $scope.sentenceData
+        }).then(function(success)
+        {
+        	// Reloads all the components in the page
+        	$rootScope.loadRanking();
+        	$rootScope.loadAddSentence();
+        	
+            // Hides the loader and shows the content
+            $(".loaderAddSentence").hide();
+            $(".showOnLoadAddSentence").show();
+            
+        },function(error)
+        {
+            console.log('Error save sentence');
+        });
+    }
+    
+
+    // Calls instantly the function to load the component as soon as the controller is ready
+    $rootScope.loadAddSentence();
+	
+});
