@@ -65,8 +65,7 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
 
 app.controller('addFoodController', function ($scope,$rootScope, $http) {
 	
-	$scope.foodTypes
-	$scope.measureData = {}
+	$scope.foodData = {}
 
 	// Function to load the section 'Add Measure'
 	$rootScope.loadAddFood = function () {
@@ -75,62 +74,46 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
         $(".showOnLoadAddFood").hide();
         $(".loaderAddFood").show();
 
-        // Request to get the measure types available in the system
-        $http({
-            url: centric01_basic+"/measuretypes",
-            method: 'GET',
-            params: {
-            }
-        }).then(function(success) {
-
-        	// Memorizes the data in the scope
-        	$scope.measureTypes = success.data.measureType;
-
-            // Hides the loader and shows the content
-            $(".loaderAddFood").hide();
-            $(".showOnLoadAddFood").show();
-            
-            
-        }, function(error){
-        	console.log('error');
-        });
+		
+	    // Hides the loader and shows the content
+	    $(".loaderAddFood").hide();
+	    $(".showOnLoadAddFood").show();
        
     };
     
     // Function to send a request for adding a new measure
-    $scope.addMeasureSave=function(){
+    $scope.addFoodSave=function(){
 
 		// Shows the loader
-    	$(".showOnLoadAddMeasure").hide();
-        $(".loaderAddMeasure").show();
+    	$(".showOnLoadAddFood").hide();
+        $(".loaderAddFood").show();
         
         // Gets the data the user inserted in the form
-    	$scope.measureData.measureType=$scope.add_measureType;
-    	$scope.measureData.measureValue=$scope.add_measureValue;
-    	$scope.measureData.dateRegistered=$scope.add_measureDate;
+    	$scope.foodData.name=$scope.add_foodName;
+    	$scope.foodData.calories=$scope.add_foodCalories;
+    	$scope.foodData.foodType={};
+    	$scope.foodData.foodType.category=$scope.add_foodType;
 
         // Request to post the measure the user wants to insert
     	$http({
-            url: centric01_basic+"/measure/"+global_username,
+            url: centric02_basic+"/food",
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
-            data: $scope.measureData
+            data: $scope.foodData
         }).then(function(success)
         {
         	// Reloads all the components in the page
-        	$rootScope.loadProgressBars();
-            $rootScope.loadMeasureHistory();
-            $rootScope.loadCurrentHealth();
-
+        	$rootScope.loadRanking();
+        	
             // Hides the loader and shows the content
-            $(".loaderAddMeasure").hide();
-            $(".showOnLoadAddMeasure").show();
+            $(".loaderAddFood").hide();
+            $(".showOnLoadAddFood").show();
             
         },function(error)
         {
-            console.log('Error save measure');
+            console.log('Error save food');
         });
     }
     
