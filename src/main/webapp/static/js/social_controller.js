@@ -58,3 +58,84 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
     
 	
 });
+
+
+
+
+
+app.controller('addFoodController', function ($scope,$rootScope, $http) {
+	
+	$scope.foodTypes
+	$scope.measureData = {}
+
+	// Function to load the section 'Add Measure'
+	$rootScope.loadAddFood = function () {
+		
+		// Shows the loader
+        $(".showOnLoadAddFood").hide();
+        $(".loaderAddFood").show();
+
+        // Request to get the measure types available in the system
+        $http({
+            url: centric01_basic+"/measuretypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.measureTypes = success.data.measureType;
+
+            // Hides the loader and shows the content
+            $(".loaderAddFood").hide();
+            $(".showOnLoadAddFood").show();
+            
+            
+        }, function(error){
+        	console.log('error');
+        });
+       
+    };
+    
+    // Function to send a request for adding a new measure
+    $scope.addMeasureSave=function(){
+
+		// Shows the loader
+    	$(".showOnLoadAddMeasure").hide();
+        $(".loaderAddMeasure").show();
+        
+        // Gets the data the user inserted in the form
+    	$scope.measureData.measureType=$scope.add_measureType;
+    	$scope.measureData.measureValue=$scope.add_measureValue;
+    	$scope.measureData.dateRegistered=$scope.add_measureDate;
+
+        // Request to post the measure the user wants to insert
+    	$http({
+            url: centric01_basic+"/measure/"+global_username,
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data: $scope.measureData
+        }).then(function(success)
+        {
+        	// Reloads all the components in the page
+        	$rootScope.loadProgressBars();
+            $rootScope.loadMeasureHistory();
+            $rootScope.loadCurrentHealth();
+
+            // Hides the loader and shows the content
+            $(".loaderAddMeasure").hide();
+            $(".showOnLoadAddMeasure").show();
+            
+        },function(error)
+        {
+            console.log('Error save measure');
+        });
+    }
+    
+
+    // Calls instantly the function to load the progress bars as soon as the controller is ready
+    $rootScope.loadAddFood();
+	
+});
