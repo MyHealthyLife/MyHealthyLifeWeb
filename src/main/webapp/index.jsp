@@ -245,8 +245,8 @@
 						<div class="foods_card">
 							<div class="card"  ng-repeat='f in foodData' >
 								<div class="card-block">
-									<h4 class="card-tiitle"> {{f.name}} [{{f.foodType.category}}]</h4>
-									<p class="card-text"> {{f.calories}} kcal</p>
+									<h4 class="card-title">{{f.name}} [{{f.foodType.category}}]</h4>
+									<p class="card-text"> <span class="glyphicon glyphicon-fire"></span> {{f.calories}} kcal</p>
 								</div>
 							</div>
 						</div>
