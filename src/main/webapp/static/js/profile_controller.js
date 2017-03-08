@@ -111,7 +111,7 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
             }
         }).then(function(success) {
             $scope.myData = success.data;
-            
+            $('.loaderSentences').hide();
         }, function(error){
         	console.log('error');
         });

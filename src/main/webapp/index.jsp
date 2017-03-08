@@ -212,7 +212,9 @@
 			<div class="row">
 				<div class="col-sm-12">
 					  <!-- <div ui-grid="{ data: myData }" class="myGrid"></div> -->
-					  
+					  <div ng-if='myData.lenght <=0 || myData=="" '>
+					  	<p class="text-muted">No new sentence for you :'( </p>
+					  </div>
 					  <div class="card" ng-repeat="x in myData">
 						  <!-- <img class="card-img-top" src="http://stock.wikimini.org/w/images/9/95/Gnome-stock_person-avatar-profile.png" alt="Card image cap">-->
 						  <div class="card-block">
