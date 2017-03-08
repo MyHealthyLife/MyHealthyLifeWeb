@@ -123,4 +123,26 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
 	
 });
 
+app.controller('foods_for_me', function ($scope,$rootScope, $http) {
+	
+	$scope.foodData;
+	
+	$scope.loadData=function(){
+		$http({
+            url: centric01_basic+"/recipe/"+global_username,
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+            $scope.foodData = success.data.food;
+            
+        }, function(error){
+        	console.log('error');
+        });
+	};
+	
+	$scope.loadData();
+	
+});
+	
 
