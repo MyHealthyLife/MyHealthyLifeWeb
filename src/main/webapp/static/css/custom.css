@@ -2,3 +2,8 @@
     width: 500px;
     height: 250px;
   }
+  
+  .scrollable-panel {
+  height:30em;
+  overflow-y: auto;
+}

@@ -27,6 +27,8 @@
 	<link rel="styleSheet" href="static/css/ui-grid.min.css"/>
 	
 	<link rel="stylesheet" href="static/css/loaders.css" />
+	
+	<link rel="stylesheet" href="static/css/custom.css" />
     
 </head>
 <body>
@@ -210,7 +212,7 @@
 				    </div>
 			</div>
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-12 scrollable-panel">
 					  <!-- <div ui-grid="{ data: myData }" class="myGrid"></div> -->
 					  <div ng-if='myData.lenght <=0 || myData=="" '>
 					  	<p class="text-muted">No new sentence for you :'( </p>
