@@ -165,9 +165,9 @@
      	</div>
      
      	
-		<center><div class="loader loaderFoods"></div></center>
+		<center><div class="loader loaderAddFood"></div></center>
 
-    	<div class="panel-body showOnLoadFoods">
+    	<div class="panel-body showOnLoadAddFood">
         	<div class="tab-content">
             	<div class="tab-pane ranking active" id="test">
 				
@@ -179,7 +179,48 @@
 				    </div>
 				</div>
 				
-				
+				<div class="row">
+					<div class="col-sm-12" ng-controller="addFoodController">
+					
+					
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Food type:</label>	
+								</div>
+				        		<div class="col-sm-9">
+						        	<input class="form-control" type="text" name="foodType" ng-model="add_foodType"><br>
+	                       		</div>
+				        	</div>
+				        	
+				        	
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Food name:</label>	
+								</div>
+				        		<div class="col-sm-9">
+						        	<input class="form-control" type="text" name="foodName" ng-model="add_foodName"><br>
+	                       		</div>
+				        	</div>
+				        	
+					        <div class="row">
+								<div class="col-sm-3">
+								    <label for="foodCalories" class="control-label">Calories (100g):</label>
+								    
+						      	</div>
+							    <div class="col-sm-3">
+							    	<input type="text" class="form-control" id="foodCalories" placeholder="e.g. 48" ng-model="add_foodCalories">
+							    </div>
+		      	
+						      	
+								<div class="col-sm-6">
+						      		<button ng-click="addFoodSave()" type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> Add Food</button>
+			        			</div>
+							</div>
+							     <br>
+					
+					
+					</div>
+				</div>
 				
 				
 				
