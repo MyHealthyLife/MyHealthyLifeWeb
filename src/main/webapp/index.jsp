@@ -220,9 +220,9 @@
 					  <div class="card" ng-repeat="x in myData">
 						  <!-- <img class="card-img-top" src="http://stock.wikimini.org/w/images/9/95/Gnome-stock_person-avatar-profile.png" alt="Card image cap">-->
 						  <div class="card-block">
-						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> {{x.usernameOne}}</h4>
+						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> {{x.usernameOne}} [{{x.insertionTime}}]</h4>
 						    <p class="card-text"> {{x.sentenceText}}</p>
-						    <a href="#" class="btn btn-primary">Dismiss TODO</a>
+						    <p align="right"><a href="#" class="btn btn-primary">Replay TODO</a></p>
 						  </div>
 						</div>
 				</div>
