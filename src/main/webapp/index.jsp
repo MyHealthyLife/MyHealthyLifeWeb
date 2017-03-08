@@ -25,6 +25,8 @@
 	<link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css" />
 	
 	<link rel="styleSheet" href="static/css/ui-grid.min.css"/>
+	
+	<link rel="stylesheet" href="static/css/loaders.css" />
     
 </head>
 <body>
@@ -231,15 +233,19 @@
 	
 		<div class="row">
 			<div class="col-sm-12" ng-controller='foods_for_me'>
+				
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3>Suggested foods</h3>
 					</div>
 					<div class="panel-body">
-						<div class="card foods_card"  ng-repeat='f in foodData' >
-							<div class="card-block">
-								<h4 class="card-tiitle"> {{f.name}} [{{f.foodType.category}}]</h4>
-								<p class="card-text"> {{f.calories}} kcal</p>
+						<center><div class="loader loaderFoods"></div></center>
+						<div class="foods_card">
+							<div class="card"  ng-repeat='f in foodData' >
+								<div class="card-block">
+									<h4 class="card-tiitle"> {{f.name}} [{{f.foodType.category}}]</h4>
+									<p class="card-text"> {{f.calories}} kcal</p>
+								</div>
 							</div>
 						</div>
 					</div>

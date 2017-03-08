@@ -128,6 +128,9 @@ app.controller('foods_for_me', function ($scope,$rootScope, $http) {
 	$scope.foodData;
 	
 	$scope.loadData=function(){
+		$('.loaderFoods').show();
+		$('.foods_card').hide();
+		
 		$http({
             url: centric01_basic+"/recipe/"+global_username,
             method: 'GET',
@@ -135,6 +138,8 @@ app.controller('foods_for_me', function ($scope,$rootScope, $http) {
             }
         }).then(function(success) {
             $scope.foodData = success.data.food;
+            $('.loaderFoods').hide();
+    		$('.foods_card').show();
             
         }, function(error){
         	console.log('error');
