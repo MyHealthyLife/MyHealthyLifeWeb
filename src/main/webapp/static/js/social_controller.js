@@ -67,7 +67,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
 	
 	$scope.foodData = {}
 
-	// Function to load the section 'Add Measure'
+	// Function to load the section 'Add Food'
 	$rootScope.loadAddFood = function () {
 		
 		// Shows the loader
@@ -81,7 +81,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
        
     };
     
-    // Function to send a request for adding a new measure
+    // Function to send a request for adding a new food
     $scope.addFoodSave=function(){
 
 		// Shows the loader
@@ -94,7 +94,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
     	$scope.foodData.foodType={};
     	$scope.foodData.foodType.category=$scope.add_foodType;
 
-        // Request to post the measure the user wants to insert
+        // Request to post the food the user wants to insert
     	$http({
             url: centric02_basic+"/food",
             method: 'POST',
@@ -118,7 +118,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
     }
     
 
-    // Calls instantly the function to load the progress bars as soon as the controller is ready
+    // Calls instantly the function to load the component as soon as the controller is ready
     $rootScope.loadAddFood();
 	
 });
