@@ -391,26 +391,17 @@
 				        	
 							<div class="row">
 								<div class="col-sm-3">
-									<label class="control-label" for="type">Sentence text:</label>	
+									<label class="control-label" for="type">Dedicate to:</label>	
 								</div>
 				        		<div class="col-sm-9">
-						        	<input class="form-control" type="text" name="sentenceText" ng-model="add_sentenceText"><br>
+						        	<input class="form-control" type="text" name="dedicateToUser" ng-model="dedicate_toUser"><br>
 	                       		</div>
 				        	</div>
 				        	
-					        <div class="row">
-								<div class="col-sm-3">
-								    <label for="imageURL" class="control-label">Image URL:</label>
-								    
-						      	</div>
-							    <div class="col-sm-9">
-							    	<input type="text" class="form-control" id="imageURL" placeholder="http://example.com/image.png" ng-model="add_imageURL">
-							    </div>
-				        	</div>
 				        	<br>
 					      	<div class="row">
 								<div class="col-sm-12">
-						      		<button ng-click="addSentenceSave()" type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> Add Sentence</button>
+						      		<button ng-click="dedicateSentenceSave()" type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-envelope"></span> Dedicate Sentence</button>
 			        			</div>
 							</div>
 							</div>
