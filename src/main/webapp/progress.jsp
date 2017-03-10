@@ -158,6 +158,7 @@
 								</div>
 				        		<div class="col-sm-9">
 						        	<select class="form-control" name="type" ng-model="add_measureType">
+						        		<option value="" disabled selected>Select your option</option>
 		            					<option ng-repeat="singleMeasure in measureTypes">{{singleMeasure}}</option>
 		                       		</select><br>
 	                       		</div>

@@ -301,6 +301,7 @@
 	                       		</div>
 	                       		<div class="col-sm-4">
 						        	<select class="form-control" name="motive" ng-model="add_sentenceTypeMotive">
+						        		<option value="" disabled selected>Select your option</option>
 		            					<option>gain</option>
 		            					<option>loss</option>
 		                       		</select><br>
