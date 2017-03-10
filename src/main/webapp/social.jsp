@@ -297,11 +297,16 @@
 									<label class="control-label" for="type">Sentence type:</label>	
 								</div>
 				        		<div class="col-sm-5">
-						        	<input class="form-control" type="text" name="sentenceType" ng-model="add_sentenceType"><br>
+						        	<select class="form-control" name="motive" ng-model="add_sentenceType">
+						        		<option value="" disabled selected>Select type</option>
+		            					<option ng-repeat="singleMeasure in measureTypes">{{singleMeasure}}</option>
+		                       		</select><br>
+						        	<!-- <input class="form-control" type="text" name="sentenceType" ng-model="add_sentenceType">-->
+						        	<br>
 	                       		</div>
 	                       		<div class="col-sm-4">
 						        	<select class="form-control" name="motive" ng-model="add_sentenceTypeMotive">
-						        		<option value="" disabled selected>Select your option</option>
+						        		<option value="" disabled selected>Select trend</option>
 		            					<option>gain</option>
 		            					<option>loss</option>
 		                       		</select><br>
@@ -377,11 +382,16 @@
 									<label class="control-label" for="type">Sentence type:</label>	
 								</div>
 				        		<div class="col-sm-5">
-						        	<input class="form-control" type="text" name="sentenceType" ng-model="dedicate_sentenceType"><br>
+				        			<select class="form-control" name="motive" ng-model="dedicate_sentenceType">
+						        		<option value="" disabled selected>Select type</option>
+		            					<option ng-repeat="singleMeasure in measureTypes">{{singleMeasure}}</option>
+		                       		</select><br>
+						        	<!-- <input class="form-control" type="text" name="sentenceType" ng-model="dedicate_sentenceType">-->
+						        	<br>
 	                       		</div>
 	                       		<div class="col-sm-4">
 						        	<select class="form-control" name="motive" ng-model="dedicate_sentenceTypeMotive">
-						        		<option value="" disabled selected>Select your option</option>
+						        		<option value="" disabled selected>Select trend</option>
 		            					<option>gain</option>
 		            					<option>loss</option>
 		                       		</select><br>

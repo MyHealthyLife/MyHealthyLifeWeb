@@ -137,10 +137,25 @@ app.controller('addSentenceController', function ($scope,$rootScope, $http) {
         $(".showOnLoadAddSentence").hide();
         $(".loaderAddSentence").show();
 
-		
-	    // Hides the loader and shows the content
-	    $(".loaderAddSentence").hide();
-	    $(".showOnLoadAddSentence").show();
+        // Request to get the measure types available in the system
+        $http({
+            url: centric01_basic+"/measuretypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.measureTypes = success.data.measureType;
+
+    	    // Hides the loader and shows the content
+    	    $(".loaderAddSentence").hide();
+    	    $(".showOnLoadAddSentence").show();
+            
+            
+        }, function(error){
+        	console.log('Error measure types');
+        });
        
     };
     
@@ -197,6 +212,7 @@ app.controller('addSentenceController', function ($scope,$rootScope, $http) {
 app.controller('dedicateSentenceController', function ($scope,$rootScope, $http) {
 	
 	$scope.sentenceData = {}
+	$scope.measureTypes
 
 	// Function to load the section 'Dedicate Sentence'
 	$rootScope.loadDedicateSentence = function () {
@@ -204,11 +220,27 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
 		// Shows the loader
         $(".showOnLoadDedicateSentence").hide();
         $(".loaderDedicateSentence").show();
+        
+        // Request to get the measure types available in the system
+        $http({
+            url: centric01_basic+"/measuretypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
 
+        	// Memorizes the data in the scope
+        	$scope.measureTypes = success.data.measureType;
+
+    	    // Hides the loader and shows the content
+    	    $(".loaderDedicateSentence").hide();
+    	    $(".showOnLoadDedicateSentence").show();
+            
+            
+        }, function(error){
+        	console.log('Error measure types');
+        });
 		
-	    // Hides the loader and shows the content
-	    $(".loaderDedicateSentence").hide();
-	    $(".showOnLoadDedicateSentence").show();
        
     };
     
