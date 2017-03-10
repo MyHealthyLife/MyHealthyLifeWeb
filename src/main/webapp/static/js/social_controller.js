@@ -221,12 +221,8 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
         
         // Gets the data the user inserted in the form
     	var toUser = $scope.dedicate_toUser;
-    	var sentenceType=$scope.dedicate_sentenceType;
-    	var sentenceTypeMotive = null
-    	if($scope.dedicate_sentenceTypeMotive=="gain") 
-    		sentenceTypeMotive=true;
-    	else
-    		sentenceTypeMotive=false;
+    	var sentenceType = $scope.dedicate_sentenceType;
+    	var sentenceTypeMotive = $scope.dedicate_sentenceTypeMotive;
     	
         // Request to post the food the user wants to insert
     	$http({
