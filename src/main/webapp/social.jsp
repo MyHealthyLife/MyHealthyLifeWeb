@@ -346,6 +346,87 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="col-sm-6">
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+         	<h3 class="panel-title">Dedicate sentence</h3>
+     	</div>
+     
+     	
+		<center><div class="loader loaderDedicateSentence"></div></center>
+
+    	<div class="panel-body showOnLoadDedicateSentence">
+        	<div class="tab-content">
+            	<div class="tab-pane add-sentence active" id="test">
+				
+				<div class="row">
+					<div class="col-sm-6">
+					
+					    <div class="form-group">
+				    	</div>
+				    </div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-12" ng-controller="dedicateSentenceController">
+					
+					
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Sentence type:</label>	
+								</div>
+				        		<div class="col-sm-5">
+						        	<input class="form-control" type="text" name="sentenceType" ng-model="dedicate_sentenceType"><br>
+	                       		</div>
+	                       		<div class="col-sm-4">
+						        	<select class="form-control" name="motive" ng-model="dedicate_sentenceTypeMotive">
+						        		<option value="" disabled selected>Select your option</option>
+		            					<option>gain</option>
+		            					<option>loss</option>
+		                       		</select><br>
+	                       		</div>
+				        	</div>
+				        	
+				        	
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Sentence text:</label>	
+								</div>
+				        		<div class="col-sm-9">
+						        	<input class="form-control" type="text" name="sentenceText" ng-model="add_sentenceText"><br>
+	                       		</div>
+				        	</div>
+				        	
+					        <div class="row">
+								<div class="col-sm-3">
+								    <label for="imageURL" class="control-label">Image URL:</label>
+								    
+						      	</div>
+							    <div class="col-sm-9">
+							    	<input type="text" class="form-control" id="imageURL" placeholder="http://example.com/image.png" ng-model="add_imageURL">
+							    </div>
+				        	</div>
+				        	<br>
+					      	<div class="row">
+								<div class="col-sm-12">
+						      		<button ng-click="addSentenceSave()" type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> Add Sentence</button>
+			        			</div>
+							</div>
+							</div>
+							     <br>
+					
+					
+					</div>
+				</div>
+				
+				
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	</div>
 	</div>
 	
