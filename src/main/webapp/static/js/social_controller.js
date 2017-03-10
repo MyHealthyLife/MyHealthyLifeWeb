@@ -220,23 +220,22 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
         $(".loaderDedicateSentence").show();
         
         // Gets the data the user inserted in the form
-    	$scope.sentenceData.text=$scope.add_sentenceText;
-    	$scope.sentenceData.url=$scope.add_imageURL;
-    	$scope.sentenceData.sentenceType={};
-    	$scope.sentenceData.sentenceType.name=$scope.add_sentenceType;
-    	if($scope.add_sentenceTypeMotive=="gain") 
-        	$scope.sentenceData.sentenceType.motive=true;
+    	var toUser = $scope.dedicate_toUser;
+    	var sentenceType=$scope.dedicate_sentenceType;
+    	var sentenceTypeMotive = null
+    	if($scope.dedicate_sentenceTypeMotive=="gain") 
+    		sentenceTypeMotive=true;
     	else
-    		$scope.sentenceData.sentenceType.motive=false;
-    	console.log($scope.sentenceData);
+    		sentenceTypeMotive=false;
+    	
         // Request to post the food the user wants to insert
     	$http({
-            url: centric02_basic+"/sentence",
+            url: centric02_basic+"/sentence/" + global_username + "/" + toUser + "/" + sentenceType + "/" + sentenceTypeMotive,
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
-            data: $scope.sentenceData
+            data: null
         }).then(function(success)
         {
         	// Reloads all the components in the page
@@ -244,12 +243,12 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
         	$rootScope.loadAddSentence();
         	
             // Hides the loader and shows the content
-            $(".loaderAddSentence").hide();
-            $(".showOnLoadAddSentence").show();
+            $(".loaderDedicateSentence").hide();
+            $(".showOnLoadDedicateSentence").show();
             
         },function(error)
         {
-            console.log('Error save sentence');
+            console.log('Error dedicate sentence');
         });
     }
     
