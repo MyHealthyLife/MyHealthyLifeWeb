@@ -163,7 +163,6 @@
     	<div class="panel-heading">
          	<h3 class="panel-title">Add Food</h3>
      	</div>
-     
      	
 		<center><div class="loader loaderAddFood"></div></center>
 
@@ -228,6 +227,41 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+         	<h3 class="panel-title">Add Recipe</h3>
+     	</div>
+     	
+		<center><div class="loader loaderAddRecipe"></div></center>
+
+    	<div class="panel-body showOnLoadAddRecipe">
+        	<div class="tab-content">
+            	<div class="tab-pane add-food active" id="test">
+				
+				<div class="row">
+					<div class="col-sm-6">
+					
+					    <div class="form-group">
+				    	</div>
+				    </div>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-12">
+					
+					TODO
+					
+					</div>
+				</div>
+				
+				
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	</div>
 	</div>
 	
