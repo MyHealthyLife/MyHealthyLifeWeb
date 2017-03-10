@@ -10,14 +10,14 @@ body{
 }
 
 .add-sentence{
-  height:30em;
+  height:18em;
   overflow-y:auto;
   overflow-x:hidden;
   width:100%;
 }
 
 .add-food{
-  height:30em;
+  height:15em;
   overflow-y:auto;
   overflow-x:hidden;
   width:100%;
