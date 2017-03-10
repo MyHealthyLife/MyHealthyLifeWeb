@@ -160,7 +160,7 @@ app.controller('addSentenceController', function ($scope,$rootScope, $http) {
         	$scope.sentenceData.sentenceType.motive=true;
     	else
     		$scope.sentenceData.sentenceType.motive=false;
-
+    	console.log($scope.sentenceData);
         // Request to post the food the user wants to insert
     	$http({
             url: centric02_basic+"/sentence",

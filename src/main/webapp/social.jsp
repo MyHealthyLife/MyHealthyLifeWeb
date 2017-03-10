@@ -169,7 +169,7 @@
 
     	<div class="panel-body showOnLoadAddFood">
         	<div class="tab-content">
-            	<div class="tab-pane ranking active" id="test">
+            	<div class="tab-pane add-food active" id="test">
 				
 				<div class="row">
 					<div class="col-sm-6">
@@ -244,7 +244,7 @@
 
     	<div class="panel-body showOnLoadAddSentence">
         	<div class="tab-content">
-            	<div class="tab-pane ranking active" id="test">
+            	<div class="tab-pane add-sentence active" id="test">
 				
 				<div class="row">
 					<div class="col-sm-6">
