@@ -65,7 +65,7 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
 
 app.controller('addFoodController', function ($scope,$rootScope, $http) {
 	
-	$scope.foodData = {}
+	$scope.foodTypes;
 
 	// Function to load the section 'Add Food'
 	$rootScope.loadAddFood = function () {
@@ -74,6 +74,22 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
         $(".showOnLoadAddFood").hide();
         $(".loaderAddFood").show();
 
+
+    	/////////////
+    	$http({
+            url: centric02_basic+"/food/foodTypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.foodTypes = success.data.foodType;
+        	
+        }, function(error){
+        	console.log('Error testing');
+        });
+    	///////////////////////
 		
 	    // Hides the loader and shows the content
 	    $(".loaderAddFood").hide();
@@ -93,7 +109,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
     	$scope.foodData.calories=$scope.add_foodCalories;
     	$scope.foodData.foodType={};
     	$scope.foodData.foodType.category=$scope.add_foodType;
-
+    	
         // Request to post the food the user wants to insert
     	$http({
             url: centric02_basic+"/food",
