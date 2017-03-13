@@ -88,39 +88,54 @@
 	
 	<div class="container">
 	
-	<div class="row">
-		<div class="col-sm-4">
-	<div class="row">
+	
+		<!--<div class="col-sm-12">
+	    <div class="row">
 		<div class="col-sm-12">
 		    <div class="form-group">
 	    	    <h2>My Profile</h2>
 	    	</div>
 	    </div>
-	</div><br>
+	</div><br> -->
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>My Profile</h2>
+		</div>
+	</div>
 	<div class="row" ng-controller="user_data">
-		<div class="col-lg-9 col-sm-12">
+		<div class="col-sm-4">
 
-            <div class="card hovercard">
-                <div class="cardheader">
-
-                </div>
-                <div class="avatar">
-                    <img alt="" src="http://stock.wikimini.org/w/images/9/95/Gnome-stock_person-avatar-profile.png">
-                </div>
-                <div class="info">
-                    <div class="title">
-                        <a target="_blank" href="#">{{user_data.username}}<i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i> </a>
-                    </div>
-                    <div class="desc">Firstname: {{user_data.firstname}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
-                    <div class="desc">Lastname: {{user_data.lastname}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
-                    <div class="desc">Sex: {{user_data.sex}} </div>
-                    <div class="desc">Birthdate: {{user_data.birthdate}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
-                    
-                    <div class="desc"><br><button class="btn btn-primary" ng-click="editData()"><span class="	glyphicon glyphicon-pencil"></span>Edit data</button></div>
-                </div>
-                <div class="bottom">
-       
-                </div>
+			<div class="panel panel-primary">
+			
+				<div class="panel-heading">
+					<h4>Personal data</h4>
+				</div>
+			
+				<div class="panel-body">
+	            	<div class="card hovercard">
+	            	
+		                <div class="cardheader">
+		
+		                </div>
+		                <div class="avatar">
+		                    <img alt="" src="http://stock.wikimini.org/w/images/9/95/Gnome-stock_person-avatar-profile.png">
+		                </div>
+		                <div class="info">
+		                    <div class="title">
+		                        <a target="_blank" href="#">{{user_data.username}}<i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i> </a>
+		                    </div>
+		                    <div class="desc">Firstname: {{user_data.firstname}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+		                    <div class="desc">Lastname: {{user_data.lastname}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+		                    <div class="desc">Sex: {{user_data.sex}} </div>
+		                    <div class="desc">Birthdate: {{user_data.birthdate}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+		                    
+		                    <div class="desc"><br><button class="btn btn-primary" ng-click="editData()"><span class="	glyphicon glyphicon-pencil"></span>Edit data</button></div>
+		                </div>
+		                <div class="bottom">
+		       
+		                </div>
+		                </div>
+	                </div>
             </div>
 
         </div>
@@ -175,14 +190,13 @@
 		         </div>
 		
 		       </div>
-		 </div>
+		 
 		</div>
 
-	</div>
 	
-</div>
 
-		<div class="col-sm-6" ng-controller='sentence_receviver'>
+
+		<div class="col-sm-8" ng-controller='sentence_receviver'>
 			
 			<div class="panel panel-primary">
     	<div class="panel-heading">
@@ -233,6 +247,7 @@
 	</div>
 		<br>
 		</div>
+	</div>
 	</div>
 	
 		<div class="row">
