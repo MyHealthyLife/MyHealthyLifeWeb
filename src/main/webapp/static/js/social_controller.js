@@ -229,6 +229,8 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
 	
 	$scope.sentenceData = {}
 	$scope.measureTypes
+	$scope.peopleList = {}
+	$scope.usernames = []
 
 	// Function to load the section 'Dedicate Sentence'
 	$rootScope.loadDedicateSentence = function () {
@@ -257,6 +259,29 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
         	console.log('Error measure types');
         });
 		
+        
+        /////////////
+    	$http({
+            url: centric01_basic+"/people",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.peopleList = success.data.person;
+        	
+        	for(i=0;i<$scope.peopleList.length;i++) {
+        		
+        		$scope.usernames[i] = $scope.peopleList[i].username;
+        		
+        	}
+        	console.log($scope.usernames);
+        	
+        }, function(error){
+        	console.log('Error testing');
+        });
+    	///////////////////////
        
     };
     

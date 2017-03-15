@@ -1,7 +1,8 @@
 
 var availableTags = ["No option available"];
+var availableUsernames = ["No username present"];
 
-function testing(){
+function autoCompleteModules(){
 	
 	var measures = $('[ng-controller="addFoodController"]').scope().foodTypes;
 	
@@ -15,16 +16,33 @@ function testing(){
 		
 	}
 	
+
+	var usernamesFromController = $('[ng-controller="dedicateSentenceController"]').scope().usernames;
+
+	if(usernamesFromController.length!=0) {
+		availableUsernames = [];
+	}
+	
+	for(i=0;i<usernamesFromController.length;i++) {
+		
+		availableUsernames.push(usernamesFromController[i]);
+		
+	}
+	
+	console.log(availableUsernames);
 	console.log(availableTags);
 	
 }
 
 $(document).ready(function() {
 	setInterval(function(){
-	    testing();
+	    autoCompleteModules();
 	  
 	$("#foodTypeAuto").autocomplete({
 	      source: availableTags
+	    });
+	$("#dedicateToUserAuto").autocomplete({
+	      source: availableUsernames
 	    });
 	  }, 3000)
 });

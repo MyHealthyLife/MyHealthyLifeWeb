@@ -410,7 +410,7 @@
 									<label class="control-label" for="type">Dedicate to:</label>	
 								</div>
 				        		<div class="col-sm-9">
-						        	<input class="form-control" type="text" name="dedicateToUser" ng-model="dedicate_toUser"><br>
+						        	<input class="form-control" id="dedicateToUserAuto" type="text" name="dedicateToUser" ng-model="dedicate_toUser"><br>
 	                       		</div>
 				        	</div>
 				        	
