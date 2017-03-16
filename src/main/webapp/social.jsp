@@ -283,6 +283,7 @@
 					        		<div class="col-sm-9">
 							        	<select class="form-control" name="foodName" ng-model="addRecipe_foodName">
 					        				<option value="" disabled selected>Select food</option>
+					        				<option ng-repeat="singleFood in foodsList">{{singleFood.name}}</option>
 		            					</select><br>
 		                       		</div>
 					        	</div>

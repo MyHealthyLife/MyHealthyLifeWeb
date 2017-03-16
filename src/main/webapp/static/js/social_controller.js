@@ -144,7 +144,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
 
 app.controller('addRecipeController', function ($scope,$rootScope, $http) {
 	
-	$scope.foodTypes;
+	$scope.foodsList;
 
 	// Function to load the section 'Add Recipe'
 	$rootScope.loadAddRecipe = function () {
@@ -156,14 +156,15 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
 
     	/////////////
     	$http({
-            url: centric02_basic+"/food/foodTypes",
+            url: centric02_basic+"/food/all",
             method: 'GET',
             params: {
             }
         }).then(function(success) {
 
         	// Memorizes the data in the scope
-        	$scope.foodTypes = success.data.foodType;
+        	$scope.foodsList = success.data.food;
+        	console.log($scope.foodsList);
         	
         }, function(error){
         	console.log('Error testing');
