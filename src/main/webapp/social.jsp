@@ -257,6 +257,12 @@
 					<div class="col-sm-12">
 					
 					
+						<div id="form" class="form-group">
+							Hai Add Another by clicking the button
+						</div>
+						<div class='Box'>I'm new box by prepend</div>
+						<button id="num" class="btn btn-primary btn-block">Add a food</button>
+					 
 					</div>
 				</div>
 				

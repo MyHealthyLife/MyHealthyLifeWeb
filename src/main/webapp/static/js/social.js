@@ -45,5 +45,11 @@ $(document).ready(function() {
 	      source: availableUsernames
 	    });
 	  }, 3000)
+
+	  
+	  $("#num").click(function () {
+	  $(".Box:first").clone().appendTo("#form"); 
+	});
+	
 });
     
