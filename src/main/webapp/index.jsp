@@ -237,7 +237,7 @@
 						  <div class="card-block">
 						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> {{x.usernameOne}} [{{x.insertionTime}}]</h4>
 						    <p class="card-text"> {{x.sentenceText}}</p>
-						    <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Replay</a></p>
+						    <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Reply</a></p>
 						  </div>
 						</div>
 				</div>
