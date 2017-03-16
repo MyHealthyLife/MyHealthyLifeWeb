@@ -264,7 +264,9 @@
 									<label class="control-label" for="type">Food name:</label>	
 								</div>
 				        		<div class="col-sm-9">
-						        	<input class="form-control" type="text" name="foodName" ng-model="addRecipe_foodName"><br>
+						        	<select class="form-control" name="foodName" ng-model="addRecipe_foodName">
+				        				<option value="" disabled selected>Select food</option>
+	            					</select><br>
 	                       		</div>
 				        	</div>
 
@@ -279,7 +281,9 @@
 										<label class="control-label" for="type">Food name:</label>	
 									</div>
 					        		<div class="col-sm-9">
-							        	<input class="form-control" type="text" name="foodName" ng-model="addRecipe_foodName"><br>
+							        	<select class="form-control" name="foodName" ng-model="addRecipe_foodName">
+					        				<option value="" disabled selected>Select food</option>
+		            					</select><br>
 		                       		</div>
 					        	</div>
 					        	
