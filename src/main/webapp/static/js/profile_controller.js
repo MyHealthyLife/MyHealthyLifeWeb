@@ -102,6 +102,12 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
 app.controller('sentence_receviver', function ($scope,$rootScope, $http){
 	$scope.myData;
 	
+	$scope.userToReplay;
+	
+	$scope.measuretypes;
+	
+	$scope.typeForResponse;
+	
 	
 	$scope.loadData=function(){
 		$http({
@@ -117,9 +123,30 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
         });
 	}
 	
+	$scope.loadmeasuretypes=function(){
+		$http({
+            url: centric01_basic+"/measuretypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+            $scope.measuretypes = success.data.measureType;
+            
+        }, function(error){
+        	console.log('error');
+        });
+	}
+	
 	//$interval($scope.loadData,5000)
 	setInterval($scope.loadData,5000);
 	$scope.loadData();
+	$scope.loadmeasuretypes();
+	
+	$scope.replaySentence=function(toUser){
+		console.log(toUser);
+		$scope.userToReplay=toUser;
+		$('#replayModal').modal('show');
+	};
 	
 });
 

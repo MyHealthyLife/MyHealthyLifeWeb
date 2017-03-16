@@ -142,7 +142,7 @@
         
         
 		<!-- Edit Data Modal -->
-		   <div class="container">
+		   
 		    <div class="modal fade" id="editDataModal" role="dialog" aria-hidden="true" style="display: none;">
 		       <div class="modal-dialog">
 		         <!-- Modal content-->
@@ -191,6 +191,7 @@
 		
 		       </div>
 		 
+		
 		</div>
 
 	
@@ -236,7 +237,7 @@
 						  <div class="card-block">
 						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> {{x.usernameOne}} [{{x.insertionTime}}]</h4>
 						    <p class="card-text"> {{x.sentenceText}}</p>
-						    <p align="right"><a href="#" class="btn btn-primary">Replay TODO</a></p>
+						    <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Replay TODO</a></p>
 						  </div>
 						</div>
 				</div>
@@ -246,8 +247,50 @@
 		</div>
 	</div>
 		<br>
+		
+		
+		<!-- Replay Modal -->
+		   
+		    <div class="modal fade" id="replayModal" role="dialog" aria-hidden="true" style="display: none;">
+		       <div class="modal-dialog">
+		         <!-- Modal content-->
+		         <div class="modal-content">
+		             <div class="modal-header">
+		                 <button type="button" class="close" data-dismiss="modal">×</button>
+		                 <h2 class="modal-title">Replay to {{userToReplay}}</h2>
+		               </div>
+		               <div class="modal-body">
+		                   
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="form-group">
+		                            	<form>
+		                            		<label>Sentence type:</label><br>
+		                            		<select name="type" ng-model="typeForResponse">
+		                            		</select>
+		                            	</form>
+		                            
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <br>
+		
+		               </div>
+		               <div class="modal-footer">
+		                    <center>
+		                    	<button class="btn btn-primary" ng-click="editSave()">Send</button>
+		                        <button data-dismiss="modal" name="genericButtonDismiss" type="button" class="btn btn-primary">Cancel</button>
+		                    </center>
+		               </div>
+		         </div>
+		
+		       </div>
+		 
+		
 		</div>
-	</div>
+		
+		</div>
+	<!--  </div>-->
 	</div>
 	
 		<div class="row">
