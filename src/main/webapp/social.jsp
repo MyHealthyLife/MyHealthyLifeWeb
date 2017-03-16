@@ -258,9 +258,34 @@
 					
 					
 						<div id="form" class="form-group">
-							Hai Add Another by clicking the button
+							
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Food name:</label>	
+								</div>
+				        		<div class="col-sm-9">
+						        	<input class="form-control" type="text" name="foodName" ng-model="addRecipe_foodName"><br>
+	                       		</div>
+				        	</div>
+
+
 						</div>
-						<div class='Box'>I'm new box by prepend</div>
+						
+						<div id="hiddenCloneRecipe">
+							<div id="boxToClone" class='Box'>
+								
+								<div class="row">
+									<div class="col-sm-3">
+										<label class="control-label" for="type">Food name:</label>	
+									</div>
+					        		<div class="col-sm-9">
+							        	<input class="form-control" type="text" name="foodName" ng-model="addRecipe_foodName"><br>
+		                       		</div>
+					        	</div>
+					        	
+							</div>
+						</div>
+						
 						<button id="num" class="btn btn-primary btn-block">Add a food</button>
 					 
 					</div>

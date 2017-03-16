@@ -46,9 +46,17 @@ $(document).ready(function() {
 	    });
 	  }, 3000)
 
+	    $("#hiddenCloneRecipe").hide();
+	var counterFoodsInRecipe = 2;
+
+	$("#num").click(function () {
+	  $(".Box:first").clone().appendTo("#form");
 	  
-	  $("#num").click(function () {
-	  $(".Box:first").clone().appendTo("#form"); 
+		$("#boxToClone").attr("class", String(counterFoodsInRecipe));
+
+		$("#boxToClone").attr("id", "view");
+		
+		counterFoodsInRecipe++;
 	});
 	
 });
