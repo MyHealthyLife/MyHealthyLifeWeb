@@ -237,7 +237,7 @@
 						  <div class="card-block">
 						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> {{x.usernameOne}} [{{x.insertionTime}}]</h4>
 						    <p class="card-text"> {{x.sentenceText}}</p>
-						    <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Replay TODO</a></p>
+						    <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Replay</a></p>
 						  </div>
 						</div>
 				</div>
@@ -267,7 +267,13 @@
 		                            	<form>
 		                            		<label>Sentence type:</label><br>
 		                            		<select name="type" ng-model="typeForResponse">
+		                            			<option ng-repeat="t in measuretypes" value="{{t}}">{{t}}</option>
 		                            		</select>
+		                            		<select ng-model="modeToReplay">
+		                            			<option value="gain">gain</option>
+		                            			<option value="loss">loss</option>
+		                            		</select>
+		                            		
 		                            	</form>
 		                            
 		                            </div>
@@ -278,7 +284,42 @@
 		               </div>
 		               <div class="modal-footer">
 		                    <center>
-		                    	<button class="btn btn-primary" ng-click="editSave()">Send</button>
+		                    	<button class="btn btn-primary" ng-click="sendReply()">Send</button>
+		                        <button data-dismiss="modal" name="genericButtonDismiss" type="button" class="btn btn-primary">Cancel</button>
+		                    </center>
+		               </div>
+		         </div>
+		
+		       </div>
+		 
+		
+		</div>
+		
+		<!-- Confirmation Modal -->
+		   
+		    <div class="modal fade" id="confirmModal" role="dialog" aria-hidden="true" style="display: none;">
+		       <div class="modal-dialog">
+		         <!-- Modal content-->
+		         <div class="modal-content">
+		             <div class="modal-header">
+		                 <button type="button" class="close" data-dismiss="modal">×</button>
+		                 <h2 class="modal-title">Sentence sent</h2>
+		               </div>
+		               <div class="modal-body">
+		                   
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="form-group">
+		                            	<h3>sentence sent successfully</h3>
+		                            
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <br>
+		
+		               </div>
+		               <div class="modal-footer">
+		                    <center>
 		                        <button data-dismiss="modal" name="genericButtonDismiss" type="button" class="btn btn-primary">Cancel</button>
 		                    </center>
 		               </div>
