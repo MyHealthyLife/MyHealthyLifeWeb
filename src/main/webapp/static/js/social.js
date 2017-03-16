@@ -53,8 +53,10 @@ $(document).ready(function() {
 	  $(".Box:first").clone().appendTo("#form");
 	  
 		$("#boxToClone").attr("class", String(counterFoodsInRecipe));
-
 		$("#boxToClone").attr("id", "view");
+
+		$("#foodSelector").attr("ng-model", "addRecipe_foodName" + String(counterFoodsInRecipe));
+		$("#foodSelector").attr("id", "selectorView");
 		
 		counterFoodsInRecipe++;
 	});
