@@ -253,10 +253,9 @@
 				    </div>
 				</div>
 				
-				<div class="row">
+				<div class="row" ng-controller="addRecipeController">
 					<div class="col-sm-12">
 					
-					TODO
 					
 					</div>
 				</div>

@@ -142,6 +142,85 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
 
 
 
+app.controller('addRecipeController', function ($scope,$rootScope, $http) {
+	
+	$scope.foodTypes;
+
+	// Function to load the section 'Add Recipe'
+	$rootScope.loadAddRecipe = function () {
+		
+		// Shows the loader
+        $(".showOnLoadAddRecipe").hide();
+        $(".loaderAddRecipe").show();
+
+
+    	/////////////
+    	$http({
+            url: centric02_basic+"/food/foodTypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.foodTypes = success.data.foodType;
+        	
+        }, function(error){
+        	console.log('Error testing');
+        });
+    	///////////////////////
+		
+	    // Hides the loader and shows the content
+	    $(".loaderAddRecipe").hide();
+	    $(".showOnLoadAddRecipe").show();
+       
+    };
+    
+    // Function to send a request for adding a new food
+    /*$scope.addRecipeSave=function(){
+
+		// Shows the loader
+    	$(".showOnLoadAddFood").hide();
+        $(".loaderAddFood").show();
+        
+        // Gets the data the user inserted in the form
+    	$scope.foodData.name=$scope.add_foodName;
+    	$scope.foodData.calories=$scope.add_foodCalories;
+    	$scope.foodData.foodType={};
+    	$scope.foodData.foodType.category=$scope.add_foodType;
+    	
+        // Request to post the food the user wants to insert
+    	$http({
+            url: centric02_basic+"/food",
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data: $scope.foodData
+        }).then(function(success)
+        {
+        	// Reloads all the components in the page
+        	$rootScope.loadRanking();
+        	
+            // Hides the loader and shows the content
+            $(".loaderAddFood").hide();
+            $(".showOnLoadAddFood").show();
+            
+        },function(error)
+        {
+            console.log('Error save food');
+        });
+    }*/
+    
+
+    // Calls instantly the function to load the component as soon as the controller is ready
+    $rootScope.loadAddRecipe();
+	
+});
+
+
+
+
 app.controller('addSentenceController', function ($scope,$rootScope, $http) {
 	
 	$scope.sentenceData = {}
