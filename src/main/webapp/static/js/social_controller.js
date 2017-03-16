@@ -65,7 +65,7 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
 
 app.controller('addFoodController', function ($scope,$rootScope, $http) {
 	
-	$scope.foodData = {}
+	$scope.foodTypes;
 
 	// Function to load the section 'Add Food'
 	$rootScope.loadAddFood = function () {
@@ -74,6 +74,22 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
         $(".showOnLoadAddFood").hide();
         $(".loaderAddFood").show();
 
+
+    	/////////////
+    	$http({
+            url: centric02_basic+"/food/foodTypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.foodTypes = success.data.foodType;
+        	
+        }, function(error){
+        	console.log('Error testing');
+        });
+    	///////////////////////
 		
 	    // Hides the loader and shows the content
 	    $(".loaderAddFood").hide();
@@ -93,7 +109,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
     	$scope.foodData.calories=$scope.add_foodCalories;
     	$scope.foodData.foodType={};
     	$scope.foodData.foodType.category=$scope.add_foodType;
-
+    	
         // Request to post the food the user wants to insert
     	$http({
             url: centric02_basic+"/food",
@@ -120,6 +136,85 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
 
     // Calls instantly the function to load the component as soon as the controller is ready
     $rootScope.loadAddFood();
+	
+});
+
+
+
+
+app.controller('addRecipeController', function ($scope,$rootScope, $http) {
+	
+	$scope.foodTypes;
+
+	// Function to load the section 'Add Recipe'
+	$rootScope.loadAddRecipe = function () {
+		
+		// Shows the loader
+        $(".showOnLoadAddRecipe").hide();
+        $(".loaderAddRecipe").show();
+
+
+    	/////////////
+    	$http({
+            url: centric02_basic+"/food/foodTypes",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.foodTypes = success.data.foodType;
+        	
+        }, function(error){
+        	console.log('Error testing');
+        });
+    	///////////////////////
+		
+	    // Hides the loader and shows the content
+	    $(".loaderAddRecipe").hide();
+	    $(".showOnLoadAddRecipe").show();
+       
+    };
+    
+    // Function to send a request for adding a new food
+    /*$scope.addRecipeSave=function(){
+
+		// Shows the loader
+    	$(".showOnLoadAddFood").hide();
+        $(".loaderAddFood").show();
+        
+        // Gets the data the user inserted in the form
+    	$scope.foodData.name=$scope.add_foodName;
+    	$scope.foodData.calories=$scope.add_foodCalories;
+    	$scope.foodData.foodType={};
+    	$scope.foodData.foodType.category=$scope.add_foodType;
+    	
+        // Request to post the food the user wants to insert
+    	$http({
+            url: centric02_basic+"/food",
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data: $scope.foodData
+        }).then(function(success)
+        {
+        	// Reloads all the components in the page
+        	$rootScope.loadRanking();
+        	
+            // Hides the loader and shows the content
+            $(".loaderAddFood").hide();
+            $(".showOnLoadAddFood").show();
+            
+        },function(error)
+        {
+            console.log('Error save food');
+        });
+    }*/
+    
+
+    // Calls instantly the function to load the component as soon as the controller is ready
+    $rootScope.loadAddRecipe();
 	
 });
 
@@ -213,6 +308,8 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
 	
 	$scope.sentenceData = {}
 	$scope.measureTypes
+	$scope.peopleList = {}
+	$scope.usernames = []
 
 	// Function to load the section 'Dedicate Sentence'
 	$rootScope.loadDedicateSentence = function () {
@@ -241,6 +338,29 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
         	console.log('Error measure types');
         });
 		
+        
+        /////////////
+    	$http({
+            url: centric01_basic+"/people",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.peopleList = success.data.person;
+        	
+        	for(i=0;i<$scope.peopleList.length;i++) {
+        		
+        		$scope.usernames[i] = $scope.peopleList[i].username;
+        		
+        	}
+        	console.log($scope.usernames);
+        	
+        }, function(error){
+        	console.log('Error testing');
+        });
+    	///////////////////////
        
     };
     

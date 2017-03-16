@@ -5,6 +5,8 @@
 <title>MyHealthyLife</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+  <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="stylesheet"></link>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"></link>
     <script src="static/js/jquery-3.1.1.min.js"></script>
     <script src="static/js/angular.min.js"></script>
     <script src="static/js/bootstrap.min.js"></script>
@@ -12,6 +14,9 @@
     	global_username="<%= session.getAttribute("USERNAME") %>";
     </script>
     
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="static/js/social.js"></script>
+	
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="static/css/loaders.css" />
 	<link rel="stylesheet" href="static/css/font-awesome.min.css">
@@ -187,7 +192,7 @@
 									<label class="control-label" for="type">Food type:</label>	
 								</div>
 				        		<div class="col-sm-9">
-						        	<input class="form-control" type="text" name="foodType" ng-model="add_foodType"><br>
+						        	<input class="form-control" id="foodTypeAuto" type="text" name="foodType" ng-model="add_foodType"><br>
 	                       		</div>
 				        	</div>
 				        	
@@ -218,6 +223,7 @@
 							     <br>
 					
 					
+					 
 					</div>
 				</div>
 				
@@ -247,11 +253,41 @@
 				    </div>
 				</div>
 				
-				<div class="row">
+				<div class="row" ng-controller="addRecipeController">
 					<div class="col-sm-12">
 					
-					TODO
 					
+						<div id="form" class="form-group">
+							
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Food name:</label>	
+								</div>
+				        		<div class="col-sm-9">
+						        	<input class="form-control" type="text" name="foodName" ng-model="addRecipe_foodName"><br>
+	                       		</div>
+				        	</div>
+
+
+						</div>
+						
+						<div id="hiddenCloneRecipe">
+							<div id="boxToClone" class='Box'>
+								
+								<div class="row">
+									<div class="col-sm-3">
+										<label class="control-label" for="type">Food name:</label>	
+									</div>
+					        		<div class="col-sm-9">
+							        	<input class="form-control" type="text" name="foodName" ng-model="addRecipe_foodName"><br>
+		                       		</div>
+					        	</div>
+					        	
+							</div>
+						</div>
+						
+						<button id="num" class="btn btn-primary btn-block">Add a food</button>
+					 
 					</div>
 				</div>
 				
@@ -404,7 +440,7 @@
 									<label class="control-label" for="type">Dedicate to:</label>	
 								</div>
 				        		<div class="col-sm-9">
-						        	<input class="form-control" type="text" name="dedicateToUser" ng-model="dedicate_toUser"><br>
+						        	<input class="form-control" id="dedicateToUserAuto" type="text" name="dedicateToUser" ng-model="dedicate_toUser"><br>
 	                       		</div>
 				        	</div>
 				        	
@@ -433,7 +469,5 @@
 	
 	</div>
 	
-
-
 </body>
 </html>

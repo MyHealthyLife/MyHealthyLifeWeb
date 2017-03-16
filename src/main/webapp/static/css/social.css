@@ -22,3 +22,9 @@ body{
   overflow-x:hidden;
   width:100%;
 }
+
+.ui-autocomplete { 
+	cursor:pointer; 
+    height:120px; 
+    overflow-y:scroll;
+}

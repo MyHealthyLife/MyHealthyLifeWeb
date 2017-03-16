@@ -37,7 +37,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
             var dateToFormat = $scope.user_data.birthdate;
     		var dateObj = new Date(dateToFormat);
 			var month = dateObj.getUTCMonth() + 1;
-			var day = dateObj.getUTCDate() + 1;
+			var day = dateObj.getUTCDate();
 			var year = dateObj.getUTCFullYear();
 			var seconds = dateObj.getSeconds();
 			var minutes = dateObj.getMinutes();
@@ -70,7 +70,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
     	$scope.user_data.firstname=$scope.edit_firstname;
     	$scope.user_data.lastname=$scope.edit_lastname;
     	$scope.user_data.sex=$scope.edit_sex;
-    	$scope.user_data.birthdate=$scope.edit_birthdate.getTime();
+    	$scope.user_data.birthdate=$scope.edit_birthdate.getTime() + 1000 * 60 * 60 * 24;
     	$("#editDataModal").modal('hide');
     	$(".loading_data").show();
     	
