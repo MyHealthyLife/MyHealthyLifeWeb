@@ -266,7 +266,7 @@
 				        		<div class="col-sm-9">
 						        	<select class="form-control" name="foodName" ng-model="addRecipe_foodName">
 				        				<option value="" disabled selected>Select food</option>
-				        				<option ng-repeat="singleFood in foodsList">{{singleFood.name}} [{{singleFood.calories}} - {{singleFood.foodType.category}}]</option>
+				        				<option ng-repeat="singleFood in foodsList">{{singleFood.name}} [{{singleFood.calories}}cal - {{singleFood.foodType.category}}]</option>
 	            					</select><br>
 	                       		</div>
 				        	</div>
@@ -284,7 +284,7 @@
 					        		<div class="col-sm-9">
 							        	<select class="form-control" id="foodSelector" name="foodName" ng-model="addRecipe_foodName">
 					        				<option value="" disabled selected>Select food</option>
-					        				<option ng-repeat="singleFood in foodsList">{{singleFood.name}} [{{singleFood.calories}} - {{singleFood.foodType.category}}]</option>
+					        				<option ng-repeat="singleFood in foodsList">{{singleFood.name}} [{{singleFood.calories}}cal - {{singleFood.foodType.category}}]</option>
 	            						</select><br>
 		                       		</div>
 					        	</div>
@@ -292,8 +292,17 @@
 							</div>
 						</div>
 						
-						<button id="num" class="btn btn-primary btn-block">Add a food</button>
-					 
+						<div class="row">
+							<div class="col-sm-6">
+								<button id="num" class="btn btn-success btn-block"><span class="glyphicon glyphicon-plus"></span>Add a food</button>
+						 	</div>
+							<div class="col-sm-6">
+								<button id="rmv" class="btn btn-danger btn-block"><span class="glyphicon glyphicon-remove"></span>Remove last</button>
+						 	</div>
+					 	</div>
+					 	<br><br>
+						<button id="num" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span>Add recipe</button>
+						
 					</div>
 				</div>
 				

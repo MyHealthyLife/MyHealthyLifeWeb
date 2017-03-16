@@ -1,6 +1,7 @@
 
 var availableTags = ["No option available"];
 var availableUsernames = ["No username present"];
+var counterFoodsInRecipe = 2;
 
 function autoCompleteModules(){
 	
@@ -47,7 +48,6 @@ $(document).ready(function() {
 	  }, 3000)
 
 	    $("#hiddenCloneRecipe").hide();
-	var counterFoodsInRecipe = 2;
 
 	$("#num").click(function () {
 	  $(".Box:first").clone().appendTo("#form");
@@ -59,6 +59,13 @@ $(document).ready(function() {
 		$("#foodSelector").attr("id", "selectorView");
 		
 		counterFoodsInRecipe++;
+	});
+	
+
+
+	$("#rmv").click(function () {
+		 counterFoodsInRecipe--;
+		 $('.' + String(counterFoodsInRecipe)).remove();
 	});
 	
 });
