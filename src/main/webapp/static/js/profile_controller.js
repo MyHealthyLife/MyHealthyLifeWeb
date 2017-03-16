@@ -102,6 +102,14 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
 app.controller('sentence_receviver', function ($scope,$rootScope, $http){
 	$scope.myData;
 	
+	$scope.userToReplay;
+	
+	$scope.measuretypes;
+	
+	$scope.typeForResponse;
+	
+	$scope.modeToReplay="gain";
+	
 	
 	$scope.loadData=function(){
 		$http({
@@ -117,9 +125,52 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
         });
 	}
 	
+	$scope.loadmeasuretypes=function(){
+		$http({
+            url: centric01_basic+"/measuretypes",
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            params: {
+            }
+        }).then(function(success) {
+            $scope.measuretypes = success.data.measureType;
+            console.log($scope.measuretypes);
+            
+        }, function(error){
+        	console.log('error');
+        });
+	}
+	
 	//$interval($scope.loadData,5000)
 	setInterval($scope.loadData,5000);
 	$scope.loadData();
+	$scope.loadmeasuretypes();
+	
+	$scope.replaySentence=function(toUser){
+		console.log(toUser);
+		$scope.userToReplay=toUser;
+		$('#replayModal').modal('show');
+	};
+	
+	$scope.sendReply=function(){
+		console.log($scope.userToReplay+" "+$scope.typeForResponse+" "+$scope.modeToReplay);
+		$('#replayModal').modal('hide');
+		$http({
+			url: centric02_basic+"/sentence/" + global_username + "/" + $scope.userToReplay + "/" + $scope.typeForResponse + "/" + $scope.modeToReplay,
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            data: null
+        }).then(function(success) {
+        	$('#confirmModal').modal('show');
+            
+        }, function(error){
+        	console.log('error');
+        });
+	};
 	
 });
 
