@@ -189,11 +189,16 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
     	$scope.recipeData.name="Recipe new";
     	$scope.recipeData.description="Something";
     	$scope.recipeData.ingredients=[];
-    	$scope.recipeData.ingredients[0] = {};
-    	$scope.recipeData.ingredients[1] = {};
-    	$scope.recipeData.ingredients[0].idFood=$scope.addRecipe_foodName;
-    	$scope.recipeData.ingredients[1].idFood="303";
     	
+    	var arrayOfIngredients = document.getElementsByClassName('ingredient');
+    	
+    	for(i=0;i<arrayOfIngredients.length;i++) {
+
+        	$scope.recipeData.ingredients[i] = {};
+        	$scope.recipeData.ingredients[i].idFood = arrayOfIngredients[i].options[arrayOfIngredients[i].selectedIndex].value;
+        	
+    	}
+
         // Request to post the recipe the user wants to insert
     	$http({
             url: centric02_basic+"/recipe",
