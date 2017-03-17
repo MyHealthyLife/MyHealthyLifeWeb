@@ -10,14 +10,21 @@ body{
 }
 
 .add-sentence{
-  height:18em;
+  max-height:30em;
   overflow-y:auto;
   overflow-x:hidden;
   width:100%;
 }
 
 .add-food{
-  height:15em;
+  max-height:30em;
+  overflow-y:auto;
+  overflow-x:hidden;
+  width:100%;
+}
+
+.add-recipe{
+  max-height:50em;
   overflow-y:auto;
   overflow-x:hidden;
   width:100%;

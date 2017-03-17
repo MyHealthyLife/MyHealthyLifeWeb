@@ -243,7 +243,7 @@
 
     	<div class="panel-body showOnLoadAddRecipe">
         	<div class="tab-content">
-            	<div class="tab-pane add-food active" id="test">
+            	<div class="tab-pane add-recipe active" id="test">
 				
 				<div class="row">
 					<div class="col-sm-6">
