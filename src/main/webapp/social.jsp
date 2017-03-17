@@ -264,9 +264,9 @@
 									<label class="control-label" for="type">Food name:</label>	
 								</div>
 				        		<div class="col-sm-9">
-						        	<select class="form-control" name="foodName" ng-model="addRecipe_foodName">
+						        	<select class="form-control ingredient" name="foodName" ng-model="addRecipe_foodName">
 				        				<option value="" disabled selected>Select food</option>
-				        				<option ng-repeat="singleFood in foodsList">{{singleFood.name}} [{{singleFood.calories}}cal - {{singleFood.foodType.category}}]</option>
+				        				<option ng-repeat="singleFood in foodsList" value="{{singleFood.idFood}}">{{singleFood.name}} [{{singleFood.calories}}cal - {{singleFood.foodType.category}}]</option>
 	            					</select><br>
 	                       		</div>
 				        	</div>
@@ -284,7 +284,7 @@
 					        		<div class="col-sm-9">
 							        	<select class="form-control" id="foodSelector" name="foodName" ng-model="addRecipe_foodName">
 					        				<option value="" disabled selected>Select food</option>
-					        				<option ng-repeat="singleFood in foodsList">{{singleFood.name}} [{{singleFood.calories}}cal - {{singleFood.foodType.category}}]</option>
+					        				<option ng-repeat="singleFood in foodsList" value="{{singleFood.idFood}}">{{singleFood.name}} [{{singleFood.calories}}cal - {{singleFood.foodType.category}}]</option>
 	            						</select><br>
 		                       		</div>
 					        	</div>
@@ -301,7 +301,7 @@
 						 	</div>
 					 	</div>
 					 	<br><br>
-						<button id="num" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span>Add recipe</button>
+						<button id="num" ng-click="addRecipeSave()" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span>Add recipe</button>
 						
 					</div>
 				</div>
@@ -353,14 +353,14 @@
 		            					<option ng-repeat="singleMeasure in measureTypes">{{singleMeasure}}</option>
 		                       		</select><br>
 						        	<!-- <input class="form-control" type="text" name="sentenceType" ng-model="add_sentenceType">-->
-						        	<br>
+						        	
 	                       		</div>
 	                       		<div class="col-sm-4">
 						        	<select class="form-control" name="motive" ng-model="add_sentenceTypeMotive">
 						        		<option value="" disabled selected>Select trend</option>
 		            					<option>gain</option>
 		            					<option>loss</option>
-		                       		</select><br>
+		                       		</select>
 	                       		</div>
 				        	</div>
 				        	

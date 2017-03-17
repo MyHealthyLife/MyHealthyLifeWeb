@@ -145,6 +145,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
 app.controller('addRecipeController', function ($scope,$rootScope, $http) {
 	
 	$scope.foodsList;
+	$scope.recipeData = {};
 
 	// Function to load the section 'Add Recipe'
 	$rootScope.loadAddRecipe = function () {
@@ -177,41 +178,44 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
        
     };
     
-    // Function to send a request for adding a new food
-    /*$scope.addRecipeSave=function(){
+    // Function to send a request for adding a new recipe
+    $scope.addRecipeSave=function(){
 
 		// Shows the loader
-    	$(".showOnLoadAddFood").hide();
-        $(".loaderAddFood").show();
+    	$(".showOnLoadAddRecipe").hide();
+        $(".loaderAddRecipe").show();
         
         // Gets the data the user inserted in the form
-    	$scope.foodData.name=$scope.add_foodName;
-    	$scope.foodData.calories=$scope.add_foodCalories;
-    	$scope.foodData.foodType={};
-    	$scope.foodData.foodType.category=$scope.add_foodType;
+    	$scope.recipeData.name="Recipe new";
+    	$scope.recipeData.description="Something";
+    	$scope.recipeData.ingredients=[];
+    	$scope.recipeData.ingredients[0] = {};
+    	$scope.recipeData.ingredients[1] = {};
+    	$scope.recipeData.ingredients[0].idFood=$scope.addRecipe_foodName;
+    	$scope.recipeData.ingredients[1].idFood="303";
     	
-        // Request to post the food the user wants to insert
+        // Request to post the recipe the user wants to insert
     	$http({
-            url: centric02_basic+"/food",
+            url: centric02_basic+"/recipe",
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
-            data: $scope.foodData
+            data: $scope.recipeData
         }).then(function(success)
         {
         	// Reloads all the components in the page
         	$rootScope.loadRanking();
         	
             // Hides the loader and shows the content
-            $(".loaderAddFood").hide();
-            $(".showOnLoadAddFood").show();
+            $(".loaderAddRecipe").hide();
+            $(".showOnLoadAddRecipe").show();
             
         },function(error)
         {
             console.log('Error save food');
         });
-    }*/
+    }
     
 
     // Calls instantly the function to load the component as soon as the controller is ready

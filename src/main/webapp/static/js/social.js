@@ -56,7 +56,7 @@ $(document).ready(function() {
 		$("#boxToClone").attr("id", "view");
 
 		$("#foodSelector").attr("ng-model", "addRecipe_foodName" + String(counterFoodsInRecipe));
-		$("#foodSelector").attr("id", "selectorView");
+		$("#foodSelector").attr("class", "form-control ingredient");
 		
 		counterFoodsInRecipe++;
 	});
