@@ -259,6 +259,31 @@
 					
 						<div id="form" class="form-group">
 							
+				        	<h3>General info</h3>
+							<hr>
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Recipe name:</label>	
+								</div>
+				        		<div class="col-sm-9">
+						        	<input class="form-control" type="text" name="recipeName" ng-model="addRecipe_recipeName"><br>
+	                       		</div>
+				        	</div>
+				        	
+				        	<div class="row">
+								<div class="col-sm-3">
+									<label class="control-label" for="type">Recipe description:</label>	
+								</div>
+				        		<div class="col-sm-9">
+						        	<!-- <input class="form-control" type="text" name="recipeDescription" ng-model="addRecipe_recipeDescription">-->
+						        	
+									<textarea class="form-control" rows="5" id="textAreaRecipe" name="addRecipe_recipeDescription"></textarea>
+						        	<br>
+	                       		</div>
+				        	</div>
+				        	
+				        	<h3>Ingredients</h3>
+				        	<hr>
 							<div class="row">
 								<div class="col-sm-3">
 									<label class="control-label" for="type">Food name:</label>	
