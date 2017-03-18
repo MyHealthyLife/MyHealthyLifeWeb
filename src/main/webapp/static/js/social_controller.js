@@ -73,7 +73,10 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
 		// Shows the loader
         $(".showOnLoadAddFood").hide();
         $(".loaderAddFood").show();
-
+        
+    	// Reset the fields
+    	$scope.add_foodName = "";
+    	$scope.add_foodCalories = "";
 
     	/////////////
     	$http({
@@ -154,6 +157,9 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
         $(".showOnLoadAddRecipe").hide();
         $(".loaderAddRecipe").show();
 
+    	// Reset the fields
+    	$scope.addRecipe_recipeName = "";
+    	$scope.addRecipe_recipeDescription = "";
 
     	/////////////
     	$http({
@@ -162,7 +168,7 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
             params: {
             }
         }).then(function(success) {
-
+        	
         	// Memorizes the data in the scope
         	$scope.foodsList = success.data.food;
         	console.log($scope.foodsList);
@@ -188,7 +194,6 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
         // Gets the data the user inserted in the form
     	$scope.recipeData.name=$scope.addRecipe_recipeName;
     	$scope.recipeData.description=$scope.addRecipe_recipeDescription;
-    	$scope.recipeData.ingredients=[];
     	
     	var arrayOfIngredients = document.getElementsByClassName('ingredient');
     	
@@ -211,6 +216,7 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
         {
         	// Reloads all the components in the page
         	$rootScope.loadRanking();
+        	$rootScope.loadAddRecipe();
         	
             // Hides the loader and shows the content
             $(".loaderAddRecipe").hide();
