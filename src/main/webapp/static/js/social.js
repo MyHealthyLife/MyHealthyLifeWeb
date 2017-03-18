@@ -30,8 +30,8 @@ function autoCompleteModules(){
 		
 	}
 	
-	console.log(availableUsernames);
-	console.log(availableTags);
+	//console.log(availableUsernames);
+	//console.log(availableTags);
 	
 }
 
@@ -57,6 +57,7 @@ $(document).ready(function() {
 
 		$("#foodSelector").attr("ng-model", "addRecipe_foodName" + String(counterFoodsInRecipe));
 		$("#foodSelector").attr("class", "form-control ingredient");
+		$("#foodSelector").attr("id", "foodSelectorView");
 		
 		counterFoodsInRecipe++;
 	});
