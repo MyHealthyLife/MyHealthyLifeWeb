@@ -66,6 +66,7 @@ app.controller('rankingController', function ($scope,$rootScope, $http) {
 app.controller('addFoodController', function ($scope,$rootScope, $http) {
 	
 	$scope.foodTypes;
+	$scope.foodData = {};
 
 	// Function to load the section 'Add Food'
 	$rootScope.loadAddFood = function () {
@@ -76,6 +77,7 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
         
     	// Reset the fields
     	$scope.add_foodName = "";
+    	$scope.add_foodType = "";
     	$scope.add_foodCalories = "";
 
     	/////////////
@@ -125,6 +127,8 @@ app.controller('addFoodController', function ($scope,$rootScope, $http) {
         {
         	// Reloads all the components in the page
         	$rootScope.loadRanking();
+        	$rootScope.loadAddFood();
+        	$rootScope.loadAddRecipe();
         	
             // Hides the loader and shows the content
             $(".loaderAddFood").hide();
@@ -247,6 +251,11 @@ app.controller('addSentenceController', function ($scope,$rootScope, $http) {
 		// Shows the loader
         $(".showOnLoadAddSentence").hide();
         $(".loaderAddSentence").show();
+        
+        // Reset all the fields
+    	$scope.add_sentenceText = "";
+    	$scope.add_imageURL = "";
+    	$scope.sentenceData.sentenceType = {};
 
         // Request to get the measure types available in the system
         $http({
@@ -333,7 +342,12 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
 		// Shows the loader
         $(".showOnLoadDedicateSentence").hide();
         $(".loaderDedicateSentence").show();
-        
+
+        // Reset all the fields
+    	$scope.dedicate_toUser = "";
+    	$scope.dedicate_sentenceType = "";
+    	$scope.dedicate_sentenceTypeMotive = "";
+    	
         // Request to get the measure types available in the system
         $http({
             url: centric01_basic+"/measuretypes",
@@ -403,8 +417,8 @@ app.controller('dedicateSentenceController', function ($scope,$rootScope, $http)
         }).then(function(success)
         {
         	// Reloads all the components in the page
-        	$rootScope.loadRanking();
         	$rootScope.loadAddSentence();
+        	$rootScope.loadDedicateSentence();
         	
             // Hides the loader and shows the content
             $(".loaderDedicateSentence").hide();
