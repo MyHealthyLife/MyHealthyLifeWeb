@@ -200,5 +200,46 @@ app.controller('foods_for_me', function ($scope,$rootScope, $http) {
 	$scope.loadData();
 	
 });
+
+
+
+
+app.controller('suggestedRecipesController', function ($scope,$rootScope, $http) {
+	
+	// Function to load the section 'Suggested Recipes'
+	$rootScope.loadSuggestedRecipes = function () {
+		
+		// Shows the loader
+        $(".showOnLoadSuggestedRecipes").hide();
+        $(".loaderAddSuggestedRecipes").show();
+        
+    	// Gets all the recipes from the server
+    	$http({
+            url: centric02_basic+"/recipe",
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.suggestedRecipes = success.data;
+        	console.log($scope.suggestedRecipes);
+        	
+        }, function(error){
+        	console.log('Error suggested recipes');
+        });
+    	
+		
+	    // Hides the loader and shows the content
+	    $(".loaderSuggestedRecipes").hide();
+	    $(".showOnLoadSuggestedRecipes").show();
+       
+    };
+    
+
+    // Calls instantly the function to load the component as soon as the controller is ready
+    $rootScope.loadSuggestedRecipes();
+	
+});
 	
 

@@ -356,7 +356,7 @@
 					</div>
 		
 		
-					<div class="row">
+					<div class="row" ng-controller="suggestedRecipesController">
 					
 					</div>
 				</div>
