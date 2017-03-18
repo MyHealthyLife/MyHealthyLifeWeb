@@ -334,6 +334,37 @@
 	<!--  </div>-->
 	</div>
 	
+	
+	
+	<div class="panel panel-primary">
+    	<div class="panel-heading">
+         	<h3 class="panel-title">Suggested recipes</h3>
+     	</div>
+     
+	<center><div class="loader loaderSuggestedRecipes"></div></center>
+
+    	<div class="panel-body showOnLoadSuggestedRecipes">
+        	<div class="tab-content">
+            	<div class="tab-pane goal-progress active" id="test">
+				
+					<div class="row">
+						<div class="col-sm-12">
+						
+						    <div class="form-group">
+					    	</div>
+					    </div>
+					</div>
+		
+		
+					<div class="row">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
 		<div class="row">
 			<div class="col-sm-12" ng-controller='foods_for_me'>
 				
