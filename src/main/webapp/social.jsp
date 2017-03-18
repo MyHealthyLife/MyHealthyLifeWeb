@@ -277,7 +277,7 @@
 				        		<div class="col-sm-9">
 						        	<!-- <input class="form-control" type="text" name="recipeDescription" ng-model="addRecipe_recipeDescription">-->
 						        	
-									<textarea class="form-control" rows="5" id="textAreaRecipe" name="addRecipe_recipeDescription"></textarea>
+									<textarea class="form-control" rows="5" id="textAreaRecipe" ng-model="addRecipe_recipeDescription"></textarea>
 						        	<br>
 	                       		</div>
 				        	</div>

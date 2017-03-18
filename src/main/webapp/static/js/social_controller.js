@@ -186,8 +186,8 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
         $(".loaderAddRecipe").show();
         
         // Gets the data the user inserted in the form
-    	$scope.recipeData.name="Recipe new";
-    	$scope.recipeData.description="Something";
+    	$scope.recipeData.name=$scope.addRecipe_recipeName;
+    	$scope.recipeData.description=$scope.addRecipe_recipeDescription;
     	$scope.recipeData.ingredients=[];
     	
     	var arrayOfIngredients = document.getElementsByClassName('ingredient');
