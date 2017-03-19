@@ -217,6 +217,9 @@ app.controller('suggestedRecipesController', function ($scope,$rootScope, $http)
     	$http({
             url: centric02_basic+"/recipe",
             method: 'GET',
+            headers: {
+            	'Accept': 'application/json'
+        	},
             params: {
             }
         }).then(function(success) {
