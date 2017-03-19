@@ -345,7 +345,7 @@
 
     	<div class="panel-body showOnLoadSuggestedRecipes">
         	<div class="tab-content">
-            	<div class="tab-pane goal-progress active" id="test">
+            	<div class="tab-pane suggested-recipes active" id="test">
 				
 					<div class="row">
 						<div class="col-sm-12">
@@ -357,7 +357,30 @@
 		
 		
 					<div class="row" ng-controller="suggestedRecipesController">
-					
+							
+						<div class="panel-group" id="accordion">
+						  <div class="panel panel-default" ng-repeat="singleRecipe in suggestedRecipes">
+						    <div class="panel-heading">
+						      <h4 class="panel-title">
+						        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{singleRecipe.recipeId}}">
+						        Recipe n.{{singleRecipe.recipeId}}: {{singleRecipe.name}}</a>
+						      </h4>
+						    </div>
+						    <div id="collapse{{singleRecipe.recipeId}}" class="panel-collapse collapse">
+						      <div class="panel-body">
+						      		
+						      		<h3>Ingredients</h3>
+						    		<ul>
+						    			<li ng-repeat="singleIngredient in singleRecipe.ingredients">{{singleIngredient.name}} [{{singleIngredient.calories}} cal - {{singleIngredient.foodType.category}}]</li>
+						    		</ul>
+						    		<h3>Description</h3>
+						      		{{singleRecipe.description}}
+						      		
+								</div>
+						    </div>
+						  </div>
+						</div>
+						
 					</div>
 				</div>
 			</div>

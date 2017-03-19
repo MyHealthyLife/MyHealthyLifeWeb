@@ -225,7 +225,7 @@ app.controller('suggestedRecipesController', function ($scope,$rootScope, $http)
         }).then(function(success) {
 
         	// Memorizes the data in the scope
-        	$scope.suggestedRecipes = success.data;
+        	$scope.suggestedRecipes = success.data.recipes;
         	console.log($scope.suggestedRecipes);
         	
         }, function(error){
