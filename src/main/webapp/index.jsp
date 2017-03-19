@@ -363,7 +363,7 @@
 						    <div class="panel-heading">
 						      <h4 class="panel-title">
 						        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{singleRecipe.recipeId}}">
-						        Recipe n.{{singleRecipe.recipeId}}: {{singleRecipe.name}}</a>
+						        Recipe n.{{singleRecipe.recipeId}}: {{singleRecipe.name}} [{{singleRecipe.calories}} calories]</a>
 						      </h4>
 						    </div>
 						    <div id="collapse{{singleRecipe.recipeId}}" class="panel-collapse collapse">
@@ -373,6 +373,7 @@
 						    		<ul>
 						    			<li ng-repeat="singleIngredient in singleRecipe.ingredients">{{singleIngredient.name}} [{{singleIngredient.calories}} cal - {{singleIngredient.foodType.category}}]</li>
 						    		</ul>
+						    		Total calories: {{singleRecipe.calories}} cal
 						    		<h3>Description</h3>
 						      		{{singleRecipe.description}}
 						      		
