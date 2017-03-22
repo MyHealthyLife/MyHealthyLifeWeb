@@ -201,8 +201,10 @@ app.controller('addRecipeController', function ($scope,$rootScope, $http) {
     	
     	var arrayOfIngredients = document.getElementsByClassName('ingredient');
     	
+    	$scope.recipeData.ingredients = [];
+    	
     	for(i=0;i<arrayOfIngredients.length;i++) {
-
+    		
         	$scope.recipeData.ingredients[i] = {};
         	$scope.recipeData.ingredients[i].idFood = arrayOfIngredients[i].options[arrayOfIngredients[i].selectedIndex].value;
         	
