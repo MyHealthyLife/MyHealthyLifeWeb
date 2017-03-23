@@ -216,7 +216,7 @@ app.controller('suggestedRecipesController', function ($scope,$rootScope, $http)
         
     	// Gets all the recipes from the server
     	$http({
-            url: centric02_basic+"/recipe",
+            url: centric02_basic+"/recipe/suggested/" + global_username,
             method: 'GET',
             headers: {
             	'Accept': 'application/json'
