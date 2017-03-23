@@ -239,7 +239,7 @@
 						    <p class="card-text"> {{x.sentenceText}}</p>
 						    
 						    <div class="collapse" id="image-div-{{x.idDedicatedSentence}}">
-						    	<img alt="no image here :("><img>
+						    	<img src="{{x.url}}" alt="no image here :(" style="max-width: 50%; max-height: 50%"><img>
 						    </div>
 						    <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Reply</a></p>
 						  </div>

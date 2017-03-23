@@ -120,10 +120,26 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
         }).then(function(success) {
             $scope.myData = success.data;
             $('.loaderSentences').hide();
+            for(i=0;i<$scope.myData.length;i++){
+            	$scope.loadSentenceDetails($scope.myData[i]);
+            }
         }, function(error){
         	console.log('error');
         });
 	}
+	
+	$scope.loadSentenceDetails=function(sentence){
+		$http({
+            url: centric02_basic+"/sentence/"+global_username+"/"+sentence.idSentence,
+            method: 'GET',
+            params: {
+            }
+        }).then(function(success) {
+            sentence.url=success.data.url;
+        }, function(error){
+        	console.log('error');
+        });
+	};
 	
 	$scope.loadmeasuretypes=function(){
 		$http({
@@ -144,7 +160,7 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
 	}
 	
 	//$interval($scope.loadData,5000)
-	setInterval($scope.loadData,5000);
+	setInterval($scope.loadData,1000*60);
 	$scope.loadData();
 	$scope.loadmeasuretypes();
 	
