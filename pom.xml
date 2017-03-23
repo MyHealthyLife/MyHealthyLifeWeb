@@ -99,11 +99,11 @@
 	    <version>2.26-b02</version>
 	</dependency>
 		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-jaxb -->
-	<dependency>
+	<!-- <dependency>
 	    <groupId>org.glassfish.jersey.media</groupId>
 	    <artifactId>jersey-media-jaxb</artifactId>
 	    <version>2.22.1</version>
-	</dependency>
+	</dependency>-->
 	
     
   </dependencies>
