@@ -169,6 +169,7 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
             
         }, function(error){
         	console.log('error');
+        	$('#errorModal').modal('show');
         });
 	};
 	

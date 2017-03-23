@@ -249,7 +249,7 @@
 		<br>
 		
 		
-		<!-- Replay Modal -->
+		<!-- Reply Modal -->
 		   
 		    <div class="modal fade" id="replayModal" role="dialog" aria-hidden="true" style="display: none;">
 		       <div class="modal-dialog">
@@ -257,7 +257,7 @@
 		         <div class="modal-content">
 		             <div class="modal-header">
 		                 <button type="button" class="close" data-dismiss="modal">×</button>
-		                 <h2 class="modal-title">Replay to {{userToReplay}}</h2>
+		                 <h2 class="modal-title">Reply to {{userToReplay}}</h2>
 		               </div>
 		               <div class="modal-body">
 		                   
@@ -311,6 +311,41 @@
 		                        <div class="col-md-12">
 		                            <div class="form-group">
 		                            	<h3>sentence sent successfully</h3>
+		                            
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <br>
+		
+		               </div>
+		               <div class="modal-footer">
+		                    <center>
+		                        <button data-dismiss="modal" name="genericButtonDismiss" type="button" class="btn btn-primary">Cancel</button>
+		                    </center>
+		               </div>
+		         </div>
+		
+		       </div>
+		 
+		
+		</div>
+		
+		<!-- Error Modal -->
+		   
+		    <div class="modal fade " id="errorModal" role="dialog" aria-hidden="true" style="display: none;">
+		       <div class="modal-dialog">
+		         <!-- Modal content-->
+		         <div class="modal-content">
+		             <div class="modal-header">
+		                 <button type="button" class="close" data-dismiss="modal">×</button>
+		                 <h2 class="modal-title">Sentence NOT sent</h2>
+		               </div>
+		               <div class="modal-body">
+		                   
+		                    <div class="row">
+		                        <div class="col-md-12">
+		                            <div class="form-group">
+		                            	<h3>An error occours</h3>
 		                            
 		                            </div>
 		                        </div>
