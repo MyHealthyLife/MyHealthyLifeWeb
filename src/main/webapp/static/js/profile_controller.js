@@ -184,7 +184,7 @@ app.controller('foods_for_me', function ($scope,$rootScope, $http) {
 		$('.foods_card').hide();
 		
 		$http({
-            url: centric01_basic+"/recipe/"+global_username,
+            url: centric01_basic+"/foods/"+global_username,
             method: 'GET',
             params: {
             }
