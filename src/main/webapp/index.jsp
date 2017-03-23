@@ -235,8 +235,12 @@
 					  <div class="card" ng-repeat="x in myData">
 						  <!-- <img class="card-img-top" src="http://stock.wikimini.org/w/images/9/95/Gnome-stock_person-avatar-profile.png" alt="Card image cap">-->
 						  <div class="card-block">
-						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> {{x.usernameOne}} [{{x.insertionTime}}]</h4>
+						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> <a data-toggle="collapse" href="#image-div-{{x.idDedicatedSentence}}">{{x.usernameOne}} [{{x.insertionTime}}]</a></h4>
 						    <p class="card-text"> {{x.sentenceText}}</p>
+						    
+						    <div class="collapse" id="image-div-{{x.idDedicatedSentence}}">
+						    	<img alt="no image here :("><img>
+						    </div>
 						    <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Reply</a></p>
 						  </div>
 						</div>
