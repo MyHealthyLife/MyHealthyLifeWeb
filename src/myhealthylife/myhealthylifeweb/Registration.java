@@ -1,6 +1,10 @@
 package myhealthylife.myhealthylifeweb;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.text.ParseException;
 
 import javax.servlet.RequestDispatcher;
@@ -40,16 +44,28 @@ public class Registration extends HttpServlet {
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String sex = request.getParameter("sex");
+        String birthdate = request.getParameter("birthdate");
         
         // Check of some parameters
         if(username!=null && !username.equals("") && password!=null && !password.equals("") && password.equals(passConfirm)) {
             
+        	// Date utility formatter
+        	DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ITALY);
+        	
+        	// Sets the attributes of the person
         	Person p = new Person();
     		p.setUsername(username);
     		p.setPassword(password);
     		p.setFirstname(firstname);
     		p.setLastname(lastname);
     		p.setSex(sex);
+    		try {
+    			Date dateTemp = format.parse(birthdate);
+    			dateTemp.setTime(dateTemp.getTime() + 60 * 60 * 24 * 1000);
+				p.setBirthdate(dateTemp);
+			} catch (ParseException e) {
+				p.setBirthdate(new Date());
+			}
     		/*try {
     			p.setBirthdate(format.parse(birthdate));
     		} catch (ParseException e) {
