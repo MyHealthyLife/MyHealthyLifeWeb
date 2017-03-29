@@ -250,7 +250,7 @@ app.controller('suggestedRecipesController', function ($scope,$rootScope, $http)
 		
 		// Shows the loader
         $(".showOnLoadSuggestedRecipes").hide();
-        $(".loaderAddSuggestedRecipes").show();
+        $(".loaderSuggestedRecipes").show();
         
     	// Gets all the recipes from the server
     	$http({
