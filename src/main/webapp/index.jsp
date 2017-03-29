@@ -376,7 +376,7 @@
 	
 	
 	
-	<div class="panel panel-primary">
+	<div class="panel panel-primary" ng-controller="suggestedRecipesController">
     	<div class="panel-heading">
          	<h3 class="panel-title">Suggested recipes</h3>
      	</div>
@@ -396,7 +396,7 @@
 					</div>
 		
 		
-					<div class="row" ng-controller="suggestedRecipesController">
+					<div class="row">
 							
 						<div class="panel-group" id="accordion">
 						  <div class="panel panel-default" ng-repeat="singleRecipe in suggestedRecipes">
