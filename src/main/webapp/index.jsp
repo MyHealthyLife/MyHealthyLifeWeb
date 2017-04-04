@@ -204,10 +204,47 @@
 		
 		</div>
 
+
+		
+		<div class="col-sm-3">
+
+			<div class="panel panel-primary">
+	    	<div class="panel-heading">
+	         	<h3 class="panel-title">Today's weather</h3>
+	     	</div>
+	     
+			<center><div class="loader loaderWeather"></div></center>
+	
+	    	<div class="panel-body showOnLoadSuggestedRecipes">
+	        	<div class="tab-content">
+	            	<div class="tab-pane suggested-recipes active" id="test">
+					
+						<div class="row">
+							<div class="col-sm-12">
+							
+							    <div class="form-group">
+						    	</div>
+						    </div>
+						</div>
+			
+			
+						<div class="row">
+								
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
 
 
-		<div class="col-sm-8" ng-controller='sentence_receviver'>
+
+	
+
+
+		<div class="col-sm-5" ng-controller='sentence_receviver'>
 			
 			<div class="panel panel-primary">
     	<div class="panel-heading">
