@@ -126,10 +126,14 @@
 		                    </div>
 		                    <div class="desc">Firstname: {{user_data.firstname}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
 		                    <div class="desc">Lastname: {{user_data.lastname}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
-		                    <div class="desc">Sex: {{user_data.sex}} </div>
+		                    <div class="desc">Sex: {{user_data.sex}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i> </div>
 		                    <div class="desc">Birthdate: {{user_data.birthdate}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+		                    <div class="desc">City: {{user_data.city}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+		                    <div class="desc">Country: {{user_data.country}} <i class="loading_data fa fa-spinner fa-spin" style="font-size:24px"></i></div>
+		                    
 		                    <div class="desc checkbox"><input type="checkbox" ng-model="user_data.usernameVisible" disabled="disabled"/> public telegram username</div>
 		                    <div class="desc"><br><button class="btn btn-primary" ng-click="editData()"><span class="	glyphicon glyphicon-pencil"></span>Edit data</button></div>
+		                	
 		                </div>
 		                <div class="bottom">
 		       
@@ -170,7 +174,12 @@
 			                            			<option value="F">F</option>
 			                            		</select><br>
 			                            		<label>Birthdate:</label>
-			                            		<input class="form-control" type="date" name="birthdate" ng-model="edit_birthdate"><br><br>
+			                            		<input class="form-control" type="date" name="birthdate" ng-model="edit_birthdate"><br>
+			                            		<label>City:</label>
+			                            		<input class="form-control" type="text" name="city" ng-model="edit_city" /><br>
+			                            		<label>Country (IT - DE - GB - ...):</label>
+			                            		<input class="form-control" type="text" name="country" ng-model="edit_country" maxlength="2"/>
+			                            		<br><br>
 			                            		<div class="checkbox"><input type="checkbox" ng-model="edit_username_visibility"/>Telegram username visible </div>
 			                            		
 			                            	</form>
