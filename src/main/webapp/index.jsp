@@ -206,7 +206,18 @@
 
 
 		
-		<div class="col-sm-3" ng-controller="weatherController">
+		
+	
+
+
+
+	
+
+
+		<div class="col-sm-8">
+			
+			
+			<div ng-controller="weatherController">
 
 			<div class="panel panel-primary">
 	    	<div class="panel-heading">
@@ -229,22 +240,25 @@
 			
 			
 						<div class="row">
+							<div class="col-sm-3">
 								
+								<img src="{{weatherData.url}}" height="100px"/>
 							
+							</div>
+							<div class="col-sm-9">
+								<font size="5">{{weatherData.textWeather}}</font>
+								<br>
+								<font size="3">{{weatherData.textSentence}}</font>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-
-
-
-	
-
-
-		<div class="col-sm-5" ng-controller='sentence_receviver'>
+			
+			
+			<div ng-controller='sentence_receviver'>
 			
 			<div class="panel panel-primary">
     	<div class="panel-heading">
@@ -296,8 +310,17 @@
 			</div></div>
 			</div>
 		</div>
-	</div>
+	</div></div>
 		<br>
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		<!-- Reply Modal -->

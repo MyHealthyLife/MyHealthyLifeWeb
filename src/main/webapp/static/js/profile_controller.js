@@ -305,7 +305,7 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         
     	// Gets the weather from the server
     	$http({
-            url: centric01_basic+"/sentence/weather/" + global_username,
+            url: centric01_basic + "/sentence/weather/" + global_username,
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -317,6 +317,20 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
 
         	// Memorizes the data in the scope
         	$scope.weatherData = success.data;
+        	var wCode = $scope.weatherData.weatherCode;
+        	if(wCode>=700 && wCode<=802)
+        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/512/partly-cloudy-day-icon.png";
+        	else if(wCode>=200 && wCode<=232)
+        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/thunder-icon.png";
+        	else if(wCode>=500 && wCode<=531)
+        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/rain-icon.png";
+        	else if(wCode>=600 && wCode<=622)
+        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/snow-icon.png";
+        	else if(wCode>=900 && wCode<=962)
+        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/tornado-icon.png";
+        	else
+        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/wind-vane-icon.png";
+        	
         	console.log($scope.weatherData);
         	
         }, function(error){
