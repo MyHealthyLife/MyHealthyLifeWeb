@@ -290,5 +290,50 @@ app.controller('suggestedRecipesController', function ($scope,$rootScope, $http)
     $rootScope.loadSuggestedRecipes();
 	
 });
+
+
+
+
+app.controller('weatherController', function ($scope,$rootScope, $http) {
+	
+	// Function to load the section 'Weather'
+	$rootScope.loadWeather = function () {
+		
+		// Shows the loader
+        $(".showOnLoadWeather").hide();
+        $(".loaderWeather").show();
+        
+    	// Gets the weather from the server
+    	$http({
+            url: centric01_basic+"/sentence/weather/" + global_username,
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            params: {
+            }
+        }).then(function(success) {
+
+        	// Memorizes the data in the scope
+        	$scope.weatherData = success.data;
+        	console.log($scope.weatherData);
+        	
+        }, function(error){
+        	console.log('Error weather');
+        });
+    	
+		
+	    // Hides the loader and shows the content
+	    $(".loaderWeather").hide();
+	    $(".showOnLoadWeather").show();
+       
+    };
+    
+
+    // Calls instantly the function to load the component as soon as the controller is ready
+    $rootScope.loadWeather();
+	
+});
 	
 

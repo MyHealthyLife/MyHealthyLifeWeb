@@ -206,7 +206,7 @@
 
 
 		
-		<div class="col-sm-3">
+		<div class="col-sm-3" ng-controller="weatherController">
 
 			<div class="panel panel-primary">
 	    	<div class="panel-heading">
@@ -215,7 +215,7 @@
 	     
 			<center><div class="loader loaderWeather"></div></center>
 	
-	    	<div class="panel-body showOnLoadSuggestedRecipes">
+	    	<div class="panel-body showOnLoadWeather">
 	        	<div class="tab-content">
 	            	<div class="tab-pane suggested-recipes active" id="test">
 					
