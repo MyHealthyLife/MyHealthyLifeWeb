@@ -246,9 +246,9 @@
 							
 							</div>
 							<div class="col-sm-9">
-								<font size="5">{{weatherData.textWeather}}</font>
+								<font size="6">{{weatherData.textWeather}}</font>
 								<br>
-								<font size="3">{{weatherData.textSentence}}</font>
+								<font size="4">{{weatherData.textSentence}}</font>
 							</div>
 						</div>
 					</div>
@@ -270,7 +270,7 @@
 
     	<div class="panel-body showOnLoadSentences">
         	<div class="tab-content">
-            	<div class="tab-pane ranking active" id="test">
+            	<div class="tab-pane dedicated-sentences active" id="test">
 				
 				<div class="row">
 					<div class="col-sm-6">
