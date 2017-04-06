@@ -283,6 +283,14 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
         }).then(function(success) {
 
         	// Memorizes the data in the scope
+        	
+        	if(success.data.measures==null){
+        		 // Hides the loader and shows the error
+                $(".loaderHistory").hide();
+                $(".showErrorHistory").show();
+                return;
+        	}
+        	
         	$scope.measureHistory = success.data.measures;
         	var j = $scope.measureHistory.length-1;
         	
