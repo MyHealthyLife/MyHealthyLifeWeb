@@ -98,9 +98,6 @@
 	    </div>
 	</div><br> -->
 	<div class="row">
-		<div class="col-sm-12">
-			<h2>My Profile</h2>
-		</div>
 	</div>
 	<div class="row" ng-controller="user_data">
 		<div class="col-sm-4">
