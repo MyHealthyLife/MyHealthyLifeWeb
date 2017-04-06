@@ -225,6 +225,7 @@
 	     	</div>
 	     
 			<center><div class="loader loaderWeather"></div></center>
+			<center><div class="no_weather" hidden="hidden"><h4>Set your city information in order to get the weather</h4></div></center>
 	
 	    	<div class="panel-body showOnLoadWeather">
 	        	<div class="tab-content">
@@ -267,6 +268,7 @@
      
      	
 		<center><div class="loader loaderSentences"></div></center>
+		<center><div class="no_sentence" hidden="hidden"><h4>No sentence for you :(</h4></div></center>
 
     	<div class="panel-body showOnLoadSentences">
         	<div class="tab-content">
@@ -440,6 +442,7 @@
      	</div>
      
 	<center><div class="loader loaderSuggestedRecipes"></div></center>
+	<center><div class="no_recipe" hidden="hidden"><h4>Save more measure in order to get the right recipe for you!</h4></div></center>
 
     	<div class="panel-body showOnLoadSuggestedRecipes">
         	<div class="tab-content">
@@ -496,6 +499,7 @@
 					</div>
 					<div class="panel-body">
 						<center><div class="loader loaderFoods"></div></center>
+						<center><div class="no_food" hidden="hidden"><h4>Save more measure in order to get the right foods for you!</h4> </div></center>
 						<div class="foods_card">
 							<div class="card"  ng-repeat='f in foodData' >
 								<div class="card-block">

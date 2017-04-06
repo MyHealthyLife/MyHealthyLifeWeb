@@ -138,11 +138,14 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
         }).then(function(success) {
             $scope.myData = success.data;
             $('.loaderSentences').hide();
+            $('.no_sentence').hide();
             for(i=0;i<$scope.myData.length;i++){
             	$scope.loadSentenceDetails($scope.myData[i]);
             }
         }, function(error){
         	console.log('error');
+        	$('.loaderSentences').hide();
+        	$('.no_sentence').show();
         });
 	}
 	
@@ -236,9 +239,12 @@ app.controller('foods_for_me', function ($scope,$rootScope, $http) {
             $scope.foodData = success.data.food;
             $('.loaderFoods').hide();
     		$('.foods_card').show();
+    		$('.no_food').hide();
             
         }, function(error){
         	console.log('error');
+        	$('.no_food').show();
+        	$('.loaderFoods').hide();
         });
 	};
 	
@@ -274,8 +280,11 @@ app.controller('suggestedRecipesController', function ($scope,$rootScope, $http)
         	$scope.suggestedRecipes = success.data.recipes;
         	console.log($scope.suggestedRecipes);
         	
+        	$('.no_recipe').hide();
+        	
         }, function(error){
         	console.log('Error suggested recipes');
+        	$('.no_recipe').show();
         });
     	
 		
@@ -333,14 +342,18 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         	
         	console.log($scope.weatherData);
         	
+        	$(".no_weather").hide();
+        	
         }, function(error){
         	console.log('Error weather');
+        	$(".no_weather").show();
         });
     	
 		
 	    // Hides the loader and shows the content
 	    $(".loaderWeather").hide();
 	    $(".showOnLoadWeather").show();
+	    
        
     };
     
