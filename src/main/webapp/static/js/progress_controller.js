@@ -33,7 +33,15 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
             
         	// Gets the list of measures in the health profile
         	if($scope.user_data.healthProfile!=null){
+        		if($scope.user_data.healthProfile.currentHealth.measure==null){
+        			// Hides the loader and shows the error
+                    $(".loaderCurrentHealth").hide();
+                    $(".showErrorCurrentHealth").show();
+                    return;
+        		}
 	            var measures = $scope.user_data.healthProfile.currentHealth.measure;
+	            
+	            
 	            
 	            
 	            
