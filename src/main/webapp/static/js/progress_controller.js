@@ -10,6 +10,7 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
 	$rootScope.loadCurrentHealth = function () {
 		
 		// Shows the loader
+        $(".showErrorCurrentHealth").hide();
         $(".showOnLoadCurrentHealth").hide();
         $(".loaderCurrentHealth").show();
         
@@ -50,6 +51,10 @@ app.controller('currentHealthController', function ($scope,$rootScope, $http) {
             
         }, function(error){
         	console.log('Error current health');
+
+            // Hides the loader and shows the error
+            $(".loaderCurrentHealth").hide();
+            $(".showErrorCurrentHealth").show();
         });
         
        
@@ -80,6 +85,7 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
 	$rootScope.loadProgressBars = function () {
 
 		// Shows the loader
+        $(".showErrorProgressBars").hide();
         $(".showOnLoadProgressBars").hide();
         $(".loaderProgressBars").show();
         
@@ -129,6 +135,10 @@ app.controller('progressBarController', function ($scope,$rootScope, $http) {
             
         }, function(error){
         	console.log('Error progress bars');
+
+            // Hides the loader and shows the error
+            $(".loaderProgressBars").hide();
+            $(".showErrorProgressBars").show();
         });
         
     };
@@ -236,6 +246,7 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
 	$rootScope.loadMeasureHistory = function () {
 		
 		// Shows the loader
+        $(".showErrorHistory").hide();
         $(".showOnLoadHistory").hide();
         $(".loaderHistory").show();
         
@@ -281,6 +292,11 @@ app.controller('measureHistoryController', function ($scope,$rootScope, $http) {
             
         }, function(error){
         	console.log('Error load measure history');
+        	
+
+            // Hides the loader and shows the error
+            $(".loaderHistory").hide();
+            $(".showErrorHistory").show();
         });
         
        
