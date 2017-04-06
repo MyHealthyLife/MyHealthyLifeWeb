@@ -272,21 +272,7 @@
         	<div class="tab-content">
             	<div class="tab-pane dedicated-sentences active" id="test">
 				
-				<div class="row">
-					<div class="col-sm-6">
-					
-					    <div class="form-group">
-				    	</div>
-				    </div>
-				</div>
-			<div class="row">
-					<div class="col-sm-12">
-					    <div class="form-group">
-				    	    <!-- <h1 ng-repeat="x in myData">{{x}}</h1>
-				    	    <button class="btn btn-primary" ng-click="loadData()">Load</button>-->
-				    	</div>
-				    </div>
-			</div>
+				
 			<div class="row">
 				<div class="col-sm-12 scrollable-panel">
 					  <!-- <div ui-grid="{ data: myData }" class="myGrid"></div> -->
@@ -297,12 +283,14 @@
 						  <!-- <img class="card-img-top" src="http://stock.wikimini.org/w/images/9/95/Gnome-stock_person-avatar-profile.png" alt="Card image cap">-->
 						  <div class="card-block">
 						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> <a data-toggle="collapse" href="#image-div-{{x.idDedicatedSentence}}">{{x.usernameOne}} [{{x.insertionTime}}]</a></h4>
-						    <p class="card-text"> {{x.sentenceText}}</p>
-						    
+						   	<div class="row">
+							    <div class=col-sm-6><p class="card-text"> {{x.sentenceText}}</p></div>
+							    <div class=col-sm-6><p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Reply</a></p></div>
+						    </div>
 						    <div class="collapse" id="image-div-{{x.idDedicatedSentence}}">
 						    	<img src="{{x.url}}" alt="no image here :(" style="max-width: 50%; max-height: 50%"><img>
 						    </div>
-						    <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Reply</a></p>
+						    
 						  </div>
 						</div>
 				</div>
