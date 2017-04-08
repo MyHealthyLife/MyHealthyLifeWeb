@@ -328,23 +328,23 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         	$scope.weatherData = success.data;
         	var wCode = $scope.weatherData.weatherCode;
         	if(wCode==800)
-        		$scope.weatherData.url = "http://findicons.com/files/icons/2603/weezle/256/weezle_sun.png";
+        		$scope.weatherData.url = "images/icons/01-sunny.svg";
         	if(wCode==801)
-        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/512/partly-cloudy-day-icon.png";
+        		$scope.weatherData.url = "images/icons/02-sunny.svg";
         	else if(wCode>=701 && wCode<=781)
-        		$scope.weatherData.url = "https://cdn0.iconfinder.com/data/icons/large-weather-icons/512/Fog.png";
+        		$scope.weatherData.url = "images/icons/08-mist.svg";
         	else if(wCode>=802 && wCode<=804)
-        		$scope.weatherData.url = "http://www.psdgraphics.com/wp-content/uploads/2010/03/simple-clouds-icon.jpg";
+        		$scope.weatherData.url = "images/icons/06-cloud-cloud.svg";
         	else if(wCode>=200 && wCode<=232)
-        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/thunder-icon.png";
+        		$scope.weatherData.url = "images/icons/11-rain-thunderstorm.svg";
         	else if(wCode>=500 && wCode<=531)
-        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/rain-icon.png";
+        		$scope.weatherData.url = "images/icons/10-rain-heavy.svg";
         	else if(wCode>=600 && wCode<=622)
-        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/snow-icon.png";
+        		$scope.weatherData.url = "images/icons/14-snow-heavy.svg";
         	else if(wCode>=900 && wCode<=962)
         		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/tornado-icon.png";
         	else
-        		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/wind-vane-icon.png";
+        		$scope.weatherData.url = "images/icons/03-sun-cloud.svg";
         	
         	console.log($scope.weatherData);
         	
