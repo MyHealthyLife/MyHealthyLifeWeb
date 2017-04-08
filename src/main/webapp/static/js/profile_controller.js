@@ -311,7 +311,7 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
 		// Shows the loader
         $(".showOnLoadWeather").hide();
         $(".loaderWeather").show();
-        
+        console.log("Loader weather show");
     	// Gets the weather from the server
     	$http({
             url: centric01_basic + "/sentence/weather/" + global_username,
@@ -327,8 +327,14 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         	// Memorizes the data in the scope
         	$scope.weatherData = success.data;
         	var wCode = $scope.weatherData.weatherCode;
-        	if(wCode>=700 && wCode<=802)
+        	if(wCode==800)
+        		$scope.weatherData.url = "http://findicons.com/files/icons/2603/weezle/256/weezle_sun.png";
+        	if(wCode==801)
         		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/512/partly-cloudy-day-icon.png";
+        	else if(wCode>=701 && wCode<=781)
+        		$scope.weatherData.url = "https://cdn0.iconfinder.com/data/icons/large-weather-icons/512/Fog.png";
+        	else if(wCode>=802 && wCode<=804)
+        		$scope.weatherData.url = "http://www.psdgraphics.com/wp-content/uploads/2010/03/simple-clouds-icon.jpg";
         	else if(wCode>=200 && wCode<=232)
         		$scope.weatherData.url = "http://icons.iconarchive.com/icons/large-icons/large-weather/256/thunder-icon.png";
         	else if(wCode>=500 && wCode<=531)

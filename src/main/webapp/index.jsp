@@ -216,43 +216,40 @@
 			
 			<div ng-controller="weatherController">
 
-			<div class="panel panel-primary">
-	    	<div class="panel-heading">
-	         	<h3 class="panel-title">Today's weather</h3>
-	     	</div>
 	     
 			<center><div class="loader loaderWeather"></div></center>
 			<center><div class="no_weather" hidden="hidden"><h4>Set your city information in order to get the weather</h4></div></center>
 	
-	    	<div class="panel-body showOnLoadWeather">
-	        	<div class="tab-content">
-	            	<div class="tab-pane suggested-recipes active" id="test">
-					
-						<div class="row">
-							<div class="col-sm-12">
-							
-							    <div class="form-group">
-						    	</div>
-						    </div>
-						</div>
 			
 			
-						<div class="row">
-							<div class="col-sm-3">
-								
-								<img src="{{weatherData.url}}" height="100px"/>
-							
-							</div>
-							<div class="col-sm-9">
-								<font size="6">{{weatherData.textWeather}}</font>
-								<br>
+			<div class="row showOnLoadWeather">
+				<div class="col-sm-12">
+					<div class="forecast-container">
+						<div class="today forecast">
+							<div class="forecast-header">
+								<div class="day">Saturday</div>
+								<div class="date">8 Apr</div>
+							</div> <!-- .forecast-header -->
+							<div class="forecast-content">
+								<div class="location">{{weatherData.city}}</div>
+								<div class="degree">
+									<div class="num">{{weatherData.temperature}}<sup>o</sup>C</div>
+									<div class="forecast-icon">
+										<img src="{{weatherData.url}}" alt="" width=100>
+									</div>	
+								</div>
+								<span><img src="images/icon-umberella.png" alt="">{{weatherData.precipitation}}</span>
+								<span><img src="images/icon-wind.png" alt="">{{weatherData.windSpeed}} knots</span>
+								<span><img src="images/icon-compass.png" alt="">{{weatherData.windDirection}}</span>
+								<br><br>
+								<font size="5">{{weatherData.textWeather}}</font>
 								<font size="4">{{weatherData.textSentence}}</font>
 							</div>
 						</div>
+						
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 			
 			
