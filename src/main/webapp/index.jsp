@@ -227,8 +227,8 @@
 					<div class="forecast-container">
 						<div class="today forecast">
 							<div class="forecast-header">
-								<div class="day">Saturday</div>
-								<div class="date">8 Apr</div>
+								<div class="day">Weather for: {{weatherData.day}}</div>
+								<div class="date">{{weatherData.date}}</div>
 							</div> <!-- .forecast-header -->
 							<div class="forecast-content">
 								<div class="location">{{weatherData.city}}</div>

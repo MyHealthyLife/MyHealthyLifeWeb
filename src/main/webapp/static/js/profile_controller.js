@@ -348,6 +348,30 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         	
         	console.log($scope.weatherData);
         	
+        	var today = new Date();
+        	var dd = today.getDate();
+        	var mm = today.getMonth()+1;
+        	var yyyy = today.getFullYear();
+
+        	if(dd<10) {
+        	    dd='0'+dd
+        	} 
+
+        	if(mm<10) {
+        	    mm='0'+mm
+        	} 
+        	
+        	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        	var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        	
+    		var literalMonth = monthNames[today.getMonth()];
+    		var literalDay = dayNames[today.getDay()-1];
+        	
+        	today = dd+' '+literalMonth;
+        	
+        	$scope.weatherData.date = today;
+        	$scope.weatherData.day = literalDay;
+        	
         	$(".no_weather").hide();
         	
         }, function(error){
