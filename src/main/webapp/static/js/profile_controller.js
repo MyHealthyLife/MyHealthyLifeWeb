@@ -327,16 +327,18 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         	// Memorizes the data in the scope
         	$scope.weatherData = success.data;
         	var wCode = $scope.weatherData.weatherCode;
-        	if(wCode==800)
+        	if(wCode>=800 && wCode<801)
         		$scope.weatherData.url = "images/icons/01-sunny.svg";
-        	if(wCode==801)
+        	if(wCode>=801 && wCode<803)
         		$scope.weatherData.url = "images/icons/02-sunny.svg";
+        	else if(wCode>=803 && wCode<=804)
+        		$scope.weatherData.url = "images/icons/06-cloud-cloud.svg";
         	else if(wCode>=701 && wCode<=781)
         		$scope.weatherData.url = "images/icons/08-mist.svg";
-        	else if(wCode>=802 && wCode<=804)
-        		$scope.weatherData.url = "images/icons/06-cloud-cloud.svg";
         	else if(wCode>=200 && wCode<=232)
         		$scope.weatherData.url = "images/icons/11-rain-thunderstorm.svg";
+        	else if(wCode>=300 && wCode<=321)
+        		$scope.weatherData.url = "images/icons/09-rain-light.svg"
         	else if(wCode>=500 && wCode<=531)
         		$scope.weatherData.url = "images/icons/10-rain-heavy.svg";
         	else if(wCode>=600 && wCode<=622)
