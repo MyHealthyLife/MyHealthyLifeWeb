@@ -327,9 +327,10 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         	// Memorizes the data in the scope
         	$scope.weatherData = success.data;
         	var wCode = $scope.weatherData.weatherCode;
+        	
         	if(wCode>=800 && wCode<801)
         		$scope.weatherData.url = "images/icons/01-sunny.svg";
-        	if(wCode>=801 && wCode<803)
+        	else if(wCode>=801 && wCode<803)
         		$scope.weatherData.url = "images/icons/02-sunny.svg";
         	else if(wCode>=803 && wCode<=804)
         		$scope.weatherData.url = "images/icons/06-cloud-cloud.svg";
@@ -348,6 +349,7 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         	else
         		$scope.weatherData.url = "images/icons/03-sun-cloud.svg";
         	
+        	
         	console.log($scope.weatherData);
         	
         	var today = new Date();
@@ -364,11 +366,11 @@ app.controller('weatherController', function ($scope,$rootScope, $http) {
         	} 
         	
         	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        	var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        	var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         	
     		var literalMonth = monthNames[today.getMonth()];
-    		var literalDay = dayNames[today.getDay()-1];
-        	
+    		var literalDay = dayNames[today.getDay()];
+    		
         	today = dd+' '+literalMonth;
         	
         	$scope.weatherData.date = today;

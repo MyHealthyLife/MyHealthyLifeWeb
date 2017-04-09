@@ -237,7 +237,7 @@
 									<div class="forecast-icon">
 										<img src="{{weatherData.url}}" alt="" width=90>
 									</div>	
-								</div>
+								</div><br>
 								<span><img src="images/icon-umberella.png" alt="">{{weatherData.precipitation}}</span>
 								<span><img src="images/icon-wind.png" alt="">{{weatherData.windSpeed}} knots</span>
 								<span><img src="images/icon-compass.png" alt="">{{weatherData.windDirection}}</span>
