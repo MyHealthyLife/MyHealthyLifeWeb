@@ -235,7 +235,7 @@
 								<div class="degree">
 									<div class="num">{{weatherData.temperature}}<sup>o</sup>C</div>
 									<div class="forecast-icon">
-										<img src="{{weatherData.url}}" alt="" width=100>
+										<img src="{{weatherData.url}}" alt="" width=90>
 									</div>	
 								</div>
 								<span><img src="images/icon-umberella.png" alt="">{{weatherData.precipitation}}</span>
