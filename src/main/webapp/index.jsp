@@ -242,8 +242,8 @@
 								<span><img src="images/icon-wind.png" alt="">{{weatherData.windSpeed}} knots</span>
 								<span><img src="images/icon-compass.png" alt="">{{weatherData.windDirection}}</span>
 								<br><br>
-								<font size="5">{{weatherData.textWeather}}</font>
-								<font size="4">{{weatherData.textSentence}}</font>
+								<font size="5">{{weatherData.textWeather}}.</font>
+								<font size="5">{{weatherData.textSentence}}</font>
 							</div>
 						</div>
 						
