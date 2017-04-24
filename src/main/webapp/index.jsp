@@ -445,8 +445,39 @@
 	<!--  </div>-->
 	</div>
 	
+
+
+	<div class="row">
+		
 	
-	
+			<div class="col-sm-6" ng-controller='foods_for_me'>
+				
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+			         	<h3 class="panel-title">Suggested foods</h3>
+			     	</div>
+					<div class="panel-body suggested-foods">
+						<center><div class="loader loaderFoods"></div></center>
+						<center><div class="no_food" hidden="hidden"><h4>Save more measure in order to get the right foods for you!</h4> </div></center>
+						<div class="foods_card">
+							<div class="card"  ng-repeat='f in foodData' >
+								<div class="card-block">
+									<h4 class="card-title">{{f.name}} [{{f.foodType.category}}]</h4>
+									<p class="card-text"> <span class="glyphicon glyphicon-fire"></span> {{f.calories}} kcal</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			<div class="col-sm-6">
+		
+		
 	<div class="panel panel-primary" ng-controller="suggestedRecipesController">
     	<div class="panel-heading">
          	<h3 class="panel-title">Suggested recipes</h3>
@@ -501,28 +532,13 @@
 	</div>
 	
 	
-		<div class="row">
-			<div class="col-sm-12" ng-controller='foods_for_me'>
-				
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3>Suggested foods</h3>
-					</div>
-					<div class="panel-body">
-						<center><div class="loader loaderFoods"></div></center>
-						<center><div class="no_food" hidden="hidden"><h4>Save more measure in order to get the right foods for you!</h4> </div></center>
-						<div class="foods_card">
-							<div class="card"  ng-repeat='f in foodData' >
-								<div class="card-block">
-									<h4 class="card-title">{{f.name}} [{{f.foodType.category}}]</h4>
-									<p class="card-text"> <span class="glyphicon glyphicon-fire"></span> {{f.calories}} kcal</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		
+	
+	
+	
+	
+	</div>
+			
+			
 		</div>
 	
 	</div>
