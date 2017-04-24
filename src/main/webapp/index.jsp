@@ -521,7 +521,7 @@
 					</div>
 		
 		
-					<div class="row">
+					<div class="recipe_block">
 							
 						<div class="panel-group" id="accordionRecipe">
 						  <div class="panel panel-default" ng-repeat="singleRecipe in suggestedRecipes">
