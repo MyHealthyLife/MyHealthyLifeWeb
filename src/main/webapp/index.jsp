@@ -105,7 +105,7 @@
 			<div class="panel panel-primary">
 			
 				<div class="panel-heading">
-					<h4>Personal data</h4>
+					<h3 class="panel-title">Personal data</h3>
 				</div>
 			
 				<div class="panel-body">
@@ -460,11 +460,33 @@
 						<center><div class="loader loaderFoods"></div></center>
 						<center><div class="no_food" hidden="hidden"><h4>Save more measure in order to get the right foods for you!</h4> </div></center>
 						<div class="foods_card">
-							<div class="card"  ng-repeat='f in foodData' >
-								<div class="card-block">
+							<!-- <div class="card"  ng-repeat='f in foodData' >
+								<!-- <div class="card-block">
 									<h4 class="card-title">{{f.name}} [{{f.foodType.category}}]</h4>
 									<p class="card-text"> <span class="glyphicon glyphicon-fire"></span> {{f.calories}} kcal</p>
 								</div>
+								
+							</div>-->
+							
+							<div class="panel-group" id="accordion">
+							  <div class="panel panel-default" ng-repeat="singleFood in foodData">
+							    <div class="panel-heading">
+							      <h4 class="panel-title">
+							        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{singleFood.idFood}}">
+							        Food n.{{singleFood.idFood}}: {{singleFood.name}}</a>
+							      </h4>
+							    </div>
+							    <div id="collapse{{singleFood.idFood}}" class="panel-collapse collapse">
+							      <div class="panel-body">
+							      		
+							      		<h3>Information</h3>
+							    		Type: {{singleFood.foodType.category}}
+							    		<br>
+							    		Calories: {{singleFood.calories}} cal
+							      		
+									</div>
+							    </div>
+							  </div>
 							</div>
 						</div>
 					</div>
