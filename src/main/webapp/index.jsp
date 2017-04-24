@@ -278,10 +278,27 @@
 					  <div class="card" ng-repeat="x in myData">
 						  <!-- <img class="card-img-top" src="http://stock.wikimini.org/w/images/9/95/Gnome-stock_person-avatar-profile.png" alt="Card image cap">-->
 						  <div class="card-block">
-						    <h4 class="card-title"><span class="glyphicon glyphicon-user"></span> <a data-toggle="collapse" href="#image-div-{{x.idDedicatedSentence}}">{{x.usernameOne}} [{{x.insertionTime}}]</a></h4>
+						  <div class="row">
+						  <div class=col-sm-9>
+			    			<h4 class="card-title"><span class="glyphicon glyphicon-user"></span> <a data-toggle="collapse" href="#image-div-{{x.idDedicatedSentence}}">{{x.usernameOne}} [{{x.insertionTime}}]</a></h4>
+					   	 	</div>
+					   	 	<div class=col-sm-3>
+							    	<!-- <p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Reply</a></p>
+							    	-->
+						    	<p align="right">
+						    		<a class="btn btn-primary" href="#" ng-click="replaySentence(x.usernameOne)">
+							    		<i class="glyphicon glyphicon-share-alt pull-left"></i>
+							    		<span>Reply<!-- <br><small>to {{x.usernameOne}}</small> --></span>
+						    		</a>
+					    		</p>
+            
+							    </div>
+					   	  </div>
 						   	<div class="row">
-							    <div class=col-sm-6><p class="card-text"> {{x.sentenceText}}</p></div>
-							    <div class=col-sm-6><p align="right"><a href="#" class="btn btn-primary" ng-click="replaySentence(x.usernameOne)">Reply</a></p></div>
+							    <div class=col-sm-12>
+							    	<p class="card-text"> {{x.sentenceText}}</p>
+						    	</div>
+							    
 						    </div>
 						    <div class="collapse" id="image-div-{{x.idDedicatedSentence}}">
 						    	<img src="{{x.url}}" alt="no image here :(" style="max-width: 50%; max-height: 50%"><img>
