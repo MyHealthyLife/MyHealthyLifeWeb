@@ -523,15 +523,15 @@
 		
 					<div class="row">
 							
-						<div class="panel-group" id="accordion2">
+						<div class="panel-group" id="accordionRecipe">
 						  <div class="panel panel-default" ng-repeat="singleRecipe in suggestedRecipes">
 						    <div class="panel-heading">
 						      <h4 class="panel-title">
-						        <a data-toggle="collapse" data-parent="#accordion2" href="#collapse{{singleRecipe.recipeId}}">
+						        <a data-toggle="collapse" data-parent="#accordionRecipe" href="#collapseRecipe{{singleRecipe.recipeId}}">
 						        Recipe n.{{singleRecipe.recipeId}}: {{singleRecipe.name}} [{{singleRecipe.calories}} calories]</a>
 						      </h4>
 						    </div>
-						    <div id="collapse{{singleRecipe.recipeId}}" class="panel-collapse collapse">
+						    <div id="collapseRecipe{{singleRecipe.recipeId}}" class="panel-collapse collapse">
 						      <div class="panel-body">
 						      		
 						      		<h3>Ingredients</h3>
