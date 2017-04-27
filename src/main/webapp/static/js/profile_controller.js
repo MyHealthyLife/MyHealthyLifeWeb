@@ -25,10 +25,12 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
 	$scope.edit_country;
 	
 	
+	//function for loading the user information
 	$scope.loadUserData = function () {
         console.log('loadUserData called.');
         $(".loading_data").show();
         
+        //REST call to centric01
         $http({
             url: centric01_basic+"/user/data/"+global_username,
             method: 'GET',
@@ -62,7 +64,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
        
     };
     
-    
+    //load data in the data edit form
     $scope.editData=function(){
     	$scope.edit_username=$scope.user_data.username;
     	$scope.edit_firstname=$scope.user_data.firstname;
@@ -75,6 +77,7 @@ app.controller('user_data', function ($scope,$rootScope, $http) {
     	$("#editDataModal").modal('show');
     }
     
+    //save the updated data
     $scope.editSave=function(){
     	$scope.user_data.username=$scope.edit_username;
     	$scope.user_data.firstname=$scope.edit_firstname;
@@ -124,7 +127,7 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
 	
 	$scope.modeToReplay="gain";
 	
-	
+	//retrieve the dedicated sentence of the user
 	$scope.loadData=function(){
 		$http({
             url: centric02_basic+"/sentence/"+global_username,
@@ -149,6 +152,7 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
         });
 	}
 	
+	//load the datails of the sentence
 	$scope.loadSentenceDetails=function(sentence){
 		$http({
             url: centric02_basic+"/sentence/"+global_username+"/"+sentence.idSentence,
@@ -166,6 +170,7 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
         });
 	};
 	
+	//function for loading the measure type
 	$scope.loadmeasuretypes=function(){
 		$http({
             url: centric01_basic+"/measuretypes",
@@ -186,7 +191,10 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
 	}
 	
 	//$interval($scope.loadData,5000)
+	
+	//execute the function which load the dedicated sentences every 60 seconds
 	setInterval($scope.loadData,1000*60);
+	
 	$scope.loadData();
 	$scope.loadmeasuretypes();
 	
@@ -196,6 +204,7 @@ app.controller('sentence_receviver', function ($scope,$rootScope, $http){
 		$('#replayModal').modal('show');
 	};
 	
+	//function for sending the replays to the dedicated sentences
 	$scope.sendReply=function(){
 		console.log($scope.userToReplay+" "+$scope.typeForResponse+" "+$scope.modeToReplay);
 		$('#replayModal').modal('hide');
@@ -222,6 +231,7 @@ app.controller('foods_for_me', function ($scope,$rootScope, $http) {
 	
 	$scope.foodData;
 	
+	//load the suggested foods for the user
 	$scope.loadData=function(){
 		$('.loaderFoods').show();
 		$('.foods_card').hide();
@@ -248,6 +258,7 @@ app.controller('foods_for_me', function ($scope,$rootScope, $http) {
         });
 	};
 	
+	//call thi function during the page loading
 	$scope.loadData();
 	
 });
